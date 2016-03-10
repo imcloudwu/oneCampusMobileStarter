@@ -79,6 +79,8 @@ class LoginWebView : UIViewController,UIWebViewDelegate{
     
     func SetTokenAndClose(code:String){
         
+        cnv?.loginHelper?.accountInfo.SaveUserImage()
+        
         DeleteCookies()
         
         cnv?.loginHelper?.GetAccessTokenAndRefreshToken(code)

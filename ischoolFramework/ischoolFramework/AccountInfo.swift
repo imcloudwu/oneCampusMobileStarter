@@ -8,13 +8,13 @@
 
 class AccountInfo{
     
-    private var myPhotoLocalPath = NSHomeDirectory().stringByAppendingString("/Documents/myPhoto.dat")
+    var myPhotoLocalPath = NSHomeDirectory().stringByAppendingString("/Documents/myPhoto.dat")
     
     var Name : String = ""
     
     var Account : String = ""
     
-    var MyPhoto : UIImage?{
+    var Photo : UIImage?{
         
         get{
             
@@ -46,6 +46,9 @@ class AccountInfo{
             
             Account = json["mail"].stringValue
         }
+    }
+    
+    func SaveUserImage(){
         
         let rsp2 = try? HttpClient.Get("https://auth.ischool.com.tw/service/getpic.php")
         
@@ -57,6 +60,5 @@ class AccountInfo{
             
             imgData?.writeToFile(myPhotoLocalPath, atomically: true)
         }
-        
     }
 }

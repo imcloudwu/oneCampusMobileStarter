@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6114DEF41C8D3ACC00B6A34C /* LeftViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */; };
+		612A5A601C915983008EB69F /* blackboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 612A5A5F1C915983008EB69F /* blackboard.jpg */; };
 		615789F61C900B4C00C2710B /* RightViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F51C900B4C00C2710B /* RightViewCtrl.swift */; };
 		615789F81C900FB300C2710B /* PassValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F71C900FB300C2710B /* PassValue.swift */; };
 		615789FA1C900FF300C2710B /* InfoChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F91C900FF300C2710B /* InfoChangeDelegate.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewCtrl.swift; sourceTree = "<group>"; };
+		612A5A5F1C915983008EB69F /* blackboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackboard.jpg; sourceTree = "<group>"; };
 		615789F51C900B4C00C2710B /* RightViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewCtrl.swift; path = ../RightViewCtrl.swift; sourceTree = "<group>"; };
 		615789F71C900FB300C2710B /* PassValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassValue.swift; sourceTree = "<group>"; };
 		615789F91C900FF300C2710B /* InfoChangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoChangeDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		61959F6A1C89880B00F4DB8B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				612A5A5F1C915983008EB69F /* blackboard.jpg */,
 				61959F6B1C89880B00F4DB8B /* nature-1.jpg */,
 				61959F6C1C89880B00F4DB8B /* User-100.png */,
 			);
@@ -322,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				612A5A601C915983008EB69F /* blackboard.jpg in Resources */,
 				61959F7A1C89880B00F4DB8B /* User-100.png in Resources */,
 				61959F791C89880B00F4DB8B /* nature-1.jpg in Resources */,
 				616E2A6C1C89690500F94E20 /* Storyboard.storyboard in Resources */,

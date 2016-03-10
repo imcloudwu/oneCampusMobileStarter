@@ -34,30 +34,51 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var childBtn: UIButton!
     
+    var logout : (() -> ())?
+    
+    @IBAction func Logout(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "確認要登出嗎？", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
+            
+            self.logout?()
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func changeSchool(sender: AnyObject) {
         
         let menu = UIAlertController(title: "請選擇學校", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         menu.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         
-        for dsns in DsnsList{
+        if let dsnss = DsnsList{
             
-            menu.addAction(UIAlertAction(title: dsns.Name, style: UIAlertActionStyle.Default, handler: { (act) -> Void in
+            for dsns in dsnss{
                 
-                self.schoolBtn.setTitle(dsns.Name, forState: UIControlState.Normal)
-                
-                self.childBtn.setTitle("", forState: UIControlState.Normal)
-                
-                self.currentDsns = dsns
-                
-                self.currentChild = nil
-                
-                self.currentPassValue?.delegate?.DsnsChanged(dsns.AccessPoint)
-                
-                self.Children = GetMyChildren(self.Resource, dsns: dsns.AccessPoint)
-                
-                SlideView.ToggleSideMenu()
-            }))
+                menu.addAction(UIAlertAction(title: dsns.Name, style: UIAlertActionStyle.Default, handler: { (act) -> Void in
+                    
+                    self.schoolBtn.setTitle(dsns.Name, forState: UIControlState.Normal)
+                    
+                    self.childBtn.setTitle("請選擇小孩", forState: UIControlState.Normal)
+                    
+                    self.currentDsns = dsns
+                    
+                    self.currentChild = nil
+                    
+                    self.currentPassValue?.delegate?.DsnsChanged(dsns.AccessPoint)
+                    
+                    self.Children = GetMyChildren(self.Resource, dsns: dsns.AccessPoint)
+                    
+                    //SlideView.ToggleSideMenu()
+                }))
+            }
+        
         }
         
         self.presentViewController(menu, animated: true, completion: nil)
@@ -70,19 +91,23 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         menu.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         
-        for child in Children{
+        if let children = Children{
             
-            menu.addAction(UIAlertAction(title: child.Name, style: UIAlertActionStyle.Default, handler: { (act) -> Void in
+            for child in children{
                 
-                self.childBtn.setTitle(child.Name, forState: UIControlState.Normal)
-                
-                self.currentPassValue?.delegate?.StudentIdChanged(child.ID)
-                
-                self.currentChild = child
-                
-                SlideView.ToggleSideMenu()
-                
-            }))
+                menu.addAction(UIAlertAction(title: child.Name, style: UIAlertActionStyle.Default, handler: { (act) -> Void in
+                    
+                    self.childBtn.setTitle(child.Name, forState: UIControlState.Normal)
+                    
+                    self.currentPassValue?.delegate?.StudentIdChanged(child.ID)
+                    
+                    self.currentChild = child
+                    
+                    SlideView.ToggleSideMenu()
+                    
+                }))
+            }
+        
         }
         
         self.presentViewController(menu, animated: true, completion: nil)
@@ -96,13 +121,17 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         tableView.delegate = self
         tableView.dataSource = self
         
-        Resource.Account.SetInfo((Resource.Connection.loginHelper.AccessToken))
+        Resource.Connection.loginHelper.accountInfo.SetInfo((Resource.Connection.loginHelper.AccessToken))
         
-        icon.image = Resource.Account.MyPhoto
+        icon.layer.cornerRadius = icon.frame.width / 2
         
-        name.text = Resource.Account.Name
+        icon.layer.masksToBounds = true
         
-        account.text = Resource.Account.Account
+        icon.image = Resource.Connection.loginHelper.accountInfo.Photo
+        
+        name.text = Resource.Connection.loginHelper.accountInfo.Name
+        
+        account.text = Resource.Connection.loginHelper.accountInfo.Account
         
         DsnsList = GetDsnsList(Resource.Connection.loginHelper.AccessToken)
     }
@@ -138,6 +167,10 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         let vc = funcShell?.GetViewController()
         
         vc?.passValue = passvalue
+        
+        let navtitle = funcShell?.Name
+        
+        vc?.navtitle = navtitle
         
         self.currentPassValue = passvalue
         

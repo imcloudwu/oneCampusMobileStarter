@@ -9,17 +9,17 @@
 import UIKit
 import ischoolFramework
 
-class SampleViewController: ischoolViewCtrl,InfoChangeDelegate {
+class SampleViewController: ischoolViewCtrl {
     
     let contract = "1campus.mobile.parent"
     
     @IBOutlet weak var label: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        passValue?.delegate = self
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        passValue?.delegate = self
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,7 +36,7 @@ class SampleViewController: ischoolViewCtrl,InfoChangeDelegate {
         
     }
     
-    func DsnsChanged(dsns: String) {
+    override func DsnsChanged(dsns: String) {
         
         passValue?.Dsns = dsns
         
@@ -47,7 +47,7 @@ class SampleViewController: ischoolViewCtrl,InfoChangeDelegate {
         self.navigationItem.title = "\(passValue?.Dsns)#\(passValue?.Id)"
     }
     
-    func StudentIdChanged(studentId: String) {
+    override func StudentIdChanged(studentId: String) {
         
         passValue?.Id = studentId
         

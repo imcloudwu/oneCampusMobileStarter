@@ -10,8 +10,6 @@ public class Resources{
     
     var Functions : FunctionPool
     
-    var Account : AccountInfo
-    
     var Connection : ConnectionManager
     
     public init(connectionManager:ConnectionManager){
@@ -19,8 +17,6 @@ public class Resources{
         self.Connection = connectionManager
         
         self.Functions = FunctionPool()
-        
-        self.Account = AccountInfo()
     }
     
     public func AddFunction(function:ischoolProtocol){

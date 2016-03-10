@@ -8,20 +8,29 @@
 
 import UIKit
 
-public class ischoolViewCtrl : UIViewController{
+public class ischoolViewCtrl : UIViewController,InfoChangeDelegate{
+    
+    public var navtitle : String?
     
     public var passValue : PassValue?
     
-    public override func viewDidLoad() {
+    public final override func viewDidLoad() {
         
         let img = UIImage(named: "Menu-24.png", inBundle: frameworkBundle, compatibleWithTraitCollection: nil)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: "ToggleSideMenu")
         
+        self.navigationItem.title = navtitle
+        
+        self.passValue?.delegate = self
     }
     
     func ToggleSideMenu(){
         
         SlideView.ToggleSideMenu()
     }
+    
+    public func DsnsChanged(dsns:String){ }
+    
+    public func StudentIdChanged(studentId:String){ }
 }

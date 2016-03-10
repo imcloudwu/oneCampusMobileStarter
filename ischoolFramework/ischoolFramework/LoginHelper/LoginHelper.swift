@@ -10,6 +10,8 @@ import Foundation
 
 public class LoginHelper{
     
+    var accountInfo : AccountInfo
+    
     var url : String?
     
     var clientId : String?
@@ -41,9 +43,15 @@ public class LoginHelper{
     }
     
     public init(clientId:String,clientSecret:String,url:String){
+        
+        self.accountInfo = AccountInfo()
+        
         self.clientId = clientId
+        
         self.clientSecret = clientSecret
+        
         self.url = url
+        
         self.lockQueue = dispatch_queue_create("LoginHelper.lockQueue", nil)
     }
     
@@ -101,4 +109,5 @@ public class LoginHelper{
             Keychain.save("refreshToken", data: rftoken.dataValue)
         }
     }
+    
 }

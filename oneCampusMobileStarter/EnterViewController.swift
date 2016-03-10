@@ -9,30 +9,20 @@
 import UIKit
 import ischoolFramework
 import SampleModule
+import AbsenceModule
 
 class EnterViewController : UIViewController{
     
     var loginHelper : LoginHelper!
     
-    var modules = [SampleShell.Instance,SampleShell.Instance,SampleShell.Instance]
+    var modules = [SampleShell.Instance,SampleShell.Instance,SampleShell.Instance,AbsenceShell.Instance]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Keychain.clear()
         
-        var scopes = [String]()
-        
-        for module in modules{
-            
-            let key = "*:" + module.Scope
-            
-            if !scopes.contains(key){
-                scopes.append(key)
-            }
-        }
-        
-        let scope = "User.Mail,User.BasicInfo,1Campus.Notification.Read,1Campus.Notification.Send,*:auth.guest,*:sakura," + scopes.joinWithSeparator(",")
+        let scope = "User.Mail,User.BasicInfo,1Campus.Notification.Read,1Campus.Notification.Send,*:auth.guest,*:sakura" + GetScopes()
         
         let url = "https://auth.ischool.com.tw/oauth/authorize.php?client_id=\(clientID)&response_type=code&state=http://_blank&redirect_uri=http://_blank&scope=\(scope)"
         
@@ -78,10 +68,33 @@ class EnterViewController : UIViewController{
         
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        app.window?.rootViewController = SlideView.GetInstance(resources)
+        app.window?.rootViewController = SlideView.GetInstance(resources) { () -> () in
+            
+            Keychain.clear()
+            
+            app.window?.rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EnterViewController")
+        }
         
         app.window?.makeKeyAndVisible()
         
+    }
+    
+    func GetScopes() -> String{
+        
+        var scopes = [String]()
+        
+        for module in modules{
+            
+            let key = "*:" + module.Scope
+            
+            if !scopes.contains(key){
+                scopes.append(key)
+            }
+        }
+        
+        let retval = scopes.joinWithSeparator(",")
+        
+        return retval.isEmpty ? "" : "," + retval
     }
     
     

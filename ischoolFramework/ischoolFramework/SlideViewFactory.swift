@@ -10,11 +10,13 @@ public class SlideView{
     
     private static var _mmdc : MMDrawerController?
     
-    public class func GetInstance(resource:Resources) -> MMDrawerController?{
+    public class func GetInstance(resource:Resources,logout:(() -> ())) -> MMDrawerController?{
             
             let leftView = frameworkStoryboard.instantiateViewControllerWithIdentifier("LeftView") as! LeftViewCtrl
             
             leftView.Resource = resource
+        
+            leftView.logout = logout
             
             let rightView = frameworkStoryboard.instantiateViewControllerWithIdentifier("RightView")
             

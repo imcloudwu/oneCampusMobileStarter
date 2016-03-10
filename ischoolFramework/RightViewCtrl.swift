@@ -10,9 +10,13 @@ import UIKit
 
 class RightViewCtrl : ischoolViewCtrl{
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        self.navigationItem.title = "歡迎使用"
+//    }
+    
+    override func viewWillAppear(animated: Bool) {
         self.navigationItem.title = "歡迎使用"
     }
 }
