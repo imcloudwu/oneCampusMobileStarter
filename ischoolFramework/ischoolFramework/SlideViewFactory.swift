@@ -12,21 +12,21 @@ public class SlideView{
     
     public class func GetInstance(resource:Resources,logout:(() -> ())) -> MMDrawerController?{
             
-            let leftView = frameworkStoryboard.instantiateViewControllerWithIdentifier("LeftView") as! LeftViewCtrl
-            
-            leftView.Resource = resource
+        let leftView = frameworkStoryboard.instantiateViewControllerWithIdentifier("LeftView") as! LeftViewCtrl
         
-            leftView.logout = logout
-            
-            let rightView = frameworkStoryboard.instantiateViewControllerWithIdentifier("RightView")
-            
-            _mmdc = MMDrawerController(centerViewController: rightView, leftDrawerViewController: leftView)
-            
-            _mmdc?.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView
-            
-            _mmdc?.closeDrawerGestureModeMask = [MMCloseDrawerGestureMode.PanningCenterView, MMCloseDrawerGestureMode.TapCenterView]
-            
-            return _mmdc
+        leftView.Resource = resource
+        
+        leftView.logout = logout
+        
+        let rightView = frameworkStoryboard.instantiateViewControllerWithIdentifier("RightView") as! UINavigationController
+        
+        _mmdc = MMDrawerController(centerViewController: rightView, leftDrawerViewController: leftView)
+        
+        _mmdc?.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView
+        
+        _mmdc?.closeDrawerGestureModeMask = [MMCloseDrawerGestureMode.PanningCenterView, MMCloseDrawerGestureMode.TapCenterView]
+        
+        return _mmdc
     }
     
     public class func ChangeContentView(vc:UIViewController){

@@ -10,6 +10,8 @@ import UIKit
 
 class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
+    var firstTime = true
+    
     var Resource : Resources!
     
     var DsnsList : [DsnsItem]!
@@ -113,8 +115,6 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         self.presentViewController(menu, animated: true, completion: nil)
     }
     
-    //var cons : ConnectionManager
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -134,6 +134,23 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         account.text = Resource.Connection.loginHelper.accountInfo.Account
         
         DsnsList = GetDsnsList(Resource.Connection.loginHelper.AccessToken)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        guard firstTime else{
+            return
+        }
+        
+        firstTime = false
+        
+        if Resource.Functions.GetPools()?.count > 0{
+            
+            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+            
+            tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -148,6 +165,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         var cell = tableView.dequeueReusableCellWithIdentifier("cell")
         
         if cell == nil{
+            
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         }
         

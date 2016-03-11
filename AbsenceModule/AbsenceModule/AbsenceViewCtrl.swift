@@ -13,6 +13,8 @@ class AbsenceViewCtrl : ischoolViewCtrl{
     
     let contract = "1campus.mobile.parent"
     
+    @IBOutlet weak var label: UILabel!
+    
     func LoadData(){
         
         if let id = passValue?.Id where !id.isEmpty{
@@ -20,6 +22,8 @@ class AbsenceViewCtrl : ischoolViewCtrl{
             passValue?.SendRequest(contract, srevice: "absence.GetChildAttendance", req: "<Request><RefStudentId>\(id)</RefStudentId></Request>", callback: { (response) -> () in
                 
                 print(response)
+                
+                self.label.text = response
             })
             
         }
@@ -43,6 +47,13 @@ class AbsenceViewCtrl : ischoolViewCtrl{
         }
         
         self.navigationItem.title = title
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        //self.navigationItem.title = "缺 曠 查 詢"
+        
+        LoadData()
     }
     
     override func StudentIdChanged(studentId: String) {

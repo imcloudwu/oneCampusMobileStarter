@@ -13,6 +13,7 @@
 		612A5A931C917230008EB69F /* AbsenceShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612A5A921C917230008EB69F /* AbsenceShell.swift */; };
 		612A5A951C917282008EB69F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612A5A941C917282008EB69F /* Storyboard.storyboard */; };
 		612A5A971C9172C1008EB69F /* AbsenceViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612A5A961C9172C1008EB69F /* AbsenceViewCtrl.swift */; };
+		61807AB81C9282B60026314A /* Google Logo Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 61807AB71C9282B60026314A /* Google Logo Filled-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		612A5A921C917230008EB69F /* AbsenceShell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsenceShell.swift; sourceTree = "<group>"; };
 		612A5A941C917282008EB69F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		612A5A961C9172C1008EB69F /* AbsenceViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsenceViewCtrl.swift; sourceTree = "<group>"; };
+		61807AB71C9282B60026314A /* Google Logo Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Google Logo Filled-50.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		612A5A6F1C9171E9008EB69F /* AbsenceModule */ = {
 			isa = PBXGroup;
 			children = (
+				61807AB71C9282B60026314A /* Google Logo Filled-50.png */,
 				612A5A701C9171E9008EB69F /* AbsenceModule.h */,
 				612A5A721C9171E9008EB69F /* Info.plist */,
 				612A5A921C917230008EB69F /* AbsenceShell.swift */,
@@ -186,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61807AB81C9282B60026314A /* Google Logo Filled-50.png in Resources */,
 				612A5A951C917282008EB69F /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

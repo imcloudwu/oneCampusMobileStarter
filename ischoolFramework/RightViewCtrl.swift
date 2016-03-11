@@ -18,5 +18,7 @@ class RightViewCtrl : ischoolViewCtrl{
     
     override func viewWillAppear(animated: Bool) {
         self.navigationItem.title = "歡迎使用"
+        
+        ToggleSideMenu()
     }
 }

@@ -10,6 +10,8 @@ import Foundation
 
 public class LoginHelper{
     
+    let saveKey = "refreshToken"
+    
     var accountInfo : AccountInfo
     
     var url : String?
@@ -55,13 +57,42 @@ public class LoginHelper{
         self.lockQueue = dispatch_queue_create("LoginHelper.lockQueue", nil)
     }
     
-    public func GetLoginView() -> UIViewController{
+    private func GetLoginView() -> UIViewController{
         
         let view = frameworkStoryboard.instantiateViewControllerWithIdentifier("LoginView") as! CustomNavigationView
         
         view.loginHelper = self
         
         return view
+    }
+    
+    public func TryToLogin(parent:UIViewController,success:(() -> Void)){
+        
+        if self.AccessToken.isEmpty{
+            
+            if let refreshToken = Keychain.load(saveKey)?.stringValue where !refreshToken.isEmpty{
+                
+                self.RenewRefreshToken(refreshToken)
+                
+                if self.AccessToken.isEmpty{
+                    
+                    parent.presentViewController(self.GetLoginView(), animated: true, completion: nil)
+                }
+                else{
+                    
+                    success()
+                }
+            }
+            else{
+                
+                parent.presentViewController(self.GetLoginView(), animated: true, completion: nil)
+            }
+        }
+        else{
+            
+            success()
+        }
+        
     }
     
     public func GetAccessTokenAndRefreshToken(code:String){
@@ -106,7 +137,7 @@ public class LoginHelper{
         
         if let rftoken = self.refreshToken{
             
-            Keychain.save("refreshToken", data: rftoken.dataValue)
+            Keychain.save(saveKey, data: rftoken.dataValue)
         }
     }
     

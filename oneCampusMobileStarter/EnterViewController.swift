@@ -15,12 +15,16 @@ class EnterViewController : UIViewController{
     
     var loginHelper : LoginHelper!
     
-    var modules = [SampleShell.Instance,SampleShell.Instance,SampleShell.Instance,AbsenceShell.Instance]
+    var modules = [AbsenceShell.Instance,SampleShell.Instance,SampleShell.Instance,SampleShell.Instance]
+    
+    //var modules = [ischoolProtocol]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Keychain.clear()
+        
+        //Keychain.save("refreshToken", data: "1234".dataValue)
         
         let scope = "User.Mail,User.BasicInfo,1Campus.Notification.Read,1Campus.Notification.Send,*:auth.guest,*:sakura" + GetScopes()
         
@@ -31,23 +35,7 @@ class EnterViewController : UIViewController{
     
     override func viewDidAppear(animated: Bool) {
         
-        if let refreshToken = Keychain.load("refreshToken")?.stringValue where !refreshToken.isEmpty{
-            
-            loginHelper.RenewRefreshToken(refreshToken)
-            
-            PrepareGotoMainView()
-            
-        }
-        else if !loginHelper.AccessToken.isEmpty && !loginHelper.RefreshToken.isEmpty{
-            
-            PrepareGotoMainView()
-            
-        }
-        else{
-            
-            self.presentViewController(loginHelper.GetLoginView(), animated: true, completion: nil)
-        }
-        
+        loginHelper.TryToLogin(self, success: PrepareGotoMainView)
     }
     
     func PrepareGotoMainView(){
@@ -88,6 +76,7 @@ class EnterViewController : UIViewController{
             let key = "*:" + module.Scope
             
             if !scopes.contains(key){
+                
                 scopes.append(key)
             }
         }

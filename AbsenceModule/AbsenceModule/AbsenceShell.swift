@@ -35,7 +35,7 @@ public class AbsenceShell : ischoolProtocol{
     public var Icon : UIImage?{
         
         get{
-            return UIImage(named: "Facebook Filled-50.png", inBundle: BundleId, compatibleWithTraitCollection: nil)
+            return UIImage(named: "Google Logo Filled-50.png", inBundle: BundleId, compatibleWithTraitCollection: nil)
         }
     }
     
