@@ -53,7 +53,7 @@ public class Connection {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
                 var err: DSFault!
                 
-                let succ = self.connect(accessPoint, targetContract, securityToken, &err)
+                let _ = self.connect(accessPoint, targetContract, securityToken, &err)
                 
                 if err != nil {
                     error?(conn: self, error: err)
@@ -160,7 +160,7 @@ public class Connection {
         let rawrsp: NSData?
         do {
             rawrsp = try HttpClient.Post(physicalAccessPoint!, body: request)
-        } catch var error as NSError {
+        } catch let error as NSError {
             e = error
             rawrsp = nil
         }
@@ -199,7 +199,7 @@ public class Connection {
                     let intCode = Int((code)!)
                     
                     if intCode > 0 {
-                        let msg = xmldoc?.root["Header"]["Status"]["Message"].stringValue
+                        _ = xmldoc?.root["Header"]["Status"]["Message"].stringValue
                         
                         err = DSFault()
                         err.initWithDSResponse(xmldoc!.root)
@@ -246,10 +246,10 @@ public class AccessPoint {
         }
         
         let geturl = "\(Service)?content=%3Ca%3E\(dsns)%3C/a%3E"
-        var found: String = "";
+        //var found: String = "";
         var e: NSError?
         
-        let before = CFAbsoluteTimeGetCurrent()
+        _ = CFAbsoluteTimeGetCurrent()
         
         var data: NSData?
         do {
@@ -259,7 +259,7 @@ public class AccessPoint {
             data = nil
         }
         
-        let span = CFAbsoluteTimeGetCurrent() - before
+        //let span = CFAbsoluteTimeGetCurrent() - before
         //println("DSNS Resolve Time(\(dsns))：\(span)")
         
         if e != nil {
@@ -306,8 +306,8 @@ public class Envelope {
 public class SecurityToken {
     
     public class func createBasicToken(userName: String, password: String) -> String {
-        let un = userName.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-        let pwd = password.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        //let un = userName.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        //let pwd = password.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
         let template = "<SecurityToken Type=\"Basic\"><UserName>\(userName)</UserName><Password><![CDATA[\(password)]]></Password></SecurityToken>"
         

@@ -15,15 +15,15 @@ extension NSData {
 //if failed will return 0
 extension String {
     
-    var intValue: Int {
+    public var intValue: Int {
         return Int(self) ?? 0
     }
     
-    var int16Value: Int16 {
+    public var int16Value: Int16 {
         return Int16(self.intValue)
     }
     
-    var doubleValue: Double {
+    public var doubleValue: Double {
         return (self as NSString).doubleValue
     }
     
@@ -59,3 +59,35 @@ extension String {
         return self
     }
 }
+
+extension UITableView{
+    
+    public func reloadDataWithAnimated(){
+        
+        self.reloadData()
+        
+        animatedWithTableView(self)
+    }
+    
+    private func animatedWithTableView(tableView:UITableView){
+        
+        let cells = tableView.visibleCells
+        let tableHeight: CGFloat = tableView.bounds.size.height
+        
+        for cell in cells{
+            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+        }
+        
+        var index = 0
+        
+        for cell in cells {
+            
+            UIView.animateWithDuration(1.0, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+                }, completion: nil)
+            
+            index += 1
+        }
+    }
+}
+

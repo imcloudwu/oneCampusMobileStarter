@@ -12,7 +12,7 @@ public class ischoolViewCtrl : UIViewController,InfoChangeDelegate{
     
     public var navtitle : String?
     
-    public var passValue : PassValue?
+    public var appContext : AppContext?
     
     public final override func viewDidLoad() {
         
@@ -22,7 +22,7 @@ public class ischoolViewCtrl : UIViewController,InfoChangeDelegate{
         
         self.navigationItem.title = navtitle
         
-        self.passValue?.delegate = self
+        self.appContext?.delegate = self
     }
     
     func ToggleSideMenu(){

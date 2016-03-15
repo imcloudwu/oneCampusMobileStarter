@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Eup-qU-mrN">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Eup-qU-mrN">
                                 <rect key="frame" x="282" y="281" width="37" height="37"/>
                                 <color key="color" red="0.53725490200000003" green="0.68235294120000001" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
@@ -28,6 +28,9 @@
                             <constraint firstItem="Eup-qU-mrN" firstAttribute="centerY" secondItem="yOA-lV-QOM" secondAttribute="centerY" id="oKz-Wm-Xgw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loading" destination="Eup-qU-mrN" id="I1Q-zW-VFk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IpL-cJ-1Wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

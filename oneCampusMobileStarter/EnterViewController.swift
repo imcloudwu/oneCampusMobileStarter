@@ -10,12 +10,16 @@ import UIKit
 import ischoolFramework
 import SampleModule
 import AbsenceModule
+import DisciplineModule
+import ExamScoreModule
 
 class EnterViewController : UIViewController{
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     var loginHelper : LoginHelper!
     
-    var modules = [AbsenceShell.Instance,SampleShell.Instance,SampleShell.Instance,SampleShell.Instance]
+    var modules = [ExamScoreShell.Instance,DisciplineShell.Instance,AbsenceShell.Instance,SampleShell.Instance,SampleShell.Instance,SampleShell.Instance]
     
     //var modules = [ischoolProtocol]()
     
@@ -26,16 +30,28 @@ class EnterViewController : UIViewController{
         
         //Keychain.save("refreshToken", data: "1234".dataValue)
         
-        let scope = "User.Mail,User.BasicInfo,1Campus.Notification.Read,1Campus.Notification.Send,*:auth.guest,*:sakura" + GetScopes()
-        
-        let url = "https://auth.ischool.com.tw/oauth/authorize.php?client_id=\(clientID)&response_type=code&state=http://_blank&redirect_uri=http://_blank&scope=\(scope)"
-        
-        loginHelper = LoginHelper(clientId: clientID, clientSecret: clientSecret, url: url)
+        loginHelper = LoginHelper(clientId: clientID, clientSecret: clientSecret, url: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         
+        let scope = "User.Mail,User.BasicInfo,1Campus.Notification.Read,1Campus.Notification.Send,*:auth.guest,*:sakura" + GetScopes()
+        
+        let url = "https://auth.ischool.com.tw/oauth/authorize.php?client_id=\(clientID)&response_type=code&state=http://_blank&redirect_uri=http://_blank&scope=\(scope)"
+        
+        loginHelper.SetUrl(url)
+        
         loginHelper.TryToLogin(self, success: PrepareGotoMainView)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        loading.startAnimating()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        
+        loading.stopAnimating()
     }
     
     func PrepareGotoMainView(){
@@ -54,16 +70,7 @@ class EnterViewController : UIViewController{
             resources.AddFunction(module)
         }
         
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        app.window?.rootViewController = SlideView.GetInstance(resources) { () -> () in
-            
-            Keychain.clear()
-            
-            app.window?.rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EnterViewController")
-        }
-        
-        app.window?.makeKeyAndVisible()
+        self.presentViewController(SlideView.GetInstance(resources)!, animated: true, completion: nil)
         
     }
     

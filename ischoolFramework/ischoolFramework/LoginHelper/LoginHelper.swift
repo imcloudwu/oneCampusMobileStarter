@@ -44,7 +44,7 @@ public class LoginHelper{
         return ""
     }
     
-    public init(clientId:String,clientSecret:String,url:String){
+    public init(clientId:String,clientSecret:String,url:String?){
         
         self.accountInfo = AccountInfo()
         
@@ -55,6 +55,11 @@ public class LoginHelper{
         self.url = url
         
         self.lockQueue = dispatch_queue_create("LoginHelper.lockQueue", nil)
+    }
+    
+    public func SetUrl(url:String){
+    
+        self.url = url
     }
     
     private func GetLoginView() -> UIViewController{
@@ -139,6 +144,15 @@ public class LoginHelper{
             
             Keychain.save(saveKey, data: rftoken.dataValue)
         }
+    }
+    
+    func CleanAccessTokenAndRefreshToken(){
+        
+        self.accessToken = nil
+        
+        self.refreshToken = nil
+        
+        Keychain.delete(saveKey)
     }
     
 }

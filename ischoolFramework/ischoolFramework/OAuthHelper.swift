@@ -80,7 +80,7 @@ public class OAuthHelper {
         let span = CFAbsoluteTimeGetCurrent() - before
         print("Get Access Token Time：\(span)")
         
-        let str = NSString(data: token!, encoding: NSUTF8StringEncoding)
+        //let str = NSString(data: token!, encoding: NSUTF8StringEncoding)
         
         var json: JSON = JSON(data: token!)
         
@@ -95,12 +95,12 @@ public class OAuthHelper {
     public func me(accessToken access: String) -> String {
         let url = "\(OAuthHelper.ServiceME)?access_token=\(access)"
         
-        var error: NSError?
+        //var error: NSError?
         let rsp: NSData?
         do {
             rsp = try HttpClient.Get(url)
-        } catch let error1 as NSError {
-            error = error1
+        } catch _ as NSError {
+            //error = error1
             rsp = nil
         }
         var json: JSON = JSON(data: rsp!)

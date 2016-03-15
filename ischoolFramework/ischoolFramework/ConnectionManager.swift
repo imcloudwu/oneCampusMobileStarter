@@ -35,6 +35,8 @@ public class ConnectionManager{
             
             if err != nil{
                 
+                err = nil
+                
                 self.loginHelper.RenewRefreshToken(self.loginHelper.RefreshToken)
                 
                 con.connect(dsns, contract, SecurityToken.createOAuthToken(self.loginHelper.AccessToken), &err)

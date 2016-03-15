@@ -28,7 +28,7 @@ class SampleViewController: ischoolViewCtrl {
     
     override func viewDidAppear(animated: Bool) {
         
-        self.navigationItem.title = "\(passValue?.Dsns)#\(passValue?.Id)"
+        self.navigationItem.title = "\(appContext?.Dsns)#\(appContext?.Id)"
         
         label.text = "hello SampleViewController"
         
@@ -38,31 +38,31 @@ class SampleViewController: ischoolViewCtrl {
     
     override func DsnsChanged(dsns: String) {
         
-        passValue?.Dsns = dsns
+        appContext?.Dsns = dsns
         
         print("DsnsChanged")
         
         LoadData()
         
-        self.navigationItem.title = "\(passValue?.Dsns)#\(passValue?.Id)"
+        self.navigationItem.title = "\(appContext?.Dsns)#\(appContext?.Id)"
     }
     
     override func StudentIdChanged(studentId: String) {
         
-        passValue?.Id = studentId
+        appContext?.Id = studentId
         
         print("StudentIdChanged")
         
         LoadData()
         
-        self.navigationItem.title = "\(passValue?.Dsns)#\(passValue?.Id)"
+        self.navigationItem.title = "\(appContext?.Dsns)#\(appContext?.Id)"
     }
     
     func LoadData(){
         
-        if let id = passValue?.Id where !id.isEmpty{
+        if let id = appContext?.Id where !id.isEmpty{
             
-            passValue?.SendRequest(contract, srevice: "absence.GetChildAttendance", req: "<Request><RefStudentId>\(id)</RefStudentId></Request>", callback: { (response) -> () in
+            appContext?.SendRequest(contract, srevice: "absence.GetChildAttendance", req: "<Request><RefStudentId>\(id)</RefStudentId></Request>", callback: { (response) -> () in
                 
                 print(response)
                 

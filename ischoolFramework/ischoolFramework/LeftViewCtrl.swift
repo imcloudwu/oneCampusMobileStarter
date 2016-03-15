@@ -22,7 +22,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     var currentChild : Student?
     
-    var currentPassValue : PassValue?
+    var currentAppContext : AppContext?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,8 +36,6 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var childBtn: UIButton!
     
-    var logout : (() -> ())?
-    
     @IBAction func Logout(sender: AnyObject) {
         
         let alert = UIAlertController(title: "確認要登出嗎？", message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -46,7 +44,10 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
             
-            self.logout?()
+            self.Resource.Connection.loginHelper.CleanAccessTokenAndRefreshToken()
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
@@ -73,7 +74,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                     
                     self.currentChild = nil
                     
-                    self.currentPassValue?.delegate?.DsnsChanged(dsns.AccessPoint)
+                    self.currentAppContext?.delegate?.DsnsChanged(dsns.AccessPoint)
                     
                     self.Children = GetMyChildren(self.Resource, dsns: dsns.AccessPoint)
                     
@@ -101,7 +102,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                     
                     self.childBtn.setTitle(child.Name, forState: UIControlState.Normal)
                     
-                    self.currentPassValue?.delegate?.StudentIdChanged(child.ID)
+                    self.currentAppContext?.delegate?.StudentIdChanged(child.ID)
                     
                     self.currentChild = child
                     
@@ -180,17 +181,17 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         let funcShell = Resource.Functions.GetPools()?[indexPath.row]
         
-        let passvalue = PassValue(dsns: currentDsns?.AccessPoint, id: currentChild?.ID, connectionManager: Resource.Connection)
+        let appContext = AppContext(dsns: currentDsns?.AccessPoint, id: currentChild?.ID, connectionManager: Resource.Connection)
         
         let vc = funcShell?.GetViewController()
         
-        vc?.passValue = passvalue
+        vc?.appContext = appContext
         
         let navtitle = funcShell?.Name
         
         vc?.navtitle = navtitle
         
-        self.currentPassValue = passvalue
+        self.currentAppContext = appContext
         
         SlideView.ChangeContentView(vc!)
     }

@@ -70,3 +70,39 @@ public func ==(lhs: Student, rhs: Student) -> Bool {
     return lhs.DSNS == rhs.DSNS && lhs.ID == rhs.ID
 }
 
+
+public struct SemesterItem : Equatable,Comparable{
+    
+    public var SchoolYear : String
+    public var Semester : String
+    
+    public init(SchoolYear:String,Semester:String){
+        
+        self.SchoolYear = SchoolYear
+        self.Semester = Semester
+    }
+    
+    public var Description: String {
+        get {
+            return "第\(SchoolYear)學年度\(Semester)學期"
+        }
+    }
+    
+    var CompareValue : Int{
+        if let sy = Int(SchoolYear) , let sm = Int(Semester){
+            return sy * 10 + sm
+        }
+        else{
+            return 0
+        }
+    }
+}
+
+public func ==(lhs: SemesterItem, rhs: SemesterItem) -> Bool {
+    return lhs.SchoolYear == rhs.SchoolYear && lhs.Semester == rhs.Semester
+}
+
+public func <(lhs: SemesterItem, rhs: SemesterItem) -> Bool{
+    return lhs.CompareValue < rhs.CompareValue
+}
+

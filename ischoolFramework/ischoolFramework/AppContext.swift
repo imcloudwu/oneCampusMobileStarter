@@ -1,12 +1,12 @@
 //
-//  PassValue.swift
+//  AppContext.swift
 //  ischoolFramework
 //
 //  Created by Cloud on 2016/3/9.
 //  Copyright © 2016年 ischool. All rights reserved.
 //
 
-public class PassValue{
+public class AppContext{
     
     public var Dsns : String?
     
@@ -27,8 +27,6 @@ public class PassValue{
     
     public func SendRequest(contract:String,srevice:String,req:String,callback:(response:String) -> ()){
         
-        print(req)
-        
         if let dsns = self.Dsns{
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
@@ -42,4 +40,9 @@ public class PassValue{
             })
         }
     }
+}
+
+enum RequestError : ErrorType{
+    
+    case Whatever
 }

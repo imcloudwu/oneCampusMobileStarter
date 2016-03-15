@@ -10,7 +10,7 @@
 		6114DEF41C8D3ACC00B6A34C /* LeftViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */; };
 		612A5A601C915983008EB69F /* blackboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 612A5A5F1C915983008EB69F /* blackboard.jpg */; };
 		615789F61C900B4C00C2710B /* RightViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F51C900B4C00C2710B /* RightViewCtrl.swift */; };
-		615789F81C900FB300C2710B /* PassValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F71C900FB300C2710B /* PassValue.swift */; };
+		615789F81C900FB300C2710B /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F71C900FB300C2710B /* AppContext.swift */; };
 		615789FA1C900FF300C2710B /* InfoChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F91C900FF300C2710B /* InfoChangeDelegate.swift */; };
 		615DE2EE1C8EA73D00CB89BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DE2ED1C8EA73D00CB89BE /* ConnectionManager.swift */; };
 		615DE2F01C8EC6BC00CB89BE /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DE2EF1C8EC6BC00CB89BE /* AccountInfo.swift */; };
@@ -63,7 +63,7 @@
 		6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewCtrl.swift; sourceTree = "<group>"; };
 		612A5A5F1C915983008EB69F /* blackboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackboard.jpg; sourceTree = "<group>"; };
 		615789F51C900B4C00C2710B /* RightViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewCtrl.swift; path = ../RightViewCtrl.swift; sourceTree = "<group>"; };
-		615789F71C900FB300C2710B /* PassValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassValue.swift; sourceTree = "<group>"; };
+		615789F71C900FB300C2710B /* AppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		615789F91C900FF300C2710B /* InfoChangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoChangeDelegate.swift; sourceTree = "<group>"; };
 		615DE2ED1C8EA73D00CB89BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		615DE2EF1C8EC6BC00CB89BE /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				615DE2ED1C8EA73D00CB89BE /* ConnectionManager.swift */,
 				615DE2EF1C8EC6BC00CB89BE /* AccountInfo.swift */,
 				615DE2F11C8ED3B700CB89BE /* Resources.swift */,
-				615789F71C900FB300C2710B /* PassValue.swift */,
+				615789F71C900FB300C2710B /* AppContext.swift */,
 				615789F91C900FF300C2710B /* InfoChangeDelegate.swift */,
 			);
 			path = ischoolFramework;
@@ -370,7 +370,7 @@
 				61959F8D1C89929300F4DB8B /* CommonStruct.swift in Sources */,
 				61959F7C1C89880B00F4DB8B /* MMDrawerBarButtonItem.m in Sources */,
 				616E2A511C89681300F94E20 /* SwiftyJSON.swift in Sources */,
-				615789F81C900FB300C2710B /* PassValue.swift in Sources */,
+				615789F81C900FB300C2710B /* AppContext.swift in Sources */,
 				61F08A1E1C8D73C9007CDBDA /* FunctionPool.swift in Sources */,
 				61959F851C8988B500F4DB8B /* SlideViewFactory.swift in Sources */,
 				616E2A4D1C89681300F94E20 /* Keychain.swift in Sources */,

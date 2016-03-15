@@ -1,27 +1,27 @@
 //
-//  AbsenceShell.swift
-//  SampleModule
+//  ExamScoreShell.swift
+//  ExamScoreModule
 //
-//  Created by Cloud on 2016/3/7.
+//  Created by Cloud on 2016/3/15.
 //  Copyright © 2016年 ischool. All rights reserved.
 //
 
 import Foundation
 import ischoolFramework
 
-public class AbsenceShell : ischoolProtocol{
+public class ExamScoreShell : ischoolProtocol{
     
     public static var Instance : ischoolProtocol{
         
         get{
-            return AbsenceShell()
+            return ExamScoreShell()
         }
     }
     
     public var Name : String{
         
         get{
-            return "缺 曠 查 詢"
+            return "評 量 成 績"
         }
     }
     
@@ -35,14 +35,14 @@ public class AbsenceShell : ischoolProtocol{
     public var Icon : UIImage?{
         
         get{
-            return UIImage(named: "Expired Filled-50.png", inBundle: BundleId, compatibleWithTraitCollection: nil)
+            return UIImage(named: "Exam Filled-50.png", inBundle: BundleId, compatibleWithTraitCollection: nil)
         }
     }
     
     public var BundleId : NSBundle?{
         
         get{
-            return NSBundle(identifier: "tw.ischool.AbsenceModule")
+            return NSBundle(identifier: "tw.ischool.ExamScoreModule")
         }
     }
     
@@ -55,8 +55,9 @@ public class AbsenceShell : ischoolProtocol{
     
     public func GetViewController() -> ischoolViewCtrl{
         
-        let v = Storyboard?.instantiateViewControllerWithIdentifier("AbsenceViewCtrl") as! ischoolViewCtrl
+        let v = Storyboard?.instantiateViewControllerWithIdentifier("ExamScoreViewCtrl") as! ischoolViewCtrl
         
         return v
     }
 }
+
