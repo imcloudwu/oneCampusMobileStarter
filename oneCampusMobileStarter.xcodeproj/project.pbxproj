@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		61098BDA1C86E7E50059717F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61098BD91C86E7E50059717F /* Global.swift */; };
+		6120081C1C9934420067E102 /* SemesterScoreModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612008191C99343C0067E102 /* SemesterScoreModule.framework */; };
+		6120081D1C9934420067E102 /* SemesterScoreModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 612008191C99343C0067E102 /* SemesterScoreModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		612A5A981C917361008EB69F /* AbsenceModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612A5A8D1C91720D008EB69F /* AbsenceModule.framework */; };
 		612A5A991C917361008EB69F /* AbsenceModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 612A5A8D1C91720D008EB69F /* AbsenceModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		616E2A431C8967FE00F94E20 /* ischoolFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616E2A3F1C8967F300F94E20 /* ischoolFramework.framework */; };
@@ -28,6 +30,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		612008181C99343C0067E102 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6120080E1C99343C0067E102 /* SemesterScoreModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 616690681C992D8800C05DC6;
+			remoteInfo = SemesterScoreModule;
+		};
+		6120081A1C99343C0067E102 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6120080E1C99343C0067E102 /* SemesterScoreModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 616690721C992D8800C05DC6;
+			remoteInfo = SemesterScoreModuleTests;
+		};
+		6120081E1C9934420067E102 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6120080E1C99343C0067E102 /* SemesterScoreModule.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 616690671C992D8800C05DC6;
+			remoteInfo = SemesterScoreModule;
+		};
 		612A5A8C1C91720D008EB69F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 612A5A871C91720D008EB69F /* AbsenceModule.xcodeproj */;
@@ -159,6 +182,7 @@
 				61B095211C96BCC0003DA549 /* DisciplineModule.framework in Embed Frameworks */,
 				61F08A541C8D7CC0007CDBDA /* SampleModule.framework in Embed Frameworks */,
 				612A5A991C917361008EB69F /* AbsenceModule.framework in Embed Frameworks */,
+				6120081D1C9934420067E102 /* SemesterScoreModule.framework in Embed Frameworks */,
 				616E2A441C8967FE00F94E20 /* ischoolFramework.framework in Embed Frameworks */,
 				619342341C97F0C400705476 /* ExamScoreModule.framework in Embed Frameworks */,
 			);
@@ -169,6 +193,7 @@
 
 /* Begin PBXFileReference section */
 		61098BD91C86E7E50059717F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		6120080E1C99343C0067E102 /* SemesterScoreModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SemesterScoreModule.xcodeproj; path = SemesterScoreModule/SemesterScoreModule.xcodeproj; sourceTree = "<group>"; };
 		612A5A871C91720D008EB69F /* AbsenceModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AbsenceModule.xcodeproj; path = AbsenceModule/AbsenceModule.xcodeproj; sourceTree = "<group>"; };
 		616E2A381C8967F300F94E20 /* ischoolFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ischoolFramework.xcodeproj; path = ischoolFramework/ischoolFramework.xcodeproj; sourceTree = "<group>"; };
 		618E60901C853F4200E38A36 /* oneCampusMobileStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oneCampusMobileStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +223,7 @@
 				61B095201C96BCC0003DA549 /* DisciplineModule.framework in Frameworks */,
 				61F08A531C8D7CC0007CDBDA /* SampleModule.framework in Frameworks */,
 				612A5A981C917361008EB69F /* AbsenceModule.framework in Frameworks */,
+				6120081C1C9934420067E102 /* SemesterScoreModule.framework in Frameworks */,
 				616E2A431C8967FE00F94E20 /* ischoolFramework.framework in Frameworks */,
 				619342331C97F0C400705476 /* ExamScoreModule.framework in Frameworks */,
 			);
@@ -220,6 +246,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6120080F1C99343C0067E102 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				612008191C99343C0067E102 /* SemesterScoreModule.framework */,
+				6120081B1C99343C0067E102 /* SemesterScoreModuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		612A5A881C91720D008EB69F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +276,7 @@
 		618E60871C853F4200E38A36 = {
 			isa = PBXGroup;
 			children = (
+				6120080E1C99343C0067E102 /* SemesterScoreModule.xcodeproj */,
 				619342261C97F0B800705476 /* ExamScoreModule.xcodeproj */,
 				61B095141C96BC7D003DA549 /* DisciplineModule.xcodeproj */,
 				612A5A871C91720D008EB69F /* AbsenceModule.xcodeproj */,
@@ -343,6 +379,7 @@
 				612A5A9B1C917362008EB69F /* PBXTargetDependency */,
 				61B095231C96BCC0003DA549 /* PBXTargetDependency */,
 				619342361C97F0C400705476 /* PBXTargetDependency */,
+				6120081F1C9934420067E102 /* PBXTargetDependency */,
 			);
 			name = oneCampusMobileStarter;
 			productName = oneCampusMobileStarter;
@@ -441,6 +478,10 @@
 					ProductGroup = 61F08A441C8D7BDB007CDBDA /* Products */;
 					ProjectRef = 61F08A431C8D7BDB007CDBDA /* SampleModule.xcodeproj */;
 				},
+				{
+					ProductGroup = 6120080F1C99343C0067E102 /* Products */;
+					ProjectRef = 6120080E1C99343C0067E102 /* SemesterScoreModule.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -452,6 +493,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		612008191C99343C0067E102 /* SemesterScoreModule.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SemesterScoreModule.framework;
+			remoteRef = 612008181C99343C0067E102 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6120081B1C99343C0067E102 /* SemesterScoreModuleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SemesterScoreModuleTests.xctest;
+			remoteRef = 6120081A1C99343C0067E102 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		612A5A8D1C91720D008EB69F /* AbsenceModule.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -581,6 +636,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6120081F1C9934420067E102 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SemesterScoreModule;
+			targetProxy = 6120081E1C9934420067E102 /* PBXContainerItemProxy */;
+		};
 		612A5A9B1C917362008EB69F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AbsenceModule;

@@ -287,6 +287,7 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
     }
     
     func ChangeExam(){
+
         let actionSheet = UIAlertController(title: "請選擇考試別", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
         actionSheet.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         

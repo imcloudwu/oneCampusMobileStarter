@@ -12,6 +12,7 @@ import SampleModule
 import AbsenceModule
 import DisciplineModule
 import ExamScoreModule
+import SemesterScoreModule
 
 class EnterViewController : UIViewController{
     
@@ -19,7 +20,7 @@ class EnterViewController : UIViewController{
     
     var loginHelper : LoginHelper!
     
-    var modules = [ExamScoreShell.Instance,DisciplineShell.Instance,AbsenceShell.Instance,SampleShell.Instance,SampleShell.Instance,SampleShell.Instance]
+    var modules = [AbsenceShell.Instance,DisciplineShell.Instance,ExamScoreShell.Instance,SemesterScoreShell.Instance]
     
     //var modules = [ischoolProtocol]()
     

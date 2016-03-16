@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F7P-wI-haf">
-                                                    <rect key="frame" x="8" y="9" width="509" height="19"/>
+                                                    <rect key="frame" x="20" y="9" width="497" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="0js-rk-Qk3"/>
                                                     </constraints>
@@ -52,7 +52,7 @@
                                                 <constraint firstItem="F7P-wI-haf" firstAttribute="centerY" secondItem="B5W-jE-HoE" secondAttribute="centerY" id="Bhd-uC-ECz"/>
                                                 <constraint firstAttribute="trailing" secondItem="fbs-ml-kU8" secondAttribute="trailing" constant="8" id="P9i-68-kn6"/>
                                                 <constraint firstItem="fbs-ml-kU8" firstAttribute="leading" secondItem="F7P-wI-haf" secondAttribute="trailing" constant="2" id="SaH-Dv-pyM"/>
-                                                <constraint firstItem="F7P-wI-haf" firstAttribute="leading" secondItem="B5W-jE-HoE" secondAttribute="leading" constant="8" id="c1M-mA-UzV"/>
+                                                <constraint firstItem="F7P-wI-haf" firstAttribute="leading" secondItem="B5W-jE-HoE" secondAttribute="leading" constant="20" id="c1M-mA-UzV"/>
                                                 <constraint firstItem="fbs-ml-kU8" firstAttribute="centerY" secondItem="B5W-jE-HoE" secondAttribute="centerY" id="dys-5Q-hWR"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -109,7 +109,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9TN-td-7Ae">
-                                                    <rect key="frame" x="8" y="7" width="440" height="43"/>
+                                                    <rect key="frame" x="20" y="7" width="428" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="29L-sl-gNo"/>
                                                     </constraints>
@@ -125,7 +125,7 @@
                                                 <constraint firstItem="Sua-IW-BxR" firstAttribute="top" secondItem="vd1-bV-P9s" secondAttribute="bottom" id="Z2q-Hb-cnp"/>
                                                 <constraint firstItem="vd1-bV-P9s" firstAttribute="leading" secondItem="Hz9-BH-K2L" secondAttribute="trailing" constant="2" id="hwK-iK-R55"/>
                                                 <constraint firstAttribute="trailing" secondItem="Sua-IW-BxR" secondAttribute="trailing" constant="8" id="i50-5A-3S9"/>
-                                                <constraint firstItem="9TN-td-7Ae" firstAttribute="leading" secondItem="8RO-sW-dRj" secondAttribute="leading" constant="8" id="iEa-1g-RpW"/>
+                                                <constraint firstItem="9TN-td-7Ae" firstAttribute="leading" secondItem="8RO-sW-dRj" secondAttribute="leading" constant="20" id="iEa-1g-RpW"/>
                                                 <constraint firstItem="Hz9-BH-K2L" firstAttribute="leading" secondItem="9TN-td-7Ae" secondAttribute="trailing" constant="2" id="iQq-I4-PqU"/>
                                                 <constraint firstItem="vd1-bV-P9s" firstAttribute="top" secondItem="8RO-sW-dRj" secondAttribute="top" constant="8" id="rQo-7J-JMw"/>
                                                 <constraint firstItem="UyV-ua-eE7" firstAttribute="top" secondItem="Hz9-BH-K2L" secondAttribute="bottom" id="sCk-cr-vMJ"/>

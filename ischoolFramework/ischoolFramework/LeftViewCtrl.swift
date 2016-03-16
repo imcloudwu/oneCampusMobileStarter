@@ -60,7 +60,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         menu.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         
-        if let dsnss = DsnsList{
+        if let dsnss = DsnsList where dsnss.count > 0{
             
             for dsns in dsnss{
                 
@@ -74,6 +74,8 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                     
                     self.currentChild = nil
                     
+                    self.currentAppContext?.Id = ""
+                    
                     self.currentAppContext?.delegate?.DsnsChanged(dsns.AccessPoint)
                     
                     self.Children = GetMyChildren(self.Resource, dsns: dsns.AccessPoint)
@@ -81,7 +83,10 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                     //SlideView.ToggleSideMenu()
                 }))
             }
-        
+        }
+        else{
+            
+            AddChildOption(menu)
         }
         
         self.presentViewController(menu, animated: true, completion: nil)
@@ -110,10 +115,22 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                     
                 }))
             }
-        
         }
         
+        AddChildOption(menu)
+        
         self.presentViewController(menu, animated: true, completion: nil)
+    }
+    
+    func AddChildOption(menu:UIAlertController){
+    
+        //加入小孩
+        menu.addAction(UIAlertAction(title: "加 入 小 孩", style: UIAlertActionStyle.Destructive, handler: { (act) -> Void in
+            
+            let addView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AddChildMainViewCtrl")
+            
+            SlideView.ChangeContentView(addView)
+        }))
     }
     
     override func viewDidLoad() {
@@ -168,6 +185,8 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         if cell == nil{
             
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+            
+            cell?.selectionStyle = UITableViewCellSelectionStyle.None
         }
         
         cell?.imageView?.image = funcShell?.Icon

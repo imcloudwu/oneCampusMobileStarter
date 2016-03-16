@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		612008211C99345A0067E102 /* SemesterScoreShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612008201C99345A0067E102 /* SemesterScoreShell.swift */; };
+		612008231C9934650067E102 /* SemesterScoreViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612008221C9934650067E102 /* SemesterScoreViewCtrl.swift */; };
+		612008251C99347D0067E102 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612008241C99347D0067E102 /* Storyboard.storyboard */; };
+		612008281C993B340067E102 /* Report Card Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 612008261C993B340067E102 /* Report Card Filled-50.png */; };
+		612008291C993B340067E102 /* Checked-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 612008271C993B340067E102 /* Checked-32.png */; };
+		6166906C1C992D8800C05DC6 /* SemesterScoreModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 6166906B1C992D8800C05DC6 /* SemesterScoreModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		616690731C992D8800C05DC6 /* SemesterScoreModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616690681C992D8800C05DC6 /* SemesterScoreModule.framework */; };
+		616690781C992D8800C05DC6 /* SemesterScoreModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616690771C992D8800C05DC6 /* SemesterScoreModuleTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		616690741C992D8800C05DC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6166905F1C992D8800C05DC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 616690671C992D8800C05DC6;
+			remoteInfo = SemesterScoreModule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		612008201C99345A0067E102 /* SemesterScoreShell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterScoreShell.swift; sourceTree = "<group>"; };
+		612008221C9934650067E102 /* SemesterScoreViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterScoreViewCtrl.swift; sourceTree = "<group>"; };
+		612008241C99347D0067E102 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		612008261C993B340067E102 /* Report Card Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Report Card Filled-50.png"; sourceTree = "<group>"; };
+		612008271C993B340067E102 /* Checked-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checked-32.png"; sourceTree = "<group>"; };
+		616690681C992D8800C05DC6 /* SemesterScoreModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemesterScoreModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6166906B1C992D8800C05DC6 /* SemesterScoreModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemesterScoreModule.h; sourceTree = "<group>"; };
+		6166906D1C992D8800C05DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		616690721C992D8800C05DC6 /* SemesterScoreModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemesterScoreModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		616690771C992D8800C05DC6 /* SemesterScoreModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterScoreModuleTests.swift; sourceTree = "<group>"; };
+		616690791C992D8800C05DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		616690641C992D8800C05DC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6166906F1C992D8800C05DC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				616690731C992D8800C05DC6 /* SemesterScoreModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6166905E1C992D8700C05DC6 = {
+			isa = PBXGroup;
+			children = (
+				6166906A1C992D8800C05DC6 /* SemesterScoreModule */,
+				616690761C992D8800C05DC6 /* SemesterScoreModuleTests */,
+				616690691C992D8800C05DC6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		616690691C992D8800C05DC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				616690681C992D8800C05DC6 /* SemesterScoreModule.framework */,
+				616690721C992D8800C05DC6 /* SemesterScoreModuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6166906A1C992D8800C05DC6 /* SemesterScoreModule */ = {
+			isa = PBXGroup;
+			children = (
+				612008261C993B340067E102 /* Report Card Filled-50.png */,
+				612008271C993B340067E102 /* Checked-32.png */,
+				6166906B1C992D8800C05DC6 /* SemesterScoreModule.h */,
+				6166906D1C992D8800C05DC6 /* Info.plist */,
+				612008201C99345A0067E102 /* SemesterScoreShell.swift */,
+				612008221C9934650067E102 /* SemesterScoreViewCtrl.swift */,
+				612008241C99347D0067E102 /* Storyboard.storyboard */,
+			);
+			path = SemesterScoreModule;
+			sourceTree = "<group>";
+		};
+		616690761C992D8800C05DC6 /* SemesterScoreModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				616690771C992D8800C05DC6 /* SemesterScoreModuleTests.swift */,
+				616690791C992D8800C05DC6 /* Info.plist */,
+			);
+			path = SemesterScoreModuleTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		616690651C992D8800C05DC6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6166906C1C992D8800C05DC6 /* SemesterScoreModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		616690671C992D8800C05DC6 /* SemesterScoreModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6166907C1C992D8800C05DC6 /* Build configuration list for PBXNativeTarget "SemesterScoreModule" */;
+			buildPhases = (
+				616690631C992D8800C05DC6 /* Sources */,
+				616690641C992D8800C05DC6 /* Frameworks */,
+				616690651C992D8800C05DC6 /* Headers */,
+				616690661C992D8800C05DC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SemesterScoreModule;
+			productName = SemesterScoreModule;
+			productReference = 616690681C992D8800C05DC6 /* SemesterScoreModule.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		616690711C992D8800C05DC6 /* SemesterScoreModuleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6166907F1C992D8800C05DC6 /* Build configuration list for PBXNativeTarget "SemesterScoreModuleTests" */;
+			buildPhases = (
+				6166906E1C992D8800C05DC6 /* Sources */,
+				6166906F1C992D8800C05DC6 /* Frameworks */,
+				616690701C992D8800C05DC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				616690751C992D8800C05DC6 /* PBXTargetDependency */,
+			);
+			name = SemesterScoreModuleTests;
+			productName = SemesterScoreModuleTests;
+			productReference = 616690721C992D8800C05DC6 /* SemesterScoreModuleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6166905F1C992D8800C05DC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ischool;
+				TargetAttributes = {
+					616690671C992D8800C05DC6 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					616690711C992D8800C05DC6 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 616690621C992D8800C05DC6 /* Build configuration list for PBXProject "SemesterScoreModule" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6166905E1C992D8700C05DC6;
+			productRefGroup = 616690691C992D8800C05DC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				616690671C992D8800C05DC6 /* SemesterScoreModule */,
+				616690711C992D8800C05DC6 /* SemesterScoreModuleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		616690661C992D8800C05DC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612008281C993B340067E102 /* Report Card Filled-50.png in Resources */,
+				612008251C99347D0067E102 /* Storyboard.storyboard in Resources */,
+				612008291C993B340067E102 /* Checked-32.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		616690701C992D8800C05DC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		616690631C992D8800C05DC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612008231C9934650067E102 /* SemesterScoreViewCtrl.swift in Sources */,
+				612008211C99345A0067E102 /* SemesterScoreShell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6166906E1C992D8800C05DC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				616690781C992D8800C05DC6 /* SemesterScoreModuleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		616690751C992D8800C05DC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 616690671C992D8800C05DC6 /* SemesterScoreModule */;
+			targetProxy = 616690741C992D8800C05DC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6166907A1C992D8800C05DC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6166907B1C992D8800C05DC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6166907D1C992D8800C05DC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SemesterScoreModule/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tw.ischool.SemesterScoreModule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6166907E1C992D8800C05DC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SemesterScoreModule/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tw.ischool.SemesterScoreModule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		616690801C992D8800C05DC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SemesterScoreModuleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tw.ischool.SemesterScoreModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		616690811C992D8800C05DC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SemesterScoreModuleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tw.ischool.SemesterScoreModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		616690621C992D8800C05DC6 /* Build configuration list for PBXProject "SemesterScoreModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6166907A1C992D8800C05DC6 /* Debug */,
+				6166907B1C992D8800C05DC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6166907C1C992D8800C05DC6 /* Build configuration list for PBXNativeTarget "SemesterScoreModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6166907D1C992D8800C05DC6 /* Debug */,
+				6166907E1C992D8800C05DC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6166907F1C992D8800C05DC6 /* Build configuration list for PBXNativeTarget "SemesterScoreModuleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				616690801C992D8800C05DC6 /* Debug */,
+				616690811C992D8800C05DC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6166905F1C992D8800C05DC6 /* Project object */;
+}
