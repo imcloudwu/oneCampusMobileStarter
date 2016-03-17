@@ -16,6 +16,8 @@ public class SlideView{
     
     public class func GetInstance(resource:Resources) -> MMDrawerController?{
         
+        DsnsManager.Singleton.ClearDsnsList()
+        
         let leftView = frameworkStoryboard.instantiateViewControllerWithIdentifier("LeftView") as! LeftViewCtrl
         
         leftView.Resource = resource

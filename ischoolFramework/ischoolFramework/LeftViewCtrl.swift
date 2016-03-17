@@ -14,8 +14,6 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     var Resource : Resources!
     
-    var DsnsList : [DsnsItem]!
-    
     var Children : [Student]!
     
     var currentDsns : DsnsItem?
@@ -60,7 +58,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         menu.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         
-        if let dsnss = DsnsList where dsnss.count > 0{
+        if let dsnss = DsnsManager.Singleton.DsnsList where dsnss.count > 0{
             
             for dsns in dsnss{
                 
@@ -127,7 +125,17 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         //加入小孩
         menu.addAction(UIAlertAction(title: "加 入 小 孩", style: UIAlertActionStyle.Destructive, handler: { (act) -> Void in
             
-            let addView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AddChildMainViewCtrl")
+            self.schoolBtn.setTitle("請選擇學校", forState: UIControlState.Normal)
+            
+            self.childBtn.setTitle("請選擇小孩", forState: UIControlState.Normal)
+            
+            self.currentDsns = nil
+            
+            self.currentChild = nil
+            
+            let addView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AddChildMainViewCtrl") as! AddChildMainViewCtrl
+            
+            addView.Resource = self.Resource
             
             SlideView.ChangeContentView(addView)
         }))
@@ -151,7 +159,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         account.text = Resource.Connection.loginHelper.accountInfo.Account
         
-        DsnsList = GetDsnsList(Resource.Connection.loginHelper.AccessToken)
+        DsnsManager.Singleton.DsnsList = GetDsnsList(Resource.Connection.loginHelper.AccessToken)
         
     }
     

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6114DEF41C8D3ACC00B6A34C /* LeftViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */; };
 		6120082B1C9963680067E102 /* AddChildMainViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120082A1C9963680067E102 /* AddChildMainViewCtrl.swift */; };
+		612953821C9A8260001CF310 /* ScanCodeViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612953811C9A8260001CF310 /* ScanCodeViewCtrl.swift */; };
+		612953841C9A8F54001CF310 /* DsnsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612953831C9A8F54001CF310 /* DsnsManager.swift */; };
+		6129538C1C9AB444001CF310 /* KeyinByCodeViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129538B1C9AB444001CF310 /* KeyinByCodeViewCtrl.swift */; };
+		6129538E1C9AB458001CF310 /* KeyinByBasicViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129538D1C9AB458001CF310 /* KeyinByBasicViewCtrl.swift */; };
+		612953901C9AB4EE001CF310 /* SelectSchoolViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129538F1C9AB4EE001CF310 /* SelectSchoolViewCtrl.swift */; };
 		612A5A601C915983008EB69F /* blackboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 612A5A5F1C915983008EB69F /* blackboard.jpg */; };
 		615789F61C900B4C00C2710B /* RightViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F51C900B4C00C2710B /* RightViewCtrl.swift */; };
 		615789F81C900FB300C2710B /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615789F71C900FB300C2710B /* AppContext.swift */; };
@@ -16,6 +21,9 @@
 		615DE2EE1C8EA73D00CB89BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DE2ED1C8EA73D00CB89BE /* ConnectionManager.swift */; };
 		615DE2F01C8EC6BC00CB89BE /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DE2EF1C8EC6BC00CB89BE /* AccountInfo.swift */; };
 		615DE2F21C8ED3B800CB89BE /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DE2F11C8ED3B700CB89BE /* Resources.swift */; };
+		615FBE501C9A5606002B1A38 /* Key-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4D1C9A5606002B1A38 /* Key-50.png */; };
+		615FBE511C9A5606002B1A38 /* Keyboard-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4E1C9A5606002B1A38 /* Keyboard-50.png */; };
+		615FBE521C9A5606002B1A38 /* QR Code Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4F1C9A5606002B1A38 /* QR Code Filled-50.png */; };
 		616E2A221C8967E000F94E20 /* ischoolFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 616E2A211C8967E000F94E20 /* ischoolFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		616E2A291C8967E000F94E20 /* ischoolFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616E2A1E1C8967E000F94E20 /* ischoolFramework.framework */; };
 		616E2A2E1C8967E000F94E20 /* ischoolFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E2A2D1C8967E000F94E20 /* ischoolFrameworkTests.swift */; };
@@ -63,6 +71,11 @@
 /* Begin PBXFileReference section */
 		6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewCtrl.swift; sourceTree = "<group>"; };
 		6120082A1C9963680067E102 /* AddChildMainViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChildMainViewCtrl.swift; sourceTree = "<group>"; };
+		612953811C9A8260001CF310 /* ScanCodeViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewCtrl.swift; sourceTree = "<group>"; };
+		612953831C9A8F54001CF310 /* DsnsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DsnsManager.swift; sourceTree = "<group>"; };
+		6129538B1C9AB444001CF310 /* KeyinByCodeViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyinByCodeViewCtrl.swift; sourceTree = "<group>"; };
+		6129538D1C9AB458001CF310 /* KeyinByBasicViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyinByBasicViewCtrl.swift; sourceTree = "<group>"; };
+		6129538F1C9AB4EE001CF310 /* SelectSchoolViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSchoolViewCtrl.swift; sourceTree = "<group>"; };
 		612A5A5F1C915983008EB69F /* blackboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackboard.jpg; sourceTree = "<group>"; };
 		615789F51C900B4C00C2710B /* RightViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewCtrl.swift; path = ../RightViewCtrl.swift; sourceTree = "<group>"; };
 		615789F71C900FB300C2710B /* AppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
@@ -70,6 +83,9 @@
 		615DE2ED1C8EA73D00CB89BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		615DE2EF1C8EC6BC00CB89BE /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		615DE2F11C8ED3B700CB89BE /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		615FBE4D1C9A5606002B1A38 /* Key-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Key-50.png"; sourceTree = "<group>"; };
+		615FBE4E1C9A5606002B1A38 /* Keyboard-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Keyboard-50.png"; sourceTree = "<group>"; };
+		615FBE4F1C9A5606002B1A38 /* QR Code Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QR Code Filled-50.png"; sourceTree = "<group>"; };
 		616E2A1E1C8967E000F94E20 /* ischoolFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ischoolFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		616E2A211C8967E000F94E20 /* ischoolFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ischoolFramework.h; sourceTree = "<group>"; };
 		616E2A231C8967E000F94E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,6 +190,11 @@
 				615789F71C900FB300C2710B /* AppContext.swift */,
 				615789F91C900FF300C2710B /* InfoChangeDelegate.swift */,
 				6120082A1C9963680067E102 /* AddChildMainViewCtrl.swift */,
+				612953811C9A8260001CF310 /* ScanCodeViewCtrl.swift */,
+				612953831C9A8F54001CF310 /* DsnsManager.swift */,
+				6129538B1C9AB444001CF310 /* KeyinByCodeViewCtrl.swift */,
+				6129538D1C9AB458001CF310 /* KeyinByBasicViewCtrl.swift */,
+				6129538F1C9AB4EE001CF310 /* SelectSchoolViewCtrl.swift */,
 			);
 			path = ischoolFramework;
 			sourceTree = "<group>";
@@ -200,6 +221,9 @@
 		61959F671C89880B00F4DB8B /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				615FBE4D1C9A5606002B1A38 /* Key-50.png */,
+				615FBE4E1C9A5606002B1A38 /* Keyboard-50.png */,
+				615FBE4F1C9A5606002B1A38 /* QR Code Filled-50.png */,
 				61959F681C89880B00F4DB8B /* ic_ischool.png */,
 				61959F691C89880B00F4DB8B /* Menu-24.png */,
 			);
@@ -328,10 +352,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615FBE501C9A5606002B1A38 /* Key-50.png in Resources */,
 				612A5A601C915983008EB69F /* blackboard.jpg in Resources */,
+				615FBE521C9A5606002B1A38 /* QR Code Filled-50.png in Resources */,
 				61959F7A1C89880B00F4DB8B /* User-100.png in Resources */,
 				61959F791C89880B00F4DB8B /* nature-1.jpg in Resources */,
 				616E2A6C1C89690500F94E20 /* Storyboard.storyboard in Resources */,
+				615FBE511C9A5606002B1A38 /* Keyboard-50.png in Resources */,
 				61959F771C89880B00F4DB8B /* ic_ischool.png in Resources */,
 				61959F781C89880B00F4DB8B /* Menu-24.png in Resources */,
 			);
@@ -352,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61959F811C89880B00F4DB8B /* MMDrawerVisualState.m in Sources */,
+				612953821C9A8260001CF310 /* ScanCodeViewCtrl.swift in Sources */,
 				616E2A4E1C89681300F94E20 /* HttpClient.swift in Sources */,
 				616E2A6B1C89690500F94E20 /* LoginWebView.swift in Sources */,
 				616E2A501C89681300F94E20 /* OAuthHelper.swift in Sources */,
@@ -363,10 +391,14 @@
 				615DE2F01C8EC6BC00CB89BE /* AccountInfo.swift in Sources */,
 				616E2A671C89690500F94E20 /* CustomNavigationView.swift in Sources */,
 				616E2A4F1C89681300F94E20 /* Extensions.swift in Sources */,
+				612953901C9AB4EE001CF310 /* SelectSchoolViewCtrl.swift in Sources */,
 				61F08A151C8D69FD007CDBDA /* ischoolViewCtrl.swift in Sources */,
+				612953841C9A8F54001CF310 /* DsnsManager.swift in Sources */,
+				6129538E1C9AB458001CF310 /* KeyinByBasicViewCtrl.swift in Sources */,
 				615DE2EE1C8EA73D00CB89BE /* ConnectionManager.swift in Sources */,
 				61959F891C8989B200F4DB8B /* Global.swift in Sources */,
 				616E2A6A1C89690500F94E20 /* LoginHelper.swift in Sources */,
+				6129538C1C9AB444001CF310 /* KeyinByCodeViewCtrl.swift in Sources */,
 				615DE2F21C8ED3B800CB89BE /* Resources.swift in Sources */,
 				61959F831C89880B00F4DB8B /* UIViewController+MMDrawerController.m in Sources */,
 				61F08A181C8D6FAB007CDBDA /* FunctionShell.swift in Sources */,

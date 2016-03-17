@@ -62,11 +62,20 @@ public class LoginHelper{
         self.url = url
     }
     
-    private func GetLoginView() -> UIViewController{
+    private func GetLoginView(url:String?) -> UIViewController{
+        
+        return GetLoginView(url,after:nil)
+    }
+    
+    private func GetLoginView(url:String?,after:(() -> Void)?) -> UIViewController{
         
         let view = frameworkStoryboard.instantiateViewControllerWithIdentifier("LoginView") as! CustomNavigationView
         
         view.loginHelper = self
+        
+        view.url = url
+        
+        view.after = after
         
         return view
     }
@@ -81,7 +90,7 @@ public class LoginHelper{
                 
                 if self.AccessToken.isEmpty{
                     
-                    parent.presentViewController(self.GetLoginView(), animated: true, completion: nil)
+                    parent.presentViewController(self.GetLoginView(self.url), animated: true, completion: nil)
                 }
                 else{
                     
@@ -90,7 +99,7 @@ public class LoginHelper{
             }
             else{
                 
-                parent.presentViewController(self.GetLoginView(), animated: true, completion: nil)
+                parent.presentViewController(self.GetLoginView(self.url), animated: true, completion: nil)
             }
         }
         else{
@@ -98,6 +107,18 @@ public class LoginHelper{
             success()
         }
         
+    }
+    
+    public func TryToChangeScope(parent:UIViewController,after:(() -> Void)){
+        
+        if let url = self.url{
+            
+            let new_url = url + "&access_token=\(self.AccessToken)"
+            
+            let view = self.GetLoginView(new_url, after: after)
+            
+            parent.presentViewController(view, animated: true, completion: nil)
+        }
     }
     
     public func GetAccessTokenAndRefreshToken(code:String){

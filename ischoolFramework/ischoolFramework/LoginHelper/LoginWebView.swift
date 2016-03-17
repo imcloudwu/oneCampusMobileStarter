@@ -29,7 +29,7 @@ class LoginWebView : UIViewController,UIWebViewDelegate{
     func ReloadWebPage(){
         
         //載入登入頁面
-        if let target = cnv?.loginHelper?.url{
+        if let target = cnv?.url{
             
             let urlobj = NSURL(string: target)
             let request = NSURLRequest(URL: urlobj!)
@@ -85,7 +85,9 @@ class LoginWebView : UIViewController,UIWebViewDelegate{
         
         cnv?.loginHelper?.GetAccessTokenAndRefreshToken(code)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            self.cnv?.after?()
+        }
     }
     
     func DeleteCookies(){

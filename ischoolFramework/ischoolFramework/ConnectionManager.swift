@@ -46,7 +46,7 @@ public class ConnectionManager{
             
         }
         
-        return rsp == nil ? err.message : rsp
+        return err != nil ? err.message : rsp
     }
     
     func GetConnection(dsns:String,_ contract:String) -> Connection{
@@ -80,6 +80,6 @@ public class ConnectionManager{
     }
 }
 
-enum ConnectionError: ErrorType {
-    case connectError
-}
+//enum ConnectionError: ErrorType {
+//    case connectError(reason:String)
+//}

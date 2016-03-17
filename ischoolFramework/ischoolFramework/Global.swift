@@ -1,4 +1,3 @@
-
 let frameworkBundle = NSBundle(identifier: "tw.ischool.ischoolFramework")
 
 let frameworkStoryboard = UIStoryboard(name: "Storyboard", bundle: frameworkBundle)
@@ -136,4 +135,13 @@ func GetSchoolName(dsns:String) -> String{
     }
     
     return schoolName
+}
+
+func ShowErrorAlert(vc:UIViewController,title:String,msg:String){
+        
+    let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+    
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+    
+    vc.presentViewController(alert, animated: true, completion: nil)
 }
