@@ -34,7 +34,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var childBtn: UIButton!
     
-    @IBAction func Logout(sender: AnyObject) {
+    func Logout(){
         
         let alert = UIAlertController(title: "確認要登出嗎？", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -58,9 +58,9 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         menu.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         
-        if let dsnss = DsnsManager.Singleton.DsnsList where dsnss.count > 0{
+        if DsnsManager.Singleton.DsnsList.count > 0{
             
-            for dsns in dsnss{
+            for dsns in DsnsManager.Singleton.DsnsList{
                 
                 menu.addAction(UIAlertAction(title: dsns.Name, style: UIAlertActionStyle.Default, handler: { (act) -> Void in
                     
@@ -133,6 +133,8 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             
             self.currentChild = nil
             
+            self.Children = nil
+            
             let addView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AddChildMainViewCtrl") as! AddChildMainViewCtrl
             
             addView.Resource = self.Resource
@@ -181,12 +183,15 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return Resource.Functions.GetPools()?.count ?? 0
+        if let count = Resource.Functions.GetPools()?.count{
+            
+            return count + 1
+        }
+        
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
-        let funcShell = Resource.Functions.GetPools()?[indexPath.row]
         
         var cell = tableView.dequeueReusableCellWithIdentifier("cell")
         
@@ -194,10 +199,21 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
             
-            cell?.selectionStyle = UITableViewCellSelectionStyle.None
+            //cell?.selectionStyle = UITableViewCellSelectionStyle.None
         }
         
-        cell?.imageView?.image = funcShell?.Icon
+        if let count = Resource.Functions.GetPools()?.count where indexPath.row > count - 1{
+            
+            cell?.imageView?.image = UIImage(named: "Exit Filled-50.png", inBundle: frameworkBundle, compatibleWithTraitCollection: nil)?.GetResizeImage(30, height: 30)
+            
+            cell?.textLabel?.text = "登      出"
+            
+            return cell!
+        }
+        
+        let funcShell = Resource.Functions.GetPools()?[indexPath.row]
+        
+        cell?.imageView?.image = funcShell?.Icon?.GetResizeImage(30, height: 30)
         
         cell?.textLabel?.text = funcShell?.Name
         
@@ -206,21 +222,29 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
-        let funcShell = Resource.Functions.GetPools()?[indexPath.row]
+        if let count = Resource.Functions.GetPools()?.count where indexPath.row > count - 1{
+            
+            Logout()
+        }
+        else{
+            
+            let funcShell = Resource.Functions.GetPools()?[indexPath.row]
+            
+            let appContext = AppContext(dsns: currentDsns?.AccessPoint, id: currentChild?.ID, connectionManager: Resource.Connection)
+            
+            let vc = funcShell?.GetViewController()
+            
+            vc?.appContext = appContext
+            
+            let navtitle = funcShell?.Name
+            
+            vc?.navtitle = navtitle
+            
+            self.currentAppContext = appContext
+            
+            SlideView.ChangeContentView(vc!)
+        }
         
-        let appContext = AppContext(dsns: currentDsns?.AccessPoint, id: currentChild?.ID, connectionManager: Resource.Connection)
-        
-        let vc = funcShell?.GetViewController()
-        
-        vc?.appContext = appContext
-        
-        let navtitle = funcShell?.Name
-        
-        vc?.navtitle = navtitle
-        
-        self.currentAppContext = appContext
-        
-        SlideView.ChangeContentView(vc!)
     }
 
 }

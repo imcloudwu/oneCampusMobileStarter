@@ -91,3 +91,33 @@ extension UITableView{
     }
 }
 
+//回傳一張縮放後的圖片
+extension UIImage{
+    func GetResizeImage(scale:CGFloat) -> UIImage{
+        
+        let width = self.size.width
+        let height = self.size.height
+        
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(width * scale, height * scale), false, 1)
+        self.drawInRect(CGRectMake(0, 0, width * scale, height * scale))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    func GetResizeImage(width:CGFloat, height:CGFloat) -> UIImage{
+        
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), false, 1)
+        self.drawInRect(CGRectMake(0, 0, width, height))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+}
+

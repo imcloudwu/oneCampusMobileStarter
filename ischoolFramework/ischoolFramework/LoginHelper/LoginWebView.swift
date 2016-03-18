@@ -81,7 +81,7 @@ class LoginWebView : UIViewController,UIWebViewDelegate{
         
         cnv?.loginHelper?.accountInfo.SaveUserImage()
         
-        DeleteCookies()
+        DeleteCatch()
         
         cnv?.loginHelper?.GetAccessTokenAndRefreshToken(code)
         
@@ -90,7 +90,9 @@ class LoginWebView : UIViewController,UIWebViewDelegate{
         }
     }
     
-    func DeleteCookies(){
+    func DeleteCatch(){
+        
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
         
         let storage : NSHTTPCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
         

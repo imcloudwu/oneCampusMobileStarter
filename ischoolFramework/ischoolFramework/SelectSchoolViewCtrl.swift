@@ -77,44 +77,49 @@ class SelectSchoolViewCtrl: UIViewController,UITableViewDelegate,UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-        let rsp = try? HttpClient.Get("https://1campus.net/schoollist.xml")
+        //let rsp = try? HttpClient.Get("https://1campus.net/schoollist.xml")
+        
+        let rsp = try? HttpClient.Get("http://devg.ischool.com.tw/dsa/campusman.ischool.com.tw/config.public/Get1CampusSchoolList")
         
         let xml = try? AEXMLDocument(xmlData: rsp!)
         
-        if let schools = xml?.root["School"].all{
+        if let schools = xml?.root["Response"]["School"].all{
             
             for school in schools{
                 
-                if let name = school.attributes["SchoolName"],let accessPoint = school.attributes["DSNS"],let type = school.attributes["Type"], let county = school.attributes["County"]{
-                    
-                    let dsns = DsnsItem(name: name, accessPoint: accessPoint)
-                    dsns.Location = county
-                    dsns.Type = type
-                    
-                    _SchoolLists.append(dsns)
-                    
-                    if !_Locations.contains(county){
-                        _Locations.append(county)
-                    }
-                    
-                    if !_Types.contains(type){
-                        _Types.append(type)
-                    }
+                let name = school["SchoolName"].stringValue
+                
+                let accessPoint = school["DSNS"].stringValue
+                
+                let type = school["Type"].stringValue
+                
+                let county = school["County"].stringValue
+                
+                let dsns = DsnsItem(name: name, accessPoint: accessPoint)
+                dsns.Location = county
+                dsns.Type = type
+                
+                _SchoolLists.append(dsns)
+                
+                if !_Locations.contains(county){
+                    _Locations.append(county)
+                }
+                
+                if !_Types.contains(type){
+                    _Types.append(type)
                 }
             }
-            
-            let dev = DsnsItem(name: "測試開發", accessPoint: "dev.sh_d")
-            dev.Location = "新竹市"
-            dev.Type = "高中職"
-            
-            _SchoolLists.insert(dev, atIndex: 0)
-            
-            _DisplaySchool = _SchoolLists
-            
-            self.tableView.reloadDataWithAnimated()
         }
         
-        // Do any additional setup after loading the view, typically from a nib.
+        let dev = DsnsItem(name: "測試開發", accessPoint: "dev.sh_d")
+        dev.Location = "新竹市"
+        dev.Type = "高中職"
+        
+        _SchoolLists.insert(dev, atIndex: 0)
+        
+        _DisplaySchool = _SchoolLists
+        
+        self.tableView.reloadDataWithAnimated()
     }
     
     override func didReceiveMemoryWarning() {

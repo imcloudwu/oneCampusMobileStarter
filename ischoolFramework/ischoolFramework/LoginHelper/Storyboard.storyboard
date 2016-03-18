@@ -40,10 +40,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackboard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8Cb-tD-Ejn">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                                 <color key="backgroundColor" red="0.53725490200000003" green="0.68235294120000001" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="LhA-dw-vEa"/>
+                                    <constraint firstAttribute="height" constant="160" id="LhA-dw-vEa"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7w-mb-ktu">
@@ -56,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dRP-i7-ZTv">
-                                <rect key="frame" x="0.0" y="200" width="600" height="400"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="440"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RmN-5D-FD5">
@@ -103,24 +103,9 @@
                                     <action selector="changeChild:" destination="xR9-FH-Upu" eventType="touchUpInside" id="gXA-sk-XTh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkK-cq-UtU">
-                                <rect key="frame" x="490" y="150" width="90" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="25R-vv-1qr"/>
-                                    <constraint firstAttribute="width" constant="90" id="MjP-S7-CMG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="17"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.53725490200000003" green="0.68235294120000001" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="Logout:" destination="xR9-FH-Upu" eventType="touchUpInside" id="3lE-Gw-mb1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dRP-i7-ZTv" firstAttribute="top" secondItem="AkK-cq-UtU" secondAttribute="bottom" constant="20" id="0KP-YQ-TNK"/>
                             <constraint firstAttribute="trailing" secondItem="dRP-i7-ZTv" secondAttribute="trailing" id="BdO-S1-9cK"/>
                             <constraint firstItem="b1R-wF-Dfj" firstAttribute="leading" secondItem="LBx-tF-A7u" secondAttribute="leading" constant="20" id="CAQ-sr-9zc"/>
                             <constraint firstAttribute="trailing" secondItem="HKb-x9-gFt" secondAttribute="trailing" constant="20" id="D1T-f9-v4j"/>
@@ -131,7 +116,6 @@
                             <constraint firstItem="n7w-mb-ktu" firstAttribute="top" secondItem="LBx-tF-A7u" secondAttribute="topMargin" constant="10" id="Pn7-bs-UuV"/>
                             <constraint firstItem="n7w-mb-ktu" firstAttribute="leading" secondItem="b1R-wF-Dfj" secondAttribute="trailing" constant="8" id="Ps0-5M-vxg"/>
                             <constraint firstItem="n7w-mb-ktu" firstAttribute="trailing" secondItem="LBx-tF-A7u" secondAttribute="trailingMargin" id="QTY-4K-d0e"/>
-                            <constraint firstAttribute="trailing" secondItem="AkK-cq-UtU" secondAttribute="trailing" constant="20" id="QjP-AY-vod"/>
                             <constraint firstItem="HKb-x9-gFt" firstAttribute="leading" secondItem="LBx-tF-A7u" secondAttribute="leading" constant="20" id="V2B-kZ-Jhx"/>
                             <constraint firstItem="HKb-x9-gFt" firstAttribute="top" secondItem="b1R-wF-Dfj" secondAttribute="bottom" constant="1" id="V6R-Ki-6d9"/>
                             <constraint firstItem="d4D-E0-oba" firstAttribute="top" secondItem="HKb-x9-gFt" secondAttribute="bottom" constant="2" id="brn-Ev-hVM"/>

@@ -20,9 +20,9 @@ class EnterViewController : UIViewController{
     
     var loginHelper : LoginHelper!
     
-    var modules = [AbsenceShell.Instance,DisciplineShell.Instance,ExamScoreShell.Instance,SemesterScoreShell.Instance]
+    //var modules = [AbsenceShell.Instance,DisciplineShell.Instance,ExamScoreShell.Instance,SemesterScoreShell.Instance]
     
-    //var modules = [ischoolProtocol]()
+    var modules = [ischoolProtocol]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

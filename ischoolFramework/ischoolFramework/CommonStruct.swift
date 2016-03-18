@@ -8,25 +8,6 @@
 
 //import UIKit
 
-public class DsnsItem : Equatable{
-    
-    public var Name : String
-    public var AccessPoint : String
-    public var Location : String
-    public var Type : String
-    
-    public init(name:String,accessPoint:String){
-        self.Name = name
-        self.AccessPoint = accessPoint
-        self.Location = ""
-        self.Type = ""
-    }
-}
-
-public func ==(lhs: DsnsItem, rhs: DsnsItem) -> Bool {
-    return lhs.AccessPoint == rhs.AccessPoint
-}
-
 public class Student : Equatable{
     public var DSNS : String!
     public var ID : String!

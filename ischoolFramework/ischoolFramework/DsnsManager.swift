@@ -8,7 +8,7 @@
 
 class DsnsManager{
     
-    var DsnsList : [DsnsItem]!
+    private var dsnsList : [DsnsItem]!
     
     private static var _singleton : DsnsManager!
     
@@ -25,14 +25,52 @@ class DsnsManager{
         }
     }
     
+    var DsnsList : [DsnsItem]{
+        
+        get{
+            
+            if dsnsList == nil{
+                
+                dsnsList = [DsnsItem]()
+            }
+            
+            return dsnsList
+        }
+        
+        set(value){
+            
+            dsnsList = value
+        }
+        
+    }
+    
     func ClearDsnsList(){
         
-        DsnsList = [DsnsItem]()
+        dsnsList = [DsnsItem]()
     }
     
     private init(){
         
-        DsnsList = [DsnsItem]()
+        dsnsList = [DsnsItem]()
     }
     
+}
+
+public class DsnsItem : Equatable{
+    
+    public var Name : String
+    public var AccessPoint : String
+    public var Location : String
+    public var Type : String
+    
+    public init(name:String,accessPoint:String){
+        self.Name = name
+        self.AccessPoint = accessPoint
+        self.Location = ""
+        self.Type = ""
+    }
+}
+
+public func ==(lhs: DsnsItem, rhs: DsnsItem) -> Bool {
+    return lhs.AccessPoint == rhs.AccessPoint
 }

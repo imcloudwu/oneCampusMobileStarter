@@ -20,15 +20,6 @@ class AddChildMainViewCtrl : ischoolViewCtrl{
         
         self.navigationItem.title = "加 入 小 孩"
         
-//        view1.layer.masksToBounds = true
-//        view1.layer.cornerRadius = 5
-        
-//        view2.layer.masksToBounds = true
-//        view2.layer.cornerRadius = 5
-//        
-//        view3.layer.masksToBounds = true
-//        view3.layer.cornerRadius = 5
-        
         let tap1 = UITapGestureRecognizer(target: self, action: "GotoScanCodeViewCtrl")
         view1.addGestureRecognizer(tap1)
         
@@ -72,8 +63,6 @@ class AddChildMainViewCtrl : ischoolViewCtrl{
     }
     
     func GotoKeyinByBasicViewCtrl(){
-        
-        print("Action1")
         
         let view = frameworkStoryboard.instantiateViewControllerWithIdentifier("KeyinByBasicViewCtrl") as! KeyinByBasicViewCtrl
         
