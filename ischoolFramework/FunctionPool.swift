@@ -8,21 +8,39 @@
 
 class FunctionPool{
     
-    private var _pool : [ischoolProtocol]?
+    private var _pool : [ischoolProtocol]
     
     init(){
         
         _pool = [ischoolProtocol]()
     }
     
-    func GetPools() -> [ischoolProtocol]?{
+//    func GetPools() -> [ischoolProtocol]?{
+//        
+//        return _pool
+//    }
+    
+    func GetFunctionsByIDs(ids:[String]) -> [ischoolProtocol]{
         
-        return _pool
+        var functions = [ischoolProtocol]()
+        
+        for id in ids{
+            
+            for f in _pool{
+                
+                if let bundleId = f.BundleId?.bundleIdentifier where bundleId == id{
+                    
+                    functions.append(f)
+                }
+            }
+        }
+        
+        return functions
     }
     
     func AddFunction(function:ischoolProtocol){
     
-        _pool?.append(function)
+        _pool.append(function)
     }
     
     func Clear(){

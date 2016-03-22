@@ -8,6 +8,8 @@
 
 public class AppContext{
     
+    public var Identy : IdentityType?
+    
     public var Dsns : String?
     
     public var Id : String?
@@ -16,7 +18,9 @@ public class AppContext{
     
     public var delegate : InfoChangeDelegate?
     
-    init(dsns:String?,id:String?,connectionManager:ConnectionManager?){
+    init(identy:IdentityType?,dsns:String?,id:String?,connectionManager:ConnectionManager?){
+        
+        self.Identy = identy
         
         self.Dsns = dsns
         
@@ -45,4 +49,12 @@ public class AppContext{
 enum RequestError : ErrorType{
     
     case Whatever
+}
+
+public enum IdentityType: String{
+    
+    case Admin = "決策人員"
+    case Teacher = "教師"
+    case Parent = "家長"
+    case Student = "學生"
 }

@@ -9,5 +9,6 @@
 public protocol InfoChangeDelegate{
     
     func DsnsChanged(dsns:String)
+    
     func StudentIdChanged(studentId:String)
 }

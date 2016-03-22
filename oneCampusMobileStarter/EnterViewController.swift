@@ -20,9 +20,9 @@ class EnterViewController : UIViewController{
     
     var loginHelper : LoginHelper!
     
-    //var modules = [AbsenceShell.Instance,DisciplineShell.Instance,ExamScoreShell.Instance,SemesterScoreShell.Instance]
+    var modules = [AbsenceShell.Instance,DisciplineShell.Instance,ExamScoreShell.Instance,SemesterScoreShell.Instance]
     
-    var modules = [ischoolProtocol]()
+    //var modules = [ischoolProtocol]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class EnterViewController : UIViewController{
         
         loginHelper.SetUrl(url)
         
-        loginHelper.TryToLogin(self, success: PrepareGotoMainView)
+        loginHelper.TryToLogin(self, success: GotoMainView)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,11 +53,6 @@ class EnterViewController : UIViewController{
     override func viewDidDisappear(animated: Bool) {
         
         loading.stopAnimating()
-    }
-    
-    func PrepareGotoMainView(){
-        
-        GotoMainView()
     }
     
     func GotoMainView(){

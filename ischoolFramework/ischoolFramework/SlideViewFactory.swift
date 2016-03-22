@@ -33,6 +33,13 @@ public class SlideView{
         return _mmdc
     }
     
+    public class func ChangeDefaultContentView(){
+        
+        let rightView = frameworkStoryboard.instantiateViewControllerWithIdentifier("RightViewCtrl")
+        
+        ChangeContentView(rightView)
+    }
+    
     public class func ChangeContentView(vc:UIViewController){
         
         //GetInstance()?.setCenterViewController(vc, withCloseAnimation: true, completion: nil)

@@ -254,19 +254,7 @@ class AbsenceViewCtrl : ischoolViewCtrl,UITableViewDelegate,UITableViewDataSourc
         segment.insertSegmentWithTitle("總計(\(total))", atIndex: 0, animated: true)
         _SegmentItems.insert("總計", atIndex: 0)
         
-        var besSize = segment.sizeThatFits(CGSize.zero)
-        
-        let screenwidth = scrollView.frame.width
-        
-        if besSize.width < screenwidth {
-            besSize.width = screenwidth
-        }
-        
-        segment.frame.size.width = besSize.width
-        
-        scrollView.contentSize = CGSizeMake(besSize.width , 0)
-        
-        scrollView.contentOffset = CGPointMake(0 - self.scrollView.contentInset.left, 0)
+        SetSegmentWidth()
         
         self._displayData = newData
         self._displayDataBase = newData
@@ -275,6 +263,29 @@ class AbsenceViewCtrl : ischoolViewCtrl,UITableViewDelegate,UITableViewDataSourc
             segment.selectedSegmentIndex = 0
             SegmentSelect(self)
         }
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        
+        SetSegmentWidth()
+    }
+    
+    func SetSegmentWidth(){
+        
+        var besSize = segment.sizeThatFits(CGSize.zero)
+        
+        let screenwidth = scrollView.frame.width
+        
+        if besSize.width < screenwidth {
+            
+            besSize.width = screenwidth
+        }
+        
+        segment.frame.size.width = besSize.width
+        
+        scrollView.contentSize = CGSizeMake(besSize.width , 0)
+        
+        scrollView.contentOffset = CGPointMake(0 - self.scrollView.contentInset.left, 0)
     }
 
 }

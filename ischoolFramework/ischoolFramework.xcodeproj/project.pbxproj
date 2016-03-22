@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610492B51C9FD39B0081930E /* Change User Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 610492B41C9FD39B0081930E /* Change User Filled-50.png */; };
 		6114DEF41C8D3ACC00B6A34C /* LeftViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */; };
 		6120082B1C9963680067E102 /* AddChildMainViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120082A1C9963680067E102 /* AddChildMainViewCtrl.swift */; };
 		612953821C9A8260001CF310 /* ScanCodeViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612953811C9A8260001CF310 /* ScanCodeViewCtrl.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		610492B41C9FD39B0081930E /* Change User Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Change User Filled-50.png"; sourceTree = "<group>"; };
 		6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewCtrl.swift; sourceTree = "<group>"; };
 		6120082A1C9963680067E102 /* AddChildMainViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChildMainViewCtrl.swift; sourceTree = "<group>"; };
 		612953811C9A8260001CF310 /* ScanCodeViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewCtrl.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		61959F671C89880B00F4DB8B /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				610492B41C9FD39B0081930E /* Change User Filled-50.png */,
 				615270901C9BFFF5005ADDA8 /* Exit Filled-50.png */,
 				615FBE4D1C9A5606002B1A38 /* Key-50.png */,
 				615FBE4E1C9A5606002B1A38 /* Keyboard-50.png */,
@@ -362,6 +365,7 @@
 				61959F791C89880B00F4DB8B /* nature-1.jpg in Resources */,
 				615270911C9BFFF5005ADDA8 /* Exit Filled-50.png in Resources */,
 				616E2A6C1C89690500F94E20 /* Storyboard.storyboard in Resources */,
+				610492B51C9FD39B0081930E /* Change User Filled-50.png in Resources */,
 				615FBE511C9A5606002B1A38 /* Keyboard-50.png in Resources */,
 				61959F771C89880B00F4DB8B /* ic_ischool.png in Resources */,
 				61959F781C89880B00F4DB8B /* Menu-24.png in Resources */,

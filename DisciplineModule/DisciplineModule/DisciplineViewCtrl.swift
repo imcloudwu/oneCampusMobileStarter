@@ -152,19 +152,7 @@ class DisciplineViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDele
         _SegmentItems.insert("大功", atIndex: 0)
         _SegmentItems.insert("全部", atIndex: 0)
         
-        var besSize = segment.sizeThatFits(CGSize.zero)
-        
-        let screenwidth = scrollView.frame.width
-        
-        if besSize.width < screenwidth {
-            besSize.width = screenwidth
-        }
-        
-        segment.frame.size.width = besSize.width
-        
-        scrollView.contentSize = CGSizeMake(besSize.width , 0)
-        
-        scrollView.contentOffset = CGPointMake(0 - self.scrollView.contentInset.left, 0)
+        SetSegmentWidth()
         
         _displayDataBase = newData
         
@@ -298,6 +286,29 @@ class DisciplineViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDele
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return _CurrentSemester?.Description
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        
+        SetSegmentWidth()
+    }
+    
+    func SetSegmentWidth(){
+        
+        var besSize = segment.sizeThatFits(CGSize.zero)
+        
+        let screenwidth = scrollView.frame.width
+        
+        if besSize.width < screenwidth {
+            
+            besSize.width = screenwidth
+        }
+        
+        segment.frame.size.width = besSize.width
+        
+        scrollView.contentSize = CGSizeMake(besSize.width , 0)
+        
+        scrollView.contentOffset = CGPointMake(0 - self.scrollView.contentInset.left, 0)
     }
 }
 
