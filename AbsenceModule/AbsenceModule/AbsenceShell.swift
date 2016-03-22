@@ -25,10 +25,10 @@ public class AbsenceShell : ischoolProtocol{
         }
     }
     
-    public var Scope : String{
+    public var Scopes : [String]{
         
         get{
-            return "1campus.mobile.parent"
+            return ["1campus.mobile.parent"]
         }
     }
     

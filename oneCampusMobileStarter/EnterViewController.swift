@@ -76,11 +76,14 @@ class EnterViewController : UIViewController{
         
         for module in modules{
             
-            let key = "*:" + module.Scope
-            
-            if !scopes.contains(key){
+            for s in module.Scopes{
                 
-                scopes.append(key)
+                let key = "*:" + s
+                
+                if !scopes.contains(key){
+                    
+                    scopes.append(key)
+                }
             }
         }
         

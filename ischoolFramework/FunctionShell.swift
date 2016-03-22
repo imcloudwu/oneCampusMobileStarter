@@ -14,7 +14,7 @@ public protocol ischoolProtocol{
     
     var Name : String { get }
     
-    var Scope : String { get }
+    var Scopes : [String] { get }
     
     var Icon : UIImage? { get }
     
