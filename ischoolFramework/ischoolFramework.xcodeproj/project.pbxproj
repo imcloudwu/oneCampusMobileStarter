@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		615D6D881CA38E4200FBDFAE /* ischoolFrameworkAggregate */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 615D6D8B1CA38E4200FBDFAE /* Build configuration list for PBXAggregateTarget "ischoolFrameworkAggregate" */;
-			buildPhases = (
-				615D6D8C1CA38E7100FBDFAE /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = ischoolFrameworkAggregate;
-			productName = ischoolFrameworkAggregate;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		610492B51C9FD39B0081930E /* Change User Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 610492B41C9FD39B0081930E /* Change User Filled-50.png */; };
 		6114DEF41C8D3ACC00B6A34C /* LeftViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */; };
@@ -350,9 +336,6 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = ischool;
 				TargetAttributes = {
-					615D6D881CA38E4200FBDFAE = {
-						CreatedOnToolsVersion = 7.2;
-					};
 					616E2A1D1C8967E000F94E20 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -375,7 +358,6 @@
 			targets = (
 				616E2A1D1C8967E000F94E20 /* ischoolFramework */,
 				616E2A271C8967E000F94E20 /* ischoolFrameworkTests */,
-				615D6D881CA38E4200FBDFAE /* ischoolFrameworkAggregate */,
 			);
 		};
 /* End PBXProject section */
@@ -407,22 +389,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		615D6D8C1CA38E7100FBDFAE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Merge Script\n\n# 1\n# Set bash script to exit immediately if any commands fail.\nset -e\n\n# 2\n# Setup some constants for use later on.\nFRAMEWORK_NAME=\"ischoolFramework\"\n\n# 3\n# If remnants from a previous build exist, delete them.\nif [ -d \"${SRCROOT}/build\" ]; then\nrm -rf \"${SRCROOT}/build\"\nfi\n\n# 4\n# Build the framework for device and for simulator (using\n# all needed architectures).\nxcodebuild -target \"${FRAMEWORK_NAME}\" -configuration Release -arch arm64 -arch armv7 -arch armv7s only_active_arch=no defines_module=yes -sdk \"iphoneos\"\nxcodebuild -target \"${FRAMEWORK_NAME}\" -configuration Release -arch x86_64 -arch i386 only_active_arch=no defines_module=yes -sdk \"iphonesimulator\"\n\n# 5\n# Remove .framework file if exists on Desktop from previous run.\nif [ -d \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework\" ]; then\nrm -rf \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework\"\nfi\n\n# 6\n# Copy the device version of framework to Desktop.\ncp -r \"${SRCROOT}/build/Release-iphoneos/${FRAMEWORK_NAME}.framework\" \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework\"\n\n# 7\n# Replace the framework executable within the framework with\n# a new version created by merging the device and simulator\n# frameworks' executables with lipo.\nlipo -create -output \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${SRCROOT}/build/Release-iphoneos/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${SRCROOT}/build/Release-iphonesimulator/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# 8\n# Copy the Swift module mappings for the simulator into the\n# framework.  The device mappings already exist from step 6.\ncp -r \"${SRCROOT}/build/Release-iphonesimulator/${FRAMEWORK_NAME}.framework/Modules/${FRAMEWORK_NAME}.swiftmodule/\" \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework/Modules/${FRAMEWORK_NAME}.swiftmodule\"\n\n# 9\n# Delete the most recent build.\nif [ -d \"${SRCROOT}/build\" ]; then\nrm -rf \"${SRCROOT}/build\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		616E2A191C8967E000F94E20 /* Sources */ = {
@@ -486,20 +452,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		615D6D891CA38E4200FBDFAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		615D6D8A1CA38E4200FBDFAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		616E2A301C8967E000F94E20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -646,14 +598,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		615D6D8B1CA38E4200FBDFAE /* Build configuration list for PBXAggregateTarget "ischoolFrameworkAggregate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				615D6D891CA38E4200FBDFAE /* Debug */,
-				615D6D8A1CA38E4200FBDFAE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		616E2A181C8967DF00F94E20 /* Build configuration list for PBXProject "ischoolFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
