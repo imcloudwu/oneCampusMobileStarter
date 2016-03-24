@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AbsenceModuleAggregate.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>612A5A761C9171E9008EB69F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>615D6D8D1CA3917900FBDFAE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

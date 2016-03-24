@@ -23,7 +23,7 @@ public class ConnectionManager{
         lockQueue = dispatch_queue_create("ConnectionManager.lockQueue", nil)
     }
     
-    public func SendRequest(dsns:String,contract:String,service:String,body:String) -> String{
+    public func SendRequest(dsns:String,contract:String,service:String,body:String) throws -> String{
         
         var err : DSFault!
         
@@ -46,7 +46,11 @@ public class ConnectionManager{
             
         }
         
-        return err != nil ? err.message : rsp
+        if err != nil{
+            throw ConnectionError.connectError(reason: err.message)
+        }
+        
+        return rsp
     }
     
     func GetConnection(dsns:String,_ contract:String) -> Connection{
@@ -80,6 +84,6 @@ public class ConnectionManager{
     }
 }
 
-//enum ConnectionError: ErrorType {
-//    case connectError(reason:String)
-//}
+enum ConnectionError: ErrorType {
+    case connectError(reason:String)
+}

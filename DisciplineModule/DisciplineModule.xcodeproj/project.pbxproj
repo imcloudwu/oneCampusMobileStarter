@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		615D6D7F1CA387D100FBDFAE /* Vow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D6D7E1CA387D100FBDFAE /* Vow.swift */; };
 		61B094FE1C96BC60003DA549 /* DisciplineModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 61B094FD1C96BC60003DA549 /* DisciplineModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61B095051C96BC60003DA549 /* DisciplineModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B094FA1C96BC60003DA549 /* DisciplineModule.framework */; };
 		61B0950A1C96BC60003DA549 /* DisciplineModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B095091C96BC60003DA549 /* DisciplineModuleTests.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		615D6D7E1CA387D100FBDFAE /* Vow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vow.swift; sourceTree = "<group>"; };
 		61B094FA1C96BC60003DA549 /* DisciplineModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DisciplineModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B094FD1C96BC60003DA549 /* DisciplineModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisciplineModule.h; sourceTree = "<group>"; };
 		61B094FF1C96BC60003DA549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				61B095241C96BCF4003DA549 /* DisciplineShell.swift */,
 				61B095261C96BCFF003DA549 /* DisciplineViewCtrl.swift */,
 				61B095281C96BD0F003DA549 /* Storyboard.storyboard */,
+				615D6D7E1CA387D100FBDFAE /* Vow.swift */,
 			);
 			path = DisciplineModule;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				61B095251C96BCF4003DA549 /* DisciplineShell.swift in Sources */,
 				61B095271C96BCFF003DA549 /* DisciplineViewCtrl.swift in Sources */,
+				615D6D7F1CA387D100FBDFAE /* Vow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

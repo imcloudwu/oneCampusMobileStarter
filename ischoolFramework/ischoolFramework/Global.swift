@@ -2,55 +2,6 @@ let frameworkBundle = NSBundle(identifier: "tw.ischool.ischoolFramework")
 
 let frameworkStoryboard = UIStoryboard(name: "Storyboard", bundle: frameworkBundle)
 
-func GetMyChildren(resources:Resources,dsns:String) -> [Student]{
-    
-    var retVal = [Student]()
-    
-    let rsp = resources.Connection.SendRequest(dsns, contract: "1campus.mobile.parent", service: "main.GetMyChildren", body: "")
-    
-    let xml: AEXMLDocument?
-    do {
-        xml = try AEXMLDocument(xmlData: rsp.dataValue)
-    } catch _ {
-        xml = nil
-    }
-    
-    if let students = xml?.root["Student"].all {
-        for stu in students{
-            //println(stu.xmlString)
-            let studentID = stu["StudentId"].stringValue
-            let className = stu["ClassName"].stringValue
-            let studentName = stu["StudentName"].stringValue
-            let seatNo = stu["SeatNo"].stringValue
-            let studentNumber = stu["StudentNumber"].stringValue
-            let gender = stu["Gender"].stringValue
-            let mailingAddress = stu["MailingAddress"].xmlString
-            let permanentAddress = stu["PermanentAddress"].xmlString
-            let contactPhone = stu["ContactPhone"].stringValue
-            let permanentPhone = stu["PermanentPhone"].stringValue
-            let custodianName = stu["CustodianName"].stringValue
-            let fatherName = stu["FatherName"].stringValue
-            let motherName = stu["MotherName"].stringValue
-            let freshmanPhoto = GetImageFromBase64String(stu["StudentPhoto"].stringValue, defaultImg: UIImage(named: "User-100.png"))
-            
-            let stuItem = Student(DSNS: dsns,ID: studentID, ClassID: "", ClassName: className, Name: studentName, SeatNo: seatNo, StudentNumber: studentNumber, Gender: gender, MailingAddress: mailingAddress, PermanentAddress: permanentAddress, ContactPhone: contactPhone, PermanentPhone: permanentPhone, CustodianName: custodianName, FatherName: fatherName, MotherName: motherName, Photo: freshmanPhoto)
-            
-            retVal.append(stuItem)
-        }
-    }
-    
-    retVal = retVal.sort({ Int($0.SeatNo) < Int($1.SeatNo) })
-    
-//    if retVal.count > 0{
-//        
-//        let schoolName = GetSchoolName(dsns)
-//        
-//        retVal.insert(Student(DSNS: "header", ID: "", ClassID: "", ClassName: schoolName, Name: "", SeatNo: "", StudentNumber: "", Gender: "", MailingAddress: "", PermanentAddress: "", ContactPhone: "", PermanentPhone: "", CustodianName: "", FatherName: "", MotherName: "", Photo: nil), atIndex: 0)
-//    }
-    
-    return retVal
-}
-
 func GetDsnsList(accessToken:String) -> [DsnsItem]{
     
     var dsnsList = [DsnsItem]()

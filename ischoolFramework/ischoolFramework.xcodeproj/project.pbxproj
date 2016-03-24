@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		615D6D881CA38E4200FBDFAE /* ischoolFrameworkAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 615D6D8B1CA38E4200FBDFAE /* Build configuration list for PBXAggregateTarget "ischoolFrameworkAggregate" */;
+			buildPhases = (
+				615D6D8C1CA38E7100FBDFAE /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = ischoolFrameworkAggregate;
+			productName = ischoolFrameworkAggregate;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		610492B51C9FD39B0081930E /* Change User Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 610492B41C9FD39B0081930E /* Change User Filled-50.png */; };
 		6114DEF41C8D3ACC00B6A34C /* LeftViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6114DEF31C8D3ACC00B6A34C /* LeftViewCtrl.swift */; };
@@ -23,6 +37,7 @@
 		615DE2EE1C8EA73D00CB89BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DE2ED1C8EA73D00CB89BE /* ConnectionManager.swift */; };
 		615DE2F01C8EC6BC00CB89BE /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DE2EF1C8EC6BC00CB89BE /* AccountInfo.swift */; };
 		615DE2F21C8ED3B800CB89BE /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DE2F11C8ED3B700CB89BE /* Resources.swift */; };
+		615F1D8F1CA25E190033F992 /* Toaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F1D8E1CA25E190033F992 /* Toaster.swift */; };
 		615FBE501C9A5606002B1A38 /* Key-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4D1C9A5606002B1A38 /* Key-50.png */; };
 		615FBE511C9A5606002B1A38 /* Keyboard-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4E1C9A5606002B1A38 /* Keyboard-50.png */; };
 		615FBE521C9A5606002B1A38 /* QR Code Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4F1C9A5606002B1A38 /* QR Code Filled-50.png */; };
@@ -55,6 +70,8 @@
 		61959F851C8988B500F4DB8B /* SlideViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61959F841C8988B500F4DB8B /* SlideViewFactory.swift */; };
 		61959F891C8989B200F4DB8B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61959F881C8989B200F4DB8B /* Global.swift */; };
 		61959F8D1C89929300F4DB8B /* CommonStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61959F8C1C89929300F4DB8B /* CommonStruct.swift */; };
+		61B3A38A1CA11E8100350874 /* ClassViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3A3891CA11E8100350874 /* ClassViewCtrl.swift */; };
+		61B3A38C1CA142E700350874 /* StudentViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3A38B1CA142E700350874 /* StudentViewCtrl.swift */; };
 		61F08A151C8D69FD007CDBDA /* ischoolViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F08A141C8D69FD007CDBDA /* ischoolViewCtrl.swift */; };
 		61F08A181C8D6FAB007CDBDA /* FunctionShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F08A171C8D6FAB007CDBDA /* FunctionShell.swift */; };
 		61F08A1E1C8D73C9007CDBDA /* FunctionPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F08A1D1C8D73C9007CDBDA /* FunctionPool.swift */; };
@@ -87,6 +104,7 @@
 		615DE2ED1C8EA73D00CB89BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		615DE2EF1C8EC6BC00CB89BE /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		615DE2F11C8ED3B700CB89BE /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		615F1D8E1CA25E190033F992 /* Toaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toaster.swift; sourceTree = "<group>"; };
 		615FBE4D1C9A5606002B1A38 /* Key-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Key-50.png"; sourceTree = "<group>"; };
 		615FBE4E1C9A5606002B1A38 /* Keyboard-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Keyboard-50.png"; sourceTree = "<group>"; };
 		615FBE4F1C9A5606002B1A38 /* QR Code Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QR Code Filled-50.png"; sourceTree = "<group>"; };
@@ -122,6 +140,8 @@
 		61959F841C8988B500F4DB8B /* SlideViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewFactory.swift; sourceTree = "<group>"; };
 		61959F881C8989B200F4DB8B /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		61959F8C1C89929300F4DB8B /* CommonStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonStruct.swift; sourceTree = "<group>"; };
+		61B3A3891CA11E8100350874 /* ClassViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewCtrl.swift; sourceTree = "<group>"; };
+		61B3A38B1CA142E700350874 /* StudentViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentViewCtrl.swift; sourceTree = "<group>"; };
 		61F08A141C8D69FD007CDBDA /* ischoolViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ischoolViewCtrl.swift; sourceTree = "<group>"; };
 		61F08A171C8D6FAB007CDBDA /* FunctionShell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FunctionShell.swift; path = ../FunctionShell.swift; sourceTree = "<group>"; };
 		61F08A1D1C8D73C9007CDBDA /* FunctionPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FunctionPool.swift; path = ../FunctionPool.swift; sourceTree = "<group>"; };
@@ -199,6 +219,9 @@
 				6129538B1C9AB444001CF310 /* KeyinByCodeViewCtrl.swift */,
 				6129538D1C9AB458001CF310 /* KeyinByBasicViewCtrl.swift */,
 				6129538F1C9AB4EE001CF310 /* SelectSchoolViewCtrl.swift */,
+				61B3A3891CA11E8100350874 /* ClassViewCtrl.swift */,
+				61B3A38B1CA142E700350874 /* StudentViewCtrl.swift */,
+				615F1D8E1CA25E190033F992 /* Toaster.swift */,
 			);
 			path = ischoolFramework;
 			sourceTree = "<group>";
@@ -327,6 +350,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = ischool;
 				TargetAttributes = {
+					615D6D881CA38E4200FBDFAE = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					616E2A1D1C8967E000F94E20 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -349,6 +375,7 @@
 			targets = (
 				616E2A1D1C8967E000F94E20 /* ischoolFramework */,
 				616E2A271C8967E000F94E20 /* ischoolFrameworkTests */,
+				615D6D881CA38E4200FBDFAE /* ischoolFrameworkAggregate */,
 			);
 		};
 /* End PBXProject section */
@@ -381,6 +408,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		615D6D8C1CA38E7100FBDFAE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Merge Script\n\n# 1\n# Set bash script to exit immediately if any commands fail.\nset -e\n\n# 2\n# Setup some constants for use later on.\nFRAMEWORK_NAME=\"ischoolFramework\"\n\n# 3\n# If remnants from a previous build exist, delete them.\nif [ -d \"${SRCROOT}/build\" ]; then\nrm -rf \"${SRCROOT}/build\"\nfi\n\n# 4\n# Build the framework for device and for simulator (using\n# all needed architectures).\nxcodebuild -target \"${FRAMEWORK_NAME}\" -configuration Release -arch arm64 -arch armv7 -arch armv7s only_active_arch=no defines_module=yes -sdk \"iphoneos\"\nxcodebuild -target \"${FRAMEWORK_NAME}\" -configuration Release -arch x86_64 -arch i386 only_active_arch=no defines_module=yes -sdk \"iphonesimulator\"\n\n# 5\n# Remove .framework file if exists on Desktop from previous run.\nif [ -d \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework\" ]; then\nrm -rf \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework\"\nfi\n\n# 6\n# Copy the device version of framework to Desktop.\ncp -r \"${SRCROOT}/build/Release-iphoneos/${FRAMEWORK_NAME}.framework\" \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework\"\n\n# 7\n# Replace the framework executable within the framework with\n# a new version created by merging the device and simulator\n# frameworks' executables with lipo.\nlipo -create -output \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${SRCROOT}/build/Release-iphoneos/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${SRCROOT}/build/Release-iphonesimulator/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n\n# 8\n# Copy the Swift module mappings for the simulator into the\n# framework.  The device mappings already exist from step 6.\ncp -r \"${SRCROOT}/build/Release-iphonesimulator/${FRAMEWORK_NAME}.framework/Modules/${FRAMEWORK_NAME}.swiftmodule/\" \"${HOME}/Desktop/${FRAMEWORK_NAME}.framework/Modules/${FRAMEWORK_NAME}.swiftmodule\"\n\n# 9\n# Delete the most recent build.\nif [ -d \"${SRCROOT}/build\" ]; then\nrm -rf \"${SRCROOT}/build\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		616E2A191C8967E000F94E20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -399,6 +442,7 @@
 				615DE2F01C8EC6BC00CB89BE /* AccountInfo.swift in Sources */,
 				616E2A671C89690500F94E20 /* CustomNavigationView.swift in Sources */,
 				616E2A4F1C89681300F94E20 /* Extensions.swift in Sources */,
+				615F1D8F1CA25E190033F992 /* Toaster.swift in Sources */,
 				612953901C9AB4EE001CF310 /* SelectSchoolViewCtrl.swift in Sources */,
 				61F08A151C8D69FD007CDBDA /* ischoolViewCtrl.swift in Sources */,
 				612953841C9A8F54001CF310 /* DsnsManager.swift in Sources */,
@@ -412,6 +456,8 @@
 				61F08A181C8D6FAB007CDBDA /* FunctionShell.swift in Sources */,
 				61959F8D1C89929300F4DB8B /* CommonStruct.swift in Sources */,
 				6120082B1C9963680067E102 /* AddChildMainViewCtrl.swift in Sources */,
+				61B3A38A1CA11E8100350874 /* ClassViewCtrl.swift in Sources */,
+				61B3A38C1CA142E700350874 /* StudentViewCtrl.swift in Sources */,
 				61959F7C1C89880B00F4DB8B /* MMDrawerBarButtonItem.m in Sources */,
 				616E2A511C89681300F94E20 /* SwiftyJSON.swift in Sources */,
 				615789F81C900FB300C2710B /* AppContext.swift in Sources */,
@@ -440,6 +486,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		615D6D891CA38E4200FBDFAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		615D6D8A1CA38E4200FBDFAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		616E2A301C8967E000F94E20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -586,6 +646,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		615D6D8B1CA38E4200FBDFAE /* Build configuration list for PBXAggregateTarget "ischoolFrameworkAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				615D6D891CA38E4200FBDFAE /* Debug */,
+				615D6D8A1CA38E4200FBDFAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		616E2A181C8967DF00F94E20 /* Build configuration list for PBXProject "ischoolFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

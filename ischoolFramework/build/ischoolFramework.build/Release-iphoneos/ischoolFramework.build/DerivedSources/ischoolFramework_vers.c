@@ -1,0 +1,1 @@
+ const unsigned char ischoolFrameworkVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:ischoolFramework  PROJECT:ischoolFramework-1" "\n"; const double ischoolFrameworkVersionNumber __attribute__ ((used)) = (double)1.;

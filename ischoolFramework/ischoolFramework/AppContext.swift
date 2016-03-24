@@ -14,11 +14,13 @@ public class AppContext{
     
     public var Id : String?
     
+    public var Data : Student?
+    
     private var connection : ConnectionManager?
     
-    public var delegate : InfoChangeDelegate?
+    //public var delegate : InfoChangeDelegate?
     
-    init(identy:IdentityType?,dsns:String?,id:String?,connectionManager:ConnectionManager?){
+    init(identy:IdentityType?,dsns:String?,id:String?,data:Student?,connectionManager:ConnectionManager?){
         
         self.Identy = identy
         
@@ -26,35 +28,54 @@ public class AppContext{
         
         self.Id = id
         
+        self.Data = data
+        
         self.connection = connectionManager
     }
     
-    public func SendRequest(contract:String,srevice:String,req:String,callback:(response:String) -> ()){
+    public func SendRequest(contract:String,srevice:String,req:String,successCallback:(response:String) -> (),failureCallback:(error:String) -> ()){
         
         if let dsns = self.Dsns{
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                 
-                let rsp = self.connection?.SendRequest(dsns, contract: contract, service: srevice, body: req)
-                
-                dispatch_async(dispatch_get_main_queue(), {
+                do{
                     
-                    callback(response: rsp ?? "")
-                })
+                    let rsp = try self.connection?.SendRequest(dsns, contract: contract, service: srevice, body: req)
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        
+                        successCallback(response: rsp ?? "")
+                    })
+                    
+                }
+                catch ConnectionError.connectError(let reason){
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        
+                        failureCallback(error:reason)
+                    })
+                    
+                }
+                catch{
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        
+                        failureCallback(error:"未知的錯誤")
+                    })
+                    
+                }
+                
             })
         }
     }
 }
 
-enum RequestError : ErrorType{
-    
-    case Whatever
-}
-
 public enum IdentityType: String{
     
     case Admin = "決策人員"
-    case Teacher = "教師"
+    case ClassTeacher = "班導師"
+    case CourseTeacher = "授課老師"
     case Parent = "家長"
     case Student = "學生"
 }

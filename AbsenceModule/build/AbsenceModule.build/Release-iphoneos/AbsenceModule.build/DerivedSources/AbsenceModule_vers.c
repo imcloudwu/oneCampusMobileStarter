@@ -1,0 +1,1 @@
+ const unsigned char AbsenceModuleVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:AbsenceModule  PROJECT:AbsenceModule-1" "\n"; const double AbsenceModuleVersionNumber __attribute__ ((used)) = (double)1.;

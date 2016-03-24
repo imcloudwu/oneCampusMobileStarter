@@ -13,6 +13,7 @@
 		612A5A931C917230008EB69F /* AbsenceShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612A5A921C917230008EB69F /* AbsenceShell.swift */; };
 		612A5A951C917282008EB69F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612A5A941C917282008EB69F /* Storyboard.storyboard */; };
 		612A5A971C9172C1008EB69F /* AbsenceViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612A5A961C9172C1008EB69F /* AbsenceViewCtrl.swift */; };
+		615D6D7D1CA383C400FBDFAE /* Vow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D6D7C1CA383C400FBDFAE /* Vow.swift */; };
 		61B094EF1C96A60F003DA549 /* Expired Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B094EE1C96A60F003DA549 /* Expired Filled-50.png */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		612A5A921C917230008EB69F /* AbsenceShell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsenceShell.swift; sourceTree = "<group>"; };
 		612A5A941C917282008EB69F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		612A5A961C9172C1008EB69F /* AbsenceViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsenceViewCtrl.swift; sourceTree = "<group>"; };
+		615D6D7C1CA383C400FBDFAE /* Vow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vow.swift; sourceTree = "<group>"; };
+		615D6D921CA3923300FBDFAE /* ischoolFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ischoolFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/oneCampusMobileStarter-bblkfmsujimdjfdasodikklqgkgl/Build/Products/Debug-iphoneos/ischoolFramework.framework"; sourceTree = "<group>"; };
 		61B094EE1C96A60F003DA549 /* Expired Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Expired Filled-50.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -61,6 +64,7 @@
 		612A5A631C9171E8008EB69F = {
 			isa = PBXGroup;
 			children = (
+				615D6D921CA3923300FBDFAE /* ischoolFramework.framework */,
 				612A5A6F1C9171E9008EB69F /* AbsenceModule */,
 				612A5A7B1C9171E9008EB69F /* AbsenceModuleTests */,
 				612A5A6E1C9171E9008EB69F /* Products */,
@@ -85,6 +89,7 @@
 				612A5A921C917230008EB69F /* AbsenceShell.swift */,
 				612A5A961C9172C1008EB69F /* AbsenceViewCtrl.swift */,
 				612A5A941C917282008EB69F /* Storyboard.storyboard */,
+				615D6D7C1CA383C400FBDFAE /* Vow.swift */,
 			);
 			path = AbsenceModule;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			files = (
 				612A5A931C917230008EB69F /* AbsenceShell.swift in Sources */,
 				612A5A971C9172C1008EB69F /* AbsenceViewCtrl.swift in Sources */,
+				615D6D7D1CA383C400FBDFAE /* Vow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

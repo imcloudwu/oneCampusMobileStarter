@@ -15,8 +15,6 @@ class AbsenceViewCtrl : ischoolViewCtrl,UITableViewDelegate,UITableViewDataSourc
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segment: UISegmentedControl!
     
-    let contract = "1campus.mobile.parent"
-    
     var _data : [AttendanceItem]!
     var _displayDataBase : [AttendanceItem]!
     var _displayData : [AttendanceItem]!
@@ -117,30 +115,32 @@ class AbsenceViewCtrl : ischoolViewCtrl,UITableViewDelegate,UITableViewDataSourc
         
         tableView.reloadData()
         
-        GetAttendanceData()
+        if let identy = appContext?.Identy {
+            
+            switch(identy){
+                
+            case .Admin:
+                GetAttendanceData(adminContract,service: admin_service)
+                
+            case .ClassTeacher:
+                GetAttendanceData(teacherContract,service: teacher_service)
+                
+            case .Parent:
+                GetAttendanceData(parentContract,service: parent_service)
+                
+            default:
+                print("identy not match")
+            }
+        }
     }
     
-    override func StudentIdChanged(studentId: String) {
-        
-        appContext?.Id = studentId
-        
-        viewWillAppear(true)
-    }
-    
-    override func DsnsChanged(dsns: String) {
-        
-        appContext?.Dsns = dsns
-        
-        viewWillAppear(true)
-    }
-    
-    func GetAttendanceData() {
+    func GetAttendanceData(contract:String,service:String) {
         
         var retVal = [AttendanceItem]()
         
         if let id = appContext?.Id where !id.isEmpty{
             
-            appContext?.SendRequest(contract, srevice: "absence.GetChildAttendance", req: "<Request><RefStudentId>\(id)</RefStudentId></Request>", callback: { (response) -> () in
+            appContext?.SendRequest(contract, srevice: service, req: "<Request><RefStudentId>\(id)</RefStudentId></Request>", successCallback: { (response) -> () in
                 
                 let xml = try? AEXMLDocument(xmlData: response.dataValue)
                 
@@ -177,7 +177,10 @@ class AbsenceViewCtrl : ischoolViewCtrl,UITableViewDelegate,UITableViewDataSourc
                 if self._semesters.count > 0{
                     self.SetDataToTableView(self._semesters[0])
                 }
-                
+
+                }, failureCallback: { (error) -> () in
+                    
+                    print(error)
             })
         }
         

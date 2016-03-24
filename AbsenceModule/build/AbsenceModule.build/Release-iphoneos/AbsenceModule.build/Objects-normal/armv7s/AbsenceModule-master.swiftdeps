@@ -1,0 +1,7 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "9a33dc05464daf4bc0eecee68aae8440"
+build_time: [512104379, 512951000]
+inputs:
+  "/Users/cloud/Desktop/oneCampusMobileStarter/AbsenceModule/AbsenceModule/Vow.swift": !dirty [512101577, 0]
+  "/Users/cloud/Desktop/oneCampusMobileStarter/AbsenceModule/AbsenceModule/AbsenceShell.swift": !dirty [512101984, 0]
+  "/Users/cloud/Desktop/oneCampusMobileStarter/AbsenceModule/AbsenceModule/AbsenceViewCtrl.swift": !dirty [512101565, 0]

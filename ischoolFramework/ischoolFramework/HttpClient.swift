@@ -86,6 +86,7 @@ public class HttpClient {
         request.HTTPMethod = "POST"
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         request.URL = NSURL(string: url)
+        //request.setValue("gzip", forHTTPHeaderField: "Accept-Encoding")
         
         var tokenData: NSData?
         do {

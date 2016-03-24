@@ -11,7 +11,10 @@ import ischoolFramework
 
 class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDelegate{
     
-    let contract = "1campus.mobile.parent"
+    var contract : String!
+    var scoreCalcRule_service : String!
+    var scoreJH_service : String!
+    var scoreSH_service : String!
     
     var _isJH : Bool!
     var _isHS : Bool!
@@ -59,6 +62,39 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
             
         self.CheckDSNS()
         
+        if let identy = appContext?.Identy {
+            
+            switch(identy){
+                
+            case .Admin:
+                SetContractAndServiceName(adminContract, scoreCalcRule_service: admin_scoreCalcRule_service, scoreJH_service: admin_scoreJH_service, scoreSH_service: admin_scoreSH_service)
+                GetData()
+                
+            case .ClassTeacher:
+                SetContractAndServiceName(teacherContract, scoreCalcRule_service: teacher_scoreCalcRule_service, scoreJH_service: teacher_scoreJH_service, scoreSH_service: teacher_scoreSH_service)
+                GetData()
+                
+            case .CourseTeacher:
+                SetContractAndServiceName(teacherContract, scoreCalcRule_service: teacher_scoreCalcRule_service, scoreJH_service: teacher_scoreJH_service, scoreSH_service: teacher_scoreSH_service)
+                GetExamScoreDataByCourseTeacher()
+                
+            default:
+                SetContractAndServiceName(parentContract, scoreCalcRule_service: parent_scoreCalcRule_service, scoreJH_service: parent_scoreJH_service, scoreSH_service: parent_scoreSH_service)
+                GetData()
+            }
+        }
+    }
+    
+    func SetContractAndServiceName(contract:String,scoreCalcRule_service:String,scoreJH_service:String,scoreSH_service:String){
+        
+        self.contract = contract
+        self.scoreCalcRule_service = scoreCalcRule_service
+        self.scoreJH_service = scoreJH_service
+        self.scoreSH_service = scoreSH_service
+    }
+    
+    func GetData(){
+        
         if self._isJH == true{
             self.SetScoreCalcRule()
             GetJHData()
@@ -66,21 +102,6 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
         else{
             GetSHData()
         }
-        
-    }
-    
-    override func StudentIdChanged(studentId: String) {
-        
-        appContext?.Id = studentId
-        
-        viewWillAppear(true)
-    }
-    
-    override func DsnsChanged(dsns: String) {
-        
-        appContext?.Dsns = dsns
-        
-        viewWillAppear(true)
     }
     
     //new solution
@@ -122,7 +143,7 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
         
         if let student_id = appContext?.Id where !student_id.isEmpty{
             
-            appContext?.SendRequest(contract, srevice: "evaluateScoreJH.GetScoreCalcRule", req: "<Request><StudentID>\(student_id)</StudentID></Request>", callback: { (response) -> () in
+            appContext?.SendRequest(contract, srevice: scoreCalcRule_service, req: "<Request><StudentID>\(student_id)</StudentID></Request>", successCallback: { (response) -> () in
                 
                 let xml: AEXMLDocument?
                 
@@ -139,6 +160,9 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
                 if let domainScales = xml?.root["ScoreCalcRule"]["DomainScales"].stringValue{
                     self._DomainScales = domainScales.int16Value
                 }
+                }, failureCallback: { (error) -> () in
+                    
+                    print(error)
             })
         }
     }
@@ -150,7 +174,7 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
         
         if let student_id = appContext?.Id where !student_id.isEmpty{
             
-            appContext?.SendRequest(contract, srevice: "evaluateScoreSH.GetExamScore", req: "<Request><Condition><StudentID>\(student_id)</StudentID></Condition></Request>", callback: { (response) -> () in
+            appContext?.SendRequest(contract, srevice: scoreSH_service, req: "<Request><Condition><StudentID>\(student_id)</StudentID></Condition></Request>", successCallback: { (response) -> () in
                 
                 let xml: AEXMLDocument?
                 do {
@@ -193,6 +217,9 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
                 self._data = retVal
                 
                 self.GetSemesters()
+                }, failureCallback: { (error) -> () in
+                    
+                    print(error)
             })
         }
     }
@@ -204,7 +231,7 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
         
         if let student_id = appContext?.Id where !student_id.isEmpty{
             
-            appContext?.SendRequest(contract, srevice: "evaluateScoreJH.GetExamScore", req: "<Request><Condition><StudentID>\(student_id)</StudentID></Condition></Request>", callback: { (response) -> () in
+            appContext?.SendRequest(contract, srevice: scoreJH_service, req: "<Request><Condition><StudentID>\(student_id)</StudentID></Condition></Request>", successCallback: { (response) -> () in
                 
                 let xml: AEXMLDocument?
                 do {
@@ -266,6 +293,9 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
                 
                 self.GetSemesters()
                 
+                }, failureCallback: { (error) -> () in
+                    
+                    print(error)
             })
         }
     }
@@ -659,6 +689,101 @@ class ExamScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDeleg
         
         if self._Semesters.count > 0{
             self.SelectSemester(self._Semesters[0])
+        }
+    }
+    
+    //for Course Teacher
+    func GetExamScoreDataByCourseTeacher(){
+        
+        var retVal = [DisplayItem]()
+        
+        if let id = appContext?.Id,let data = appContext?.Data{
+            
+            appContext?.SendRequest(teacherContract, srevice: "courseTeacher.GetExamScore", req: "<Request><Condition><RefStudentId>\(id)</RefStudentId><RefCourseId>\(data.ClassID)</RefCourseId></Condition></Request>", successCallback: { (response) -> () in
+                
+                var xml: AEXMLDocument?
+                
+                do {
+                    xml = try AEXMLDocument(xmlData: response.dataValue)
+                } catch _ {
+                    xml = nil
+                }
+                
+                if let sceTakes = xml?.root["Response"]["SceTake"].all {
+                    for sceTake in sceTakes{
+                        let examName = sceTake["ExamName"].stringValue
+                        
+                        var examScore = ""
+                        var assignmentScore = ""
+                        
+                        if self._isJH == true{
+                            examScore = sceTake["Extension"]["Extension"]["Score"].stringValue
+                        }
+                        else{
+                            examScore = sceTake["Score"].stringValue
+                        }
+                        
+                        if self._isHS == true{
+                            assignmentScore = sceTake["Extension"]["Extension"]["AssignmentScore"].stringValue
+                        }
+                        
+                        retVal.append(DisplayItem(Title: examName, Value: examScore, OtherInfo: "", ColorAlarm: false))
+                        
+                        if assignmentScore != ""{
+                            retVal.append(DisplayItem(Title: examName + "(平時)", Value: assignmentScore, OtherInfo: "", ColorAlarm: false))
+                        }
+                    }
+                }
+                
+                self.GetCourseScoreDataByCourseTeacher(retVal)
+                
+                }, failureCallback: { (error) -> () in
+                    
+                    print(error)
+                    
+                    self.GetCourseScoreDataByCourseTeacher(retVal)
+            })
+        }
+        
+    }
+    
+    func GetCourseScoreDataByCourseTeacher(var retVal:[DisplayItem]){
+        
+        if let id = appContext?.Id,let data = appContext?.Data{
+            
+            appContext?.SendRequest(teacherContract, srevice: "courseTeacher.GetCourseScore", req: "<Request><Condition><RefStudentId>\(id)</RefStudentId><RefCourseId>\(data.ClassID)</RefCourseId></Condition></Request>", successCallback: { (response) -> () in
+                
+                var xml : AEXMLDocument?
+                
+                do {
+                    xml = try AEXMLDocument(xmlData: response.dataValue)
+                } catch _ {
+                    xml = nil
+                }
+                
+                let courseScore = xml?.root["Response"]["CourseScore"]["Score"].stringValue
+                let ordinarilyScore = xml?.root["Response"]["CourseScore"]["Extension"]["Extension"]["OrdinarilyScore"].stringValue
+                
+                if self._isJH == false && courseScore != ""{
+                    retVal.append(DisplayItem(Title: "課程成績", Value: courseScore!, OtherInfo: "", ColorAlarm: false))
+                }
+                
+                if self._isJH == true && self._isHS == true && ordinarilyScore != ""{
+                    retVal.append(DisplayItem(Title: "課程平時成績", Value: ordinarilyScore!, OtherInfo: "", ColorAlarm: false))
+                }
+                
+                self._displayData = retVal
+                
+                self.tableView.reloadDataWithAnimated()
+                
+                }, failureCallback: { (error) -> () in
+                    
+                    print(error)
+                    
+                    self._displayData = retVal
+                    
+                    self.tableView.reloadDataWithAnimated()
+            })
         }
     }
     

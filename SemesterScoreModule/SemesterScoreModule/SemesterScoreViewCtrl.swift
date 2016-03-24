@@ -42,30 +42,32 @@ class SemesterScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewD
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: "ChangeSemester")
         
-        GetScoreInfoData()
+        if let identy = appContext?.Identy {
+            
+            switch(identy){
+                
+            case .Admin:
+                GetScoreInfoData(adminContract,service: admin_service)
+                
+            case .ClassTeacher:
+                GetScoreInfoData(teacherContract,service: teacher_service)
+                
+            case .Parent:
+                GetScoreInfoData(parentContract,service: parent_service)
+                
+            default:
+                print("identy not match")
+            }
+        }
     }
     
-    override func StudentIdChanged(studentId: String) {
-        
-        appContext?.Id = studentId
-        
-        viewWillAppear(true)
-    }
-    
-    override func DsnsChanged(dsns: String) {
-        
-        appContext?.Dsns = dsns
-        
-        viewWillAppear(true)
-    }
-    
-    func GetScoreInfoData() {
+    func GetScoreInfoData(contract:String,service:String) {
         
         var retVal = [ScoreInfoItem]()
         
         if let id = appContext?.Id where !id.isEmpty{
             
-            appContext?.SendRequest(contract, srevice: "semesterScoreSH.GetChildSemsScore", req: "<Request><All></All><RefStudentId>\(id)</RefStudentId></Request>", callback: { (response) -> () in
+            appContext?.SendRequest(contract, srevice: service, req: "<Request><All></All><RefStudentId>\(id)</RefStudentId></Request>", successCallback: { (response) -> () in
                 
                 let xml: AEXMLDocument?
                 
@@ -158,6 +160,9 @@ class SemesterScoreViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewD
                 self._data = retVal
                 
                 self.GetSemesters()
+                }, failureCallback: { (error) -> () in
+                    
+                    print(error)
             })
         
         }

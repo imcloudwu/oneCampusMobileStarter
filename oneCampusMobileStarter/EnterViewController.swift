@@ -72,7 +72,7 @@ class EnterViewController : UIViewController{
     
     func GetScopes() -> String{
         
-        var scopes = [String]()
+        var basicScopes = ["*:1campus.mobile.dominator","*:1campus.mobile.teacher","*:1campus.mobile.parent","*:1campus.mobile.guest"]
         
         for module in modules{
             
@@ -80,14 +80,14 @@ class EnterViewController : UIViewController{
                 
                 let key = "*:" + s
                 
-                if !scopes.contains(key){
+                if !basicScopes.contains(key){
                     
-                    scopes.append(key)
+                    basicScopes.append(key)
                 }
             }
         }
         
-        let retval = scopes.joinWithSeparator(",")
+        let retval = basicScopes.joinWithSeparator(",")
         
         return retval.isEmpty ? "" : "," + retval
     }

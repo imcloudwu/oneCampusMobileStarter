@@ -111,7 +111,7 @@ class KeyinByBasicViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDele
         
         if !DsnsManager.Singleton.DsnsList.contains(self._DsnsItem){
             
-            let _ = Resource.Connection.SendRequest("https://auth.ischool.com.tw:8443/dsa/greening", contract: "user", service: "AddApplicationRef", body: "<Request><Applications><Application><AccessPoint>\(server)</AccessPoint><Type>dynpkg</Type></Application></Applications></Request>")
+            let _ = try? Resource.Connection.SendRequest("https://auth.ischool.com.tw:8443/dsa/greening", contract: "user", service: "AddApplicationRef", body: "<Request><Applications><Application><AccessPoint>\(server)</AccessPoint><Type>dynpkg</Type></Application></Applications></Request>")
             
             DsnsManager.Singleton.DsnsList.append(self._DsnsItem)
             
@@ -130,16 +130,16 @@ class KeyinByBasicViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDele
         
         if let relationship = self.relationship.text, let idNumber = self.idNumber.text, let studentNumber = self.studentNumber.text{
             
-            let rsp1 = Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "1campus.mobile.guest", service: "_.ConfirmMyChild", body: "<Request><StudentIdNumber>\(idNumber)</StudentIdNumber><StudentNumber>\(studentNumber)</StudentNumber></Request>")
+            let rsp1 = try? Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "1campus.mobile.guest", service: "_.ConfirmMyChild", body: "<Request><StudentIdNumber>\(idNumber)</StudentIdNumber><StudentNumber>\(studentNumber)</StudentNumber></Request>")
             
-            if rsp1.isEmpty{
+            if rsp1 == nil{
                 ShowErrorAlert(self, title: "該校查詢不到此學生資料,無法加入", msg: "")
                 return
             }
             
             var xml: AEXMLDocument?
             do {
-                xml = try AEXMLDocument(xmlData: rsp1.dataValue)
+                xml = try AEXMLDocument(xmlData: rsp1!.dataValue)
             } catch _ {
                 xml = nil
             }
@@ -162,12 +162,17 @@ class KeyinByBasicViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDele
                 confirm.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
                 confirm.addAction(UIAlertAction(title: "確認", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
                     
-                    let rsp2 = self.Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "1campus.mobile.guest", service: "_.JoinAsParent", body: "<Request><StudentId>\(Id)</StudentId><Relationship>\(relationship)</Relationship></Request>")
+                    let rsp2 = try? self.Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "1campus.mobile.guest", service: "_.JoinAsParent", body: "<Request><StudentId>\(Id)</StudentId><Relationship>\(relationship)</Relationship></Request>")
+                    
+                    if rsp2 == nil{
+                        ShowErrorAlert(self, title: "加入失敗", msg: "發生不明的錯誤,請回報給開發人員")
+                        return
+                    }
                     
                     var xml: AEXMLDocument?
                     
                     do {
-                        xml = try AEXMLDocument(xmlData: rsp2.dataValue)
+                        xml = try AEXMLDocument(xmlData: rsp2!.dataValue)
                     } catch _ {
                         xml = nil
                     }

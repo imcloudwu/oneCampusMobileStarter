@@ -118,7 +118,7 @@ class ScanCodeViewCtrl: UIViewController,AVCaptureMetadataOutputObjectsDelegate 
         
         if !DsnsManager.Singleton.DsnsList.contains(self._DsnsItem){
             
-            let _ = Resource.Connection.SendRequest("https://auth.ischool.com.tw:8443/dsa/greening", contract: "user", service: "AddApplicationRef", body: "<Request><Applications><Application><AccessPoint>\(server)</AccessPoint><Type>dynpkg</Type></Application></Applications></Request>")
+            let _ = try? Resource.Connection.SendRequest("https://auth.ischool.com.tw:8443/dsa/greening", contract: "user", service: "AddApplicationRef", body: "<Request><Applications><Application><AccessPoint>\(server)</AccessPoint><Type>dynpkg</Type></Application></Applications></Request>")
             
             DsnsManager.Singleton.DsnsList.append(self._DsnsItem)
             
@@ -135,12 +135,17 @@ class ScanCodeViewCtrl: UIViewController,AVCaptureMetadataOutputObjectsDelegate 
     
     func JoinAsParent(){
         
-        let rsp = Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "auth.guest", service: "Join.AsParent", body: "<Request><ParentCode>\(_Code)</ParentCode><Relationship>iOS Parent</Relationship></Request>")
+        let rsp = try? Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "auth.guest", service: "Join.AsParent", body: "<Request><ParentCode>\(_Code)</ParentCode><Relationship>iOS Parent</Relationship></Request>")
+        
+        if rsp == nil{
+            ShowErrorAlert(self, title: "加入失敗", msg: "發生不明的錯誤,請回報給開發人員")
+            return
+        }
         
         let xml: AEXMLDocument?
         
         do {
-            xml = try AEXMLDocument(xmlData: rsp.dataValue)
+            xml = try AEXMLDocument(xmlData: rsp!.dataValue)
         } catch _ {
             xml = nil
         }

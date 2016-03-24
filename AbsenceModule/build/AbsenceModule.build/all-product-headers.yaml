@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/cloud/Desktop/oneCampusMobileStarter/AbsenceModule/build/Release-iphoneos/AbsenceModule.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "AbsenceModule-Swift.h",
+          'external-contents': "/Users/cloud/Desktop/oneCampusMobileStarter/AbsenceModule/build/Release-iphoneos/AbsenceModule.framework/Headers/AbsenceModule-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "AbsenceModule.h",
+          'external-contents': "/Users/cloud/Desktop/oneCampusMobileStarter/AbsenceModule/AbsenceModule/AbsenceModule.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/cloud/Desktop/oneCampusMobileStarter/AbsenceModule/build/Release-iphoneos/AbsenceModule.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/cloud/Desktop/oneCampusMobileStarter/AbsenceModule/build/AbsenceModule.build/Release-iphoneos/AbsenceModule.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

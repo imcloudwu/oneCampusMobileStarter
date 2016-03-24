@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ischoolViewCtrl : UIViewController,InfoChangeDelegate{
+public class ischoolViewCtrl : UIViewController{
     
     public var navtitle : String?
     
@@ -22,7 +22,7 @@ public class ischoolViewCtrl : UIViewController,InfoChangeDelegate{
         
         self.navigationItem.title = navtitle
         
-        self.appContext?.delegate = self
+        //self.appContext?.delegate = self
     }
     
     func ToggleSideMenu(){
@@ -30,7 +30,7 @@ public class ischoolViewCtrl : UIViewController,InfoChangeDelegate{
         SlideView.ToggleSideMenu()
     }
     
-    public func DsnsChanged(dsns:String){ }
+    //public func DsnsChanged(dsns:String){ }
     
-    public func StudentIdChanged(studentId:String){ }
+    //public func StudentIdChanged(studentId:String){ }
 }

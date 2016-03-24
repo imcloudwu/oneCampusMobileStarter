@@ -12,6 +12,7 @@
 		612008251C99347D0067E102 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612008241C99347D0067E102 /* Storyboard.storyboard */; };
 		612008281C993B340067E102 /* Report Card Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 612008261C993B340067E102 /* Report Card Filled-50.png */; };
 		612008291C993B340067E102 /* Checked-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 612008271C993B340067E102 /* Checked-32.png */; };
+		615D6D811CA3897000FBDFAE /* Vow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D6D801CA3897000FBDFAE /* Vow.swift */; };
 		6166906C1C992D8800C05DC6 /* SemesterScoreModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 6166906B1C992D8800C05DC6 /* SemesterScoreModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		616690731C992D8800C05DC6 /* SemesterScoreModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616690681C992D8800C05DC6 /* SemesterScoreModule.framework */; };
 		616690781C992D8800C05DC6 /* SemesterScoreModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616690771C992D8800C05DC6 /* SemesterScoreModuleTests.swift */; };
@@ -33,6 +34,7 @@
 		612008241C99347D0067E102 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		612008261C993B340067E102 /* Report Card Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Report Card Filled-50.png"; sourceTree = "<group>"; };
 		612008271C993B340067E102 /* Checked-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checked-32.png"; sourceTree = "<group>"; };
+		615D6D801CA3897000FBDFAE /* Vow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vow.swift; sourceTree = "<group>"; };
 		616690681C992D8800C05DC6 /* SemesterScoreModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemesterScoreModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6166906B1C992D8800C05DC6 /* SemesterScoreModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemesterScoreModule.h; sourceTree = "<group>"; };
 		6166906D1C992D8800C05DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				612008201C99345A0067E102 /* SemesterScoreShell.swift */,
 				612008221C9934650067E102 /* SemesterScoreViewCtrl.swift */,
 				612008241C99347D0067E102 /* Storyboard.storyboard */,
+				615D6D801CA3897000FBDFAE /* Vow.swift */,
 			);
 			path = SemesterScoreModule;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				612008231C9934650067E102 /* SemesterScoreViewCtrl.swift in Sources */,
 				612008211C99345A0067E102 /* SemesterScoreShell.swift in Sources */,
+				615D6D811CA3897000FBDFAE /* Vow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

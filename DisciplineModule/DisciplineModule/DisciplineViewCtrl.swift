@@ -11,8 +11,6 @@ import ischoolFramework
 
 class DisciplineViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDelegate{
     
-    let contract = "1campus.mobile.parent"
-    
     var _data : [DisciplineItem]!
     var _displayData : [DisciplineItem]!
     var _displayDataBase : [DisciplineItem]!
@@ -51,20 +49,6 @@ class DisciplineViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDele
         self.tableView.reloadDataWithAnimated()
     }
     
-    override func StudentIdChanged(studentId: String) {
-        
-        appContext?.Id = studentId
-        
-        viewWillAppear(true)
-    }
-    
-    override func DsnsChanged(dsns: String) {
-        
-        appContext?.Dsns = dsns
-        
-        viewWillAppear(true)
-    }
-    
     override func viewWillAppear(animated: Bool) {
         
         _data = [DisciplineItem]()
@@ -86,7 +70,23 @@ class DisciplineViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDele
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: "ChangeSemester")
         
-        GetDisciplineData()
+        if let identy = appContext?.Identy {
+            
+            switch(identy){
+                
+            case .Admin:
+                GetDisciplineData(adminContract,service: admin_service)
+                
+            case .ClassTeacher:
+                GetDisciplineData(teacherContract,service: teacher_service)
+                
+            case .Parent:
+                GetDisciplineData(parentContract,service: parent_service)
+                
+            default:
+                print("identy not match")
+            }
+        }
     }
     
     func ChangeSemester(){
@@ -162,13 +162,13 @@ class DisciplineViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDele
         }
     }
     
-    func GetDisciplineData(){
+    func GetDisciplineData(contract:String,service:String){
         
         var retVal = [DisciplineItem]()
         
         if let id = appContext?.Id where !id.isEmpty{
             
-            appContext?.SendRequest(contract, srevice: "discipline.GetChildDiscipline", req: "<Request><RefStudentId>\(id)</RefStudentId></Request>", callback: { (response) -> () in
+            appContext?.SendRequest(contract, srevice: service, req: "<Request><RefStudentId>\(id)</RefStudentId></Request>", successCallback: { (response) -> () in
                 
                 let xml = try? AEXMLDocument(xmlData: response.dataValue)
                 
@@ -216,6 +216,9 @@ class DisciplineViewCtrl : ischoolViewCtrl,UITableViewDataSource,UITableViewDele
                     self.SetDataToTableView(self._Semesters[0])
                 }
                 
+                }, failureCallback: { (error) -> () in
+                    
+                    print(error)
             })
         }
     }

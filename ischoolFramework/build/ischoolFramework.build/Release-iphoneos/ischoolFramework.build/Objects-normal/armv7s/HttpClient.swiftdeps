@@ -1,0 +1,534 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "HttpClient"
+provides-nominal:
+- "C16ischoolFramework10HttpClient"
+- "CC16ischoolFramework10HttpClient19HttpRequestDelegate"
+provides-member:
+- ["C16ischoolFramework10HttpClient", ""]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", ""]
+provides-dynamic-lookup:
+- "connectionDidFinishLoading"
+- "connection"
+- "connection"
+- "connection"
+- "connection"
+depends-top-level:
+- "Set"
+- !private "StringLiteralType"
+- "NSObject"
+- "NSURLConnection"
+- "NSMutableData"
+- !private "NSURL"
+- "NSMutableURLRequest"
+- "Bool"
+- !private "NSURLResponse"
+- !private "NSUTF8StringEncoding"
+- "Void"
+- !private "=="
+- "NSURLAuthenticationChallenge"
+- !private "NSURLCredential"
+- "BooleanLiteralType"
+- "String"
+- !private "NSString"
+- "HttpClient"
+- !private "NSURLAuthenticationMethodServerTrust"
+- "NSURLProtectionSpace"
+- "NSData"
+- "NSError"
+- "NSURLConnectionDataDelegate"
+- !private "&&"
+depends-member:
+- !private ["PSs9AnyObject", "HTTPBody"]
+- !private ["PSs9AnyObject", "HTTPMethod"]
+- !private ["PSs9AnyObject", "HttpClient"]
+- !private ["PSs9AnyObject", "HttpRequestDelegate"]
+- !private ["PSs9AnyObject", "NSError"]
+- !private ["PSs9AnyObject", "NSMutableData"]
+- !private ["PSs9AnyObject", "NSMutableURLRequest"]
+- !private ["PSs9AnyObject", "NSString"]
+- !private ["PSs9AnyObject", "NSURL"]
+- !private ["PSs9AnyObject", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSs9AnyObject", "NSURLConnection"]
+- !private ["PSs9AnyObject", "NSURLCredential"]
+- !private ["PSs9AnyObject", "NSUTF8StringEncoding"]
+- !private ["PSs9AnyObject", "Post"]
+- !private ["PSs9AnyObject", "SendRequest"]
+- ["PSs9AnyObject", "Set"]
+- !private ["PSs9AnyObject", "TrustServerList"]
+- !private ["PSs9AnyObject", "URL"]
+- !private ["PSs9AnyObject", "addValue"]
+- !private ["PSs9AnyObject", "appendData"]
+- !private ["PSs9AnyObject", "authenticationMethod"]
+- ["PSs9AnyObject", "connection"]
+- ["PSs9AnyObject", "connectionDidFinishLoading"]
+- ["PSs9AnyObject", "connectionShouldUseCredentialStorage"]
+- !private ["PSs9AnyObject", "dataUsingEncoding"]
+- ["PSs9AnyObject", "error_callback"]
+- !private ["PSs9AnyObject", "host"]
+- ["PSs9AnyObject", "init"]
+- !private ["PSs9AnyObject", "protectionSpace"]
+- ["PSs9AnyObject", "response_data"]
+- !private ["PSs9AnyObject", "sendSynchronousRequest"]
+- !private ["PSs9AnyObject", "sender"]
+- !private ["PSs9AnyObject", "serverTrust"]
+- !private ["PSs9AnyObject", "start"]
+- ["PSs9AnyObject", "success_callback"]
+- ["PSs9AnyObject", "trust_list"]
+- ["PSs9AnyObject", ""]
+- !private ["PSs23ArrayLiteralConvertible", "Generator"]
+- !private ["PSs23ArrayLiteralConvertible", "contains"]
+- ["PSs23ArrayLiteralConvertible", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- !private ["PSs11CVarArgType", "HTTPBody"]
+- !private ["PSs11CVarArgType", "HTTPMethod"]
+- !private ["PSs11CVarArgType", "NSMutableData"]
+- !private ["PSs11CVarArgType", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSs11CVarArgType", "NSURLCredential"]
+- !private ["PSs11CVarArgType", "URL"]
+- !private ["PSs11CVarArgType", "addValue"]
+- !private ["PSs11CVarArgType", "appendData"]
+- !private ["PSs11CVarArgType", "authenticationMethod"]
+- ["PSs11CVarArgType", "connection"]
+- ["PSs11CVarArgType", "connectionDidFinishLoading"]
+- ["PSs11CVarArgType", "connectionShouldUseCredentialStorage"]
+- !private ["PSs11CVarArgType", "dataUsingEncoding"]
+- ["PSs11CVarArgType", "error_callback"]
+- !private ["PSs11CVarArgType", "host"]
+- ["PSs11CVarArgType", "init"]
+- !private ["PSs11CVarArgType", "protectionSpace"]
+- ["PSs11CVarArgType", "response_data"]
+- !private ["PSs11CVarArgType", "sendSynchronousRequest"]
+- !private ["PSs11CVarArgType", "sender"]
+- !private ["PSs11CVarArgType", "serverTrust"]
+- !private ["PSs11CVarArgType", "start"]
+- ["PSs11CVarArgType", "success_callback"]
+- ["PSs11CVarArgType", "trust_list"]
+- ["PSs11CVarArgType", ""]
+- !private ["PSs14CollectionType", "Generator"]
+- !private ["PSs14CollectionType", "contains"]
+- ["PSs14CollectionType", "init"]
+- !private ["PSs10Comparable", "dataUsingEncoding"]
+- !private ["PSs28CustomDebugStringConvertible", "Generator"]
+- ["PSs28CustomDebugStringConvertible", "Some"]
+- !private ["PSs28CustomDebugStringConvertible", "contains"]
+- !private ["PSs28CustomDebugStringConvertible", "dataUsingEncoding"]
+- ["PSs28CustomDebugStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "Generator"]
+- !private ["PSs23CustomStringConvertible", "HTTPBody"]
+- !private ["PSs23CustomStringConvertible", "HTTPMethod"]
+- !private ["PSs23CustomStringConvertible", "NSMutableData"]
+- !private ["PSs23CustomStringConvertible", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSs23CustomStringConvertible", "NSURLCredential"]
+- !private ["PSs23CustomStringConvertible", "URL"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "addValue"]
+- !private ["PSs23CustomStringConvertible", "appendData"]
+- !private ["PSs23CustomStringConvertible", "authenticationMethod"]
+- ["PSs23CustomStringConvertible", "connection"]
+- ["PSs23CustomStringConvertible", "connectionDidFinishLoading"]
+- ["PSs23CustomStringConvertible", "connectionShouldUseCredentialStorage"]
+- !private ["PSs23CustomStringConvertible", "contains"]
+- !private ["PSs23CustomStringConvertible", "dataUsingEncoding"]
+- ["PSs23CustomStringConvertible", "error_callback"]
+- !private ["PSs23CustomStringConvertible", "host"]
+- ["PSs23CustomStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "protectionSpace"]
+- ["PSs23CustomStringConvertible", "response_data"]
+- !private ["PSs23CustomStringConvertible", "sendSynchronousRequest"]
+- !private ["PSs23CustomStringConvertible", "sender"]
+- !private ["PSs23CustomStringConvertible", "serverTrust"]
+- !private ["PSs23CustomStringConvertible", "start"]
+- ["PSs23CustomStringConvertible", "success_callback"]
+- ["PSs23CustomStringConvertible", "trust_list"]
+- ["PSs23CustomStringConvertible", ""]
+- !private ["PSs9Equatable", "Generator"]
+- !private ["PSs9Equatable", "HTTPBody"]
+- !private ["PSs9Equatable", "HTTPMethod"]
+- !private ["PSs9Equatable", "NSMutableData"]
+- !private ["PSs9Equatable", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSs9Equatable", "NSURLCredential"]
+- !private ["PSs9Equatable", "URL"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "addValue"]
+- !private ["PSs9Equatable", "appendData"]
+- !private ["PSs9Equatable", "authenticationMethod"]
+- ["PSs9Equatable", "connection"]
+- ["PSs9Equatable", "connectionDidFinishLoading"]
+- ["PSs9Equatable", "connectionShouldUseCredentialStorage"]
+- !private ["PSs9Equatable", "contains"]
+- !private ["PSs9Equatable", "dataUsingEncoding"]
+- ["PSs9Equatable", "error_callback"]
+- !private ["PSs9Equatable", "host"]
+- ["PSs9Equatable", "init"]
+- !private ["PSs9Equatable", "protectionSpace"]
+- ["PSs9Equatable", "response_data"]
+- !private ["PSs9Equatable", "sendSynchronousRequest"]
+- !private ["PSs9Equatable", "sender"]
+- !private ["PSs9Equatable", "serverTrust"]
+- !private ["PSs9Equatable", "start"]
+- ["PSs9Equatable", "success_callback"]
+- ["PSs9Equatable", "trust_list"]
+- ["PSs9Equatable", ""]
+- !private ["PSs9ErrorType", "init"]
+- !private ["PSs41ExtendedGraphemeClusterLiteralConvertible", "dataUsingEncoding"]
+- !private ["PSs41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["PSs13GeneratorType", "Element"]
+- !private ["PSs8Hashable", "Generator"]
+- !private ["PSs8Hashable", "HTTPBody"]
+- !private ["PSs8Hashable", "HTTPMethod"]
+- !private ["PSs8Hashable", "NSMutableData"]
+- !private ["PSs8Hashable", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSs8Hashable", "NSURLCredential"]
+- !private ["PSs8Hashable", "URL"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "addValue"]
+- !private ["PSs8Hashable", "appendData"]
+- !private ["PSs8Hashable", "authenticationMethod"]
+- ["PSs8Hashable", "connection"]
+- ["PSs8Hashable", "connectionDidFinishLoading"]
+- ["PSs8Hashable", "connectionShouldUseCredentialStorage"]
+- !private ["PSs8Hashable", "contains"]
+- !private ["PSs8Hashable", "dataUsingEncoding"]
+- ["PSs8Hashable", "error_callback"]
+- !private ["PSs8Hashable", "host"]
+- ["PSs8Hashable", "init"]
+- !private ["PSs8Hashable", "protectionSpace"]
+- ["PSs8Hashable", "response_data"]
+- !private ["PSs8Hashable", "sendSynchronousRequest"]
+- !private ["PSs8Hashable", "sender"]
+- !private ["PSs8Hashable", "serverTrust"]
+- !private ["PSs8Hashable", "start"]
+- ["PSs8Hashable", "success_callback"]
+- ["PSs8Hashable", "trust_list"]
+- ["PSs8Hashable", ""]
+- ["C16ischoolFramework10HttpClient", "Bool"]
+- ["C16ischoolFramework10HttpClient", "Get"]
+- !private ["C16ischoolFramework10HttpClient", "HttpClient"]
+- ["C16ischoolFramework10HttpClient", "HttpRequestDelegate"]
+- ["C16ischoolFramework10HttpClient", "NSData"]
+- ["C16ischoolFramework10HttpClient", "NSError"]
+- ["C16ischoolFramework10HttpClient", "NSMutableData"]
+- ["C16ischoolFramework10HttpClient", "NSMutableURLRequest"]
+- ["C16ischoolFramework10HttpClient", "NSObject"]
+- !private ["C16ischoolFramework10HttpClient", "NSString"]
+- !private ["C16ischoolFramework10HttpClient", "NSURL"]
+- ["C16ischoolFramework10HttpClient", "NSURLAuthenticationChallenge"]
+- !private ["C16ischoolFramework10HttpClient", "NSURLAuthenticationMethodServerTrust"]
+- ["C16ischoolFramework10HttpClient", "NSURLConnection"]
+- ["C16ischoolFramework10HttpClient", "NSURLConnectionDataDelegate"]
+- !private ["C16ischoolFramework10HttpClient", "NSURLCredential"]
+- ["C16ischoolFramework10HttpClient", "NSURLProtectionSpace"]
+- !private ["C16ischoolFramework10HttpClient", "NSURLResponse"]
+- !private ["C16ischoolFramework10HttpClient", "NSUTF8StringEncoding"]
+- ["C16ischoolFramework10HttpClient", "Post"]
+- ["C16ischoolFramework10HttpClient", "Put"]
+- ["C16ischoolFramework10HttpClient", "SendRequest"]
+- ["C16ischoolFramework10HttpClient", "Set"]
+- ["C16ischoolFramework10HttpClient", "String"]
+- ["C16ischoolFramework10HttpClient", "TrustServerList"]
+- ["C16ischoolFramework10HttpClient", "Void"]
+- ["C16ischoolFramework10HttpClient", "deinit"]
+- ["C16ischoolFramework10HttpClient", "init"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "Bool"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "NSData"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "NSError"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "NSMutableData"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "NSURLAuthenticationChallenge"]
+- !private ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "NSURLAuthenticationMethodServerTrust"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "NSURLConnection"]
+- !private ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "NSURLCredential"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "NSURLProtectionSpace"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "Set"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "String"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "Void"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "connection"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "connectionDidFinishLoading"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "connectionShouldUseCredentialStorage"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "deinit"]
+- !private ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "error_callback"]
+- ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "init"]
+- !private ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "response_data"]
+- !private ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "success_callback"]
+- !private ["CC16ischoolFramework10HttpClient19HttpRequestDelegate", "trust_list"]
+- !private ["SQ", "deinit"]
+- !private ["PSs9Indexable", "Generator"]
+- !private ["PSs9Indexable", "contains"]
+- ["PSs9Indexable", "init"]
+- !private ["P16ischoolFramework17JSONSubscriptType", "dataUsingEncoding"]
+- !private ["PSs14MirrorPathType", "dataUsingEncoding"]
+- !private ["PSo8NSCoding", "HTTPBody"]
+- !private ["PSo8NSCoding", "HTTPMethod"]
+- !private ["PSo8NSCoding", "URL"]
+- !private ["PSo8NSCoding", "addValue"]
+- !private ["PSo8NSCoding", "appendData"]
+- !private ["PSo8NSCoding", "authenticationMethod"]
+- !private ["PSo8NSCoding", "dataUsingEncoding"]
+- !private ["PSo8NSCoding", "host"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "protectionSpace"]
+- !private ["PSo8NSCoding", "sender"]
+- !private ["PSo8NSCoding", "serverTrust"]
+- !private ["PSo9NSCopying", "HTTPBody"]
+- !private ["PSo9NSCopying", "HTTPMethod"]
+- !private ["PSo9NSCopying", "URL"]
+- !private ["PSo9NSCopying", "addValue"]
+- !private ["PSo9NSCopying", "appendData"]
+- !private ["PSo9NSCopying", "authenticationMethod"]
+- !private ["PSo9NSCopying", "dataUsingEncoding"]
+- !private ["PSo9NSCopying", "host"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "serverTrust"]
+- !private ["CSo6NSData", "appendData"]
+- !private ["CSo6NSData", "init"]
+- !private ["CSo7NSError", "init"]
+- !private ["PSo16NSMutableCopying", "HTTPBody"]
+- !private ["PSo16NSMutableCopying", "HTTPMethod"]
+- !private ["PSo16NSMutableCopying", "URL"]
+- !private ["PSo16NSMutableCopying", "addValue"]
+- !private ["PSo16NSMutableCopying", "appendData"]
+- !private ["PSo16NSMutableCopying", "dataUsingEncoding"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo13NSMutableData", "appendData"]
+- !private ["CSo13NSMutableData", "init"]
+- !private ["CSo19NSMutableURLRequest", "HTTPBody"]
+- !private ["CSo19NSMutableURLRequest", "HTTPMethod"]
+- !private ["CSo19NSMutableURLRequest", "URL"]
+- !private ["CSo19NSMutableURLRequest", "addValue"]
+- !private ["CSo19NSMutableURLRequest", "init"]
+- ["CSo8NSObject", "Bool"]
+- !private ["CSo8NSObject", "HTTPBody"]
+- !private ["CSo8NSObject", "HTTPMethod"]
+- ["CSo8NSObject", "NSData"]
+- ["CSo8NSObject", "NSError"]
+- ["CSo8NSObject", "NSMutableData"]
+- ["CSo8NSObject", "NSURLAuthenticationChallenge"]
+- !private ["CSo8NSObject", "NSURLAuthenticationMethodServerTrust"]
+- ["CSo8NSObject", "NSURLConnection"]
+- !private ["CSo8NSObject", "NSURLCredential"]
+- ["CSo8NSObject", "NSURLProtectionSpace"]
+- ["CSo8NSObject", "Set"]
+- ["CSo8NSObject", "String"]
+- !private ["CSo8NSObject", "URL"]
+- ["CSo8NSObject", "Void"]
+- !private ["CSo8NSObject", "addValue"]
+- !private ["CSo8NSObject", "appendData"]
+- !private ["CSo8NSObject", "authenticationMethod"]
+- ["CSo8NSObject", "connection"]
+- ["CSo8NSObject", "connectionDidFinishLoading"]
+- ["CSo8NSObject", "connectionShouldUseCredentialStorage"]
+- !private ["CSo8NSObject", "dataUsingEncoding"]
+- ["CSo8NSObject", "error_callback"]
+- !private ["CSo8NSObject", "host"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "protectionSpace"]
+- ["CSo8NSObject", "response_data"]
+- !private ["CSo8NSObject", "sendSynchronousRequest"]
+- !private ["CSo8NSObject", "sender"]
+- !private ["CSo8NSObject", "serverTrust"]
+- !private ["CSo8NSObject", "start"]
+- ["CSo8NSObject", "success_callback"]
+- ["CSo8NSObject", "trust_list"]
+- ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "HTTPBody"]
+- !private ["PSo16NSObjectProtocol", "HTTPMethod"]
+- !private ["PSo16NSObjectProtocol", "NSMutableData"]
+- !private ["PSo16NSObjectProtocol", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSo16NSObjectProtocol", "NSURLCredential"]
+- !private ["PSo16NSObjectProtocol", "URL"]
+- !private ["PSo16NSObjectProtocol", "addValue"]
+- !private ["PSo16NSObjectProtocol", "appendData"]
+- !private ["PSo16NSObjectProtocol", "authenticationMethod"]
+- ["PSo16NSObjectProtocol", "connection"]
+- ["PSo16NSObjectProtocol", "connectionDidFinishLoading"]
+- ["PSo16NSObjectProtocol", "connectionShouldUseCredentialStorage"]
+- !private ["PSo16NSObjectProtocol", "continueWithoutCredentialForAuthenticationChallenge"]
+- !private ["PSo16NSObjectProtocol", "dataUsingEncoding"]
+- ["PSo16NSObjectProtocol", "error_callback"]
+- !private ["PSo16NSObjectProtocol", "host"]
+- ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "protectionSpace"]
+- ["PSo16NSObjectProtocol", "response_data"]
+- !private ["PSo16NSObjectProtocol", "sendSynchronousRequest"]
+- !private ["PSo16NSObjectProtocol", "sender"]
+- !private ["PSo16NSObjectProtocol", "serverTrust"]
+- !private ["PSo16NSObjectProtocol", "start"]
+- ["PSo16NSObjectProtocol", "success_callback"]
+- ["PSo16NSObjectProtocol", "trust_list"]
+- !private ["PSo16NSObjectProtocol", "useCredential"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "HTTPBody"]
+- !private ["PSo14NSSecureCoding", "HTTPMethod"]
+- !private ["PSo14NSSecureCoding", "URL"]
+- !private ["PSo14NSSecureCoding", "addValue"]
+- !private ["PSo14NSSecureCoding", "appendData"]
+- !private ["PSo14NSSecureCoding", "authenticationMethod"]
+- !private ["PSo14NSSecureCoding", "dataUsingEncoding"]
+- !private ["PSo14NSSecureCoding", "host"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "protectionSpace"]
+- !private ["PSo14NSSecureCoding", "sender"]
+- !private ["PSo14NSSecureCoding", "serverTrust"]
+- !private ["CSo8NSString", "dataUsingEncoding"]
+- !private ["CSo8NSString", "deinit"]
+- !private ["CSo8NSString", "init"]
+- !private ["CSo5NSURL", "init"]
+- !private ["CSo28NSURLAuthenticationChallenge", "protectionSpace"]
+- !private ["CSo28NSURLAuthenticationChallenge", "sender"]
+- !private ["PSo34NSURLAuthenticationChallengeSender", "continueWithoutCredentialForAuthenticationChallenge"]
+- !private ["PSo34NSURLAuthenticationChallengeSender", "useCredential"]
+- !private ["CSo15NSURLConnection", "init"]
+- !private ["CSo15NSURLConnection", "sendSynchronousRequest"]
+- !private ["CSo15NSURLConnection", "start"]
+- !private ["PSo27NSURLConnectionDataDelegate", "NSMutableData"]
+- !private ["PSo27NSURLConnectionDataDelegate", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSo27NSURLConnectionDataDelegate", "NSURLCredential"]
+- ["PSo27NSURLConnectionDataDelegate", "connection"]
+- ["PSo27NSURLConnectionDataDelegate", "connectionDidFinishLoading"]
+- ["PSo27NSURLConnectionDataDelegate", "connectionShouldUseCredentialStorage"]
+- !private ["PSo27NSURLConnectionDataDelegate", "error_callback"]
+- !private ["PSo27NSURLConnectionDataDelegate", "init"]
+- !private ["PSo27NSURLConnectionDataDelegate", "response_data"]
+- !private ["PSo27NSURLConnectionDataDelegate", "success_callback"]
+- !private ["PSo27NSURLConnectionDataDelegate", "trust_list"]
+- ["PSo27NSURLConnectionDataDelegate", ""]
+- !private ["PSo23NSURLConnectionDelegate", "NSMutableData"]
+- !private ["PSo23NSURLConnectionDelegate", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSo23NSURLConnectionDelegate", "NSURLCredential"]
+- ["PSo23NSURLConnectionDelegate", "connection"]
+- ["PSo23NSURLConnectionDelegate", "connectionDidFinishLoading"]
+- ["PSo23NSURLConnectionDelegate", "connectionShouldUseCredentialStorage"]
+- !private ["PSo23NSURLConnectionDelegate", "error_callback"]
+- !private ["PSo23NSURLConnectionDelegate", "init"]
+- !private ["PSo23NSURLConnectionDelegate", "response_data"]
+- !private ["PSo23NSURLConnectionDelegate", "success_callback"]
+- !private ["PSo23NSURLConnectionDelegate", "trust_list"]
+- ["PSo23NSURLConnectionDelegate", ""]
+- !private ["CSo15NSURLCredential", "init"]
+- !private ["CSo20NSURLProtectionSpace", "authenticationMethod"]
+- !private ["CSo20NSURLProtectionSpace", "host"]
+- !private ["CSo20NSURLProtectionSpace", "serverTrust"]
+- !private ["CSo12NSURLRequest", "HTTPBody"]
+- !private ["CSo12NSURLRequest", "HTTPMethod"]
+- !private ["CSo12NSURLRequest", "URL"]
+- !private ["CSo12NSURLRequest", "addValue"]
+- !private ["CSo12NSURLRequest", "init"]
+- ["PSs21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
+- !private ["PSs16OutputStreamType", "dataUsingEncoding"]
+- !private ["PSs12SequenceType", "Generator"]
+- !private ["PSs12SequenceType", "contains"]
+- ["PSs12SequenceType", "init"]
+- !private ["VSs3Set", "Generator"]
+- !private ["VSs3Set", "contains"]
+- ["VSs3Set", "init"]
+- !private ["VSs12SetGenerator", "Element"]
+- !private ["VSs12StaticString", "deinit"]
+- !private ["PSs10Streamable", "dataUsingEncoding"]
+- !private ["SS", "dataUsingEncoding"]
+- !private ["PSs30StringInterpolationConvertible", "dataUsingEncoding"]
+- !private ["PSs24StringLiteralConvertible", "dataUsingEncoding"]
+- !private ["PSs24StringLiteralConvertible", "init"]
+- !private ["PSs31UnicodeScalarLiteralConvertible", "dataUsingEncoding"]
+- !private ["PSs31UnicodeScalarLiteralConvertible", "init"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible", "dataUsingEncoding"]
+- !private ["PSs32_BuiltinStringLiteralConvertible", "dataUsingEncoding"]
+- !private ["PSs37_BuiltinUTF16StringLiteralConvertible", "dataUsingEncoding"]
+- !private ["PSs39_BuiltinUnicodeScalarLiteralConvertible", "dataUsingEncoding"]
+- !private ["PSs16_CocoaStringType", "dataUsingEncoding"]
+- !private ["PSs16_CocoaStringType", "init"]
+- !private ["PSs32_FileReferenceLiteralConvertible", "init"]
+- !private ["PSs21_ObjectiveCBridgeable", "Generator"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "contains"]
+- !private ["PSs21_ObjectiveCBridgeable", "dataUsingEncoding"]
+- ["PSs21_ObjectiveCBridgeable", "init"]
+- !private ["PSs12_Reflectable", "Generator"]
+- ["PSs12_Reflectable", "Some"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["PSs12_Reflectable", "contains"]
+- !private ["PSs12_Reflectable", "dataUsingEncoding"]
+- ["PSs12_Reflectable", "init"]
+depends-nominal:
+- "PSs9AnyObject"
+- "PSs23ArrayLiteralConvertible"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- "PSs11CVarArgType"
+- "PSs14CollectionType"
+- !private "PSs10Comparable"
+- "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- "PSs9Equatable"
+- !private "PSs9ErrorType"
+- !private "PSs41ExtendedGraphemeClusterLiteralConvertible"
+- !private "PSs13GeneratorType"
+- "PSs8Hashable"
+- "C16ischoolFramework10HttpClient"
+- "CC16ischoolFramework10HttpClient19HttpRequestDelegate"
+- !private "SQ"
+- "PSs9Indexable"
+- !private "P16ischoolFramework17JSONSubscriptType"
+- !private "PSs14MirrorPathType"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo6NSData"
+- !private "CSo7NSError"
+- !private "PSo16NSMutableCopying"
+- !private "CSo13NSMutableData"
+- !private "CSo19NSMutableURLRequest"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "CSo5NSURL"
+- !private "CSo28NSURLAuthenticationChallenge"
+- !private "PSo34NSURLAuthenticationChallengeSender"
+- !private "CSo15NSURLConnection"
+- "PSo27NSURLConnectionDataDelegate"
+- "PSo23NSURLConnectionDelegate"
+- !private "CSo15NSURLCredential"
+- !private "CSo20NSURLProtectionSpace"
+- !private "CSo12NSURLRequest"
+- "PSs21NilLiteralConvertible"
+- "Sq"
+- !private "PSs16OutputStreamType"
+- "PSs12SequenceType"
+- "VSs3Set"
+- !private "VSs12SetGenerator"
+- !private "VSs12StaticString"
+- !private "PSs10Streamable"
+- !private "SS"
+- !private "PSs30StringInterpolationConvertible"
+- !private "PSs24StringLiteralConvertible"
+- !private "PSs31UnicodeScalarLiteralConvertible"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- !private "PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "PSs32_BuiltinStringLiteralConvertible"
+- !private "PSs37_BuiltinUTF16StringLiteralConvertible"
+- !private "PSs39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "PSs16_CocoaStringType"
+- !private "PSs32_FileReferenceLiteralConvertible"
+- "PSs21_ObjectiveCBridgeable"
+- "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/Swift.swiftmodule"
+- "/Users/cloud/Desktop/oneCampusMobileStarter/ischoolFramework/ischoolFramework/MMDrawerController/MMDrawerController.h"
+- "/Users/cloud/Desktop/oneCampusMobileStarter/ischoolFramework/ischoolFramework/ischoolFramework.h"
+- "/Users/cloud/Desktop/oneCampusMobileStarter/ischoolFramework/build/ischoolFramework.build/Release-iphoneos/ischoolFramework.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7s/CoreAudio.swiftmodule"
+interface-hash: "d08b5686278713dc94c09ff358b48020"

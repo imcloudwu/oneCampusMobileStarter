@@ -14,19 +14,17 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     var Resource : Resources!
     
-    var Children : [Student]!
+    //var Children : [Student]!
     
     var currentDsns : DsnsItem?
     
-    var currentChild : Student?
+    var currentStudent : ChosedStudent?
     
     var currentIdenty : IdentityType?
     
-    var currentAppContext : AppContext?
-    
     var currentFunctions : [ischoolProtocol]?
     
-    var identyTypes = [IdentityType.Admin,IdentityType.Teacher,IdentityType.Parent]
+    var identyTypes = [IdentityType.Admin,IdentityType.CourseTeacher,IdentityType.ClassTeacher,IdentityType.Parent]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -73,6 +71,10 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                 self.currentIdenty = type
                 
                 self.identyBtn.setTitle("\(type.rawValue)", forState: UIControlState.Normal)
+                
+                self.ResetDsns()
+                
+                Keychain.save("currentIdenty", data: type.rawValue.dataValue)
             }))
         }
         
@@ -93,31 +95,16 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                     
                     self.schoolBtn.setTitle(dsns.Name, forState: UIControlState.Normal)
                     
-                    self.childBtn.setTitle("請選擇學生", forState: UIControlState.Normal)
-                    
                     self.currentDsns = dsns
-                    
-                    self.currentChild = nil
-                    
-                    self.currentAppContext = nil
-                    
-                    //self.currentAppContext?.delegate?.DsnsChanged(dsns.AccessPoint)
-                    
-                    self.Children = GetMyChildren(self.Resource, dsns: dsns.AccessPoint)
                     
                     self.currentFunctions = self.GetFunctionByIDs(self.GetFunctionIDsBySchool(dsns.AccessPoint))
                     
                     self.tableView.reloadData()
                     
-                    let rightView = frameworkStoryboard.instantiateViewControllerWithIdentifier("RightViewCtrl")
+                    self.ResetStudent()
                     
-                    SlideView.ChangeContentView(rightView)
                 }))
             }
-        }
-        else{
-            
-            AddChildOption(menu)
         }
         
         self.presentViewController(menu, animated: true, completion: nil)
@@ -126,31 +113,34 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBAction func changeChild(sender: AnyObject) {
         
-        let menu = UIAlertController(title: "請選擇學生", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        menu.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
-        
-        if let children = Children{
+        if currentIdenty == IdentityType.Admin || currentIdenty == IdentityType.ClassTeacher || currentIdenty == IdentityType.CourseTeacher{
             
-            for child in children{
-                
-                menu.addAction(UIAlertAction(title: child.Name, style: UIAlertActionStyle.Default, handler: { (act) -> Void in
-                    
-                    self.childBtn.setTitle(child.Name, forState: UIControlState.Normal)
-                    
-                    self.currentAppContext?.delegate?.StudentIdChanged(child.ID)
-                    
-                    self.currentChild = child
-                    
-                    SlideView.ToggleSideMenu()
-                    
-                }))
-            }
+            let classViewCtrl = frameworkStoryboard.instantiateViewControllerWithIdentifier("ClassViewCtrl") as! ClassViewCtrl
+            
+            let choseStudent = ChosedStudent()
+            
+            self.currentStudent = choseStudent
+            
+            classViewCtrl.appContext = GetAppContext()
+            
+            classViewCtrl.chosedStudent = choseStudent
+            
+            SlideView.ChangeContentView(classViewCtrl)
         }
-        
-        AddChildOption(menu)
-        
-        self.presentViewController(menu, animated: true, completion: nil)
+        else if currentIdenty == IdentityType.Parent{
+            
+            let studentViewCtrl = frameworkStoryboard.instantiateViewControllerWithIdentifier("StudentViewCtrl") as! StudentViewCtrl
+            
+            let choseStudent = ChosedStudent()
+            
+            self.currentStudent = choseStudent
+            
+            studentViewCtrl.appContext = GetAppContext()
+            
+            studentViewCtrl.chosedStudent = choseStudent
+            
+            SlideView.ChangeContentView(studentViewCtrl)
+        }
     }
     
     func AddChildOption(menu:UIAlertController){
@@ -164,9 +154,9 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             
             self.currentDsns = nil
             
-            self.currentChild = nil
+            self.currentStudent = nil
             
-            self.Children = nil
+            //self.Children = nil
             
             let addView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AddChildMainViewCtrl") as! AddChildMainViewCtrl
             
@@ -197,6 +187,35 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         DsnsManager.Singleton.DsnsList = GetDsnsList(Resource.Connection.loginHelper.AccessToken)
 
         self.currentFunctions = [ischoolProtocol]()
+        
+        if let lastIdenty = Keychain.load("currentIdenty")?.stringValue{
+            
+            switch(lastIdenty){
+                
+            case IdentityType.Admin.rawValue:
+                self.currentIdenty = IdentityType.Admin
+                
+            case IdentityType.CourseTeacher.rawValue:
+                self.currentIdenty = IdentityType.CourseTeacher
+                
+            case IdentityType.ClassTeacher.rawValue:
+                self.currentIdenty = IdentityType.ClassTeacher
+                
+            default:
+                self.currentIdenty = IdentityType.Parent
+            }
+            
+            self.identyBtn.setTitle(self.currentIdenty?.rawValue, forState: UIControlState.Normal)
+        }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        if let name = currentStudent?.Name{
+            
+            childBtn.setTitle(name, forState: UIControlState.Normal)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -219,10 +238,10 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         if let count = self.currentFunctions?.count{
             
-            return count + 2
+            return count + 1
         }
         
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -236,19 +255,11 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             //cell?.selectionStyle = UITableViewCellSelectionStyle.None
         }
         
-        if let count = self.currentFunctions?.count where indexPath.row == count + 1{
+        if let count = self.currentFunctions?.count where indexPath.row == count{
             
             cell?.imageView?.image = UIImage(named: "Exit Filled-50.png", inBundle: frameworkBundle, compatibleWithTraitCollection: nil)?.GetResizeImage(30, height: 30)
             
             cell?.textLabel?.text = "登          出"
-            
-            return cell!
-        }
-        else if let count = self.currentFunctions?.count where indexPath.row == count{
-            
-            cell?.imageView?.image = UIImage(named: "Change User Filled-50.png", inBundle: frameworkBundle, compatibleWithTraitCollection: nil)?.GetResizeImage(30, height: 30)
-            
-            cell?.textLabel?.text = "身 份 切 換"
             
             return cell!
         }
@@ -264,44 +275,25 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
-        if let count = self.currentFunctions?.count where indexPath.row == count + 1{
+        if let count = self.currentFunctions?.count where indexPath.row == count {
             
             Logout()
-        }
-        else if let count = self.currentFunctions?.count where indexPath.row == count{
-            
-            ChangeIdenty()
         }
         else{
             
             let funcShell = self.currentFunctions?[indexPath.row]
             
-            let appContext = AppContext(identy: self.currentIdenty, dsns: currentDsns?.AccessPoint, id: currentChild?.ID, connectionManager: Resource.Connection)
-            
             let vc = funcShell?.GetViewController()
             
-            vc?.appContext = appContext
+            vc?.appContext = GetAppContext()
             
             let navtitle = funcShell?.Name
             
             vc?.navtitle = navtitle
             
-            self.currentAppContext = appContext
-            
             SlideView.ChangeContentView(vc!)
         }
         
-    }
-    
-    func ChangeIdenty(){
-        
-//        self.currentAppContext = nil
-//        
-//        let view = frameworkStoryboard.instantiateViewControllerWithIdentifier("IdentyViewCtrl") as! IdentyViewCtrl
-//        
-//        view.ParentIdentity = self.currentIdenty
-//        
-//        SlideView.ChangeContentView(view)
     }
     
     func GetFunctionIDsBySchool(dsns:String) -> [String]{
@@ -314,13 +306,34 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             
             return ["tw.ischool.AbsenceModule"]
         }
-        
-        //return [String]()
     }
     
     func GetFunctionByIDs(ids:[String]) -> [ischoolProtocol]{
         
         return Resource.Functions.GetFunctionsByIDs(ids)
+    }
+    
+    func GetAppContext() -> AppContext{
+        
+        let appContext = AppContext(identy: self.currentIdenty, dsns: currentDsns?.AccessPoint, id: currentStudent?.Id, data: currentStudent?.Data?.Clone(),connectionManager: Resource.Connection)
+        
+        return appContext
+    }
+    
+    func ResetDsns(){
+        
+        self.currentDsns = nil
+        
+        self.schoolBtn.setTitle("請選擇學校", forState: UIControlState.Normal)
+        
+        self.ResetStudent()
+    }
+    
+    func ResetStudent(){
+        
+        self.currentStudent = nil
+        
+        self.childBtn.setTitle("請選擇學生", forState: UIControlState.Normal)
     }
 
 }

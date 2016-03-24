@@ -1,0 +1,10 @@
+framework module AbsenceModule {
+  umbrella header "AbsenceModule.h"
+
+  export *
+  module * { export * }
+}
+
+module AbsenceModule.__Swift {
+    exclude header "AbsenceModule-Swift.h"
+}

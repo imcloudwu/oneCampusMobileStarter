@@ -28,7 +28,7 @@ public class AbsenceShell : ischoolProtocol{
     public var Scopes : [String]{
         
         get{
-            return ["1campus.mobile.parent"]
+            return [adminContract,teacherContract,parentContract]
         }
     }
     

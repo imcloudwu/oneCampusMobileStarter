@@ -1,0 +1,10 @@
+framework module ischoolFramework {
+  umbrella header "ischoolFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module ischoolFramework.Swift {
+    header "ischoolFramework-Swift.h"
+}
