@@ -4,15 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Aggregate.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ischoolFramework.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>610AE3301CA3C66000F4C8B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>610AE37B1CA3D97C00F4C8B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

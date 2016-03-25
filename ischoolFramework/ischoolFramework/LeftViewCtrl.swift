@@ -310,7 +310,9 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     func GetFunctionByIDs(ids:[String]) -> [ischoolProtocol]{
         
-        return Resource.Functions.GetFunctionsByIDs(ids)
+        //return Resource.Functions.GetFunctionsByIDs(ids)
+        
+        return Resource.Functions.GetAllFunctions()
     }
     
     func GetAppContext() -> AppContext{

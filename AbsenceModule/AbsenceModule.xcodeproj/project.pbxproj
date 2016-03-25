@@ -38,7 +38,6 @@
 		612A5A941C917282008EB69F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		612A5A961C9172C1008EB69F /* AbsenceViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsenceViewCtrl.swift; sourceTree = "<group>"; };
 		615D6D7C1CA383C400FBDFAE /* Vow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vow.swift; sourceTree = "<group>"; };
-		615D6D921CA3923300FBDFAE /* ischoolFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ischoolFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/oneCampusMobileStarter-bblkfmsujimdjfdasodikklqgkgl/Build/Products/Debug-iphoneos/ischoolFramework.framework"; sourceTree = "<group>"; };
 		61B094EE1C96A60F003DA549 /* Expired Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Expired Filled-50.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -64,7 +63,6 @@
 		612A5A631C9171E8008EB69F = {
 			isa = PBXGroup;
 			children = (
-				615D6D921CA3923300FBDFAE /* ischoolFramework.framework */,
 				612A5A6F1C9171E9008EB69F /* AbsenceModule */,
 				612A5A7B1C9171E9008EB69F /* AbsenceModuleTests */,
 				612A5A6E1C9171E9008EB69F /* Products */,
@@ -335,6 +333,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/..";
 				INFOPLIST_FILE = AbsenceModule/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -354,6 +353,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/..";
 				INFOPLIST_FILE = AbsenceModule/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

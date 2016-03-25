@@ -38,6 +38,11 @@ class FunctionPool{
         return functions
     }
     
+    func GetAllFunctions() -> [ischoolProtocol]{
+        
+        return _pool
+    }
+    
     func AddFunction(function:ischoolProtocol){
     
         _pool.append(function)

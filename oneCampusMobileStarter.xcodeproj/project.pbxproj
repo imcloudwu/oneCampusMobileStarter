@@ -12,8 +12,8 @@
 		6120081D1C9934420067E102 /* SemesterScoreModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 612008191C99343C0067E102 /* SemesterScoreModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		612A5A981C917361008EB69F /* AbsenceModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612A5A8D1C91720D008EB69F /* AbsenceModule.framework */; };
 		612A5A991C917361008EB69F /* AbsenceModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 612A5A8D1C91720D008EB69F /* AbsenceModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		616E2A431C8967FE00F94E20 /* ischoolFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616E2A3F1C8967F300F94E20 /* ischoolFramework.framework */; };
-		616E2A441C8967FE00F94E20 /* ischoolFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 616E2A3F1C8967F300F94E20 /* ischoolFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		616591761CA54797002AA803 /* ischoolFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616591731CA54791002AA803 /* ischoolFramework.framework */; };
+		616591771CA54797002AA803 /* ischoolFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 616591731CA54791002AA803 /* ischoolFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		618E60941C853F4200E38A36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E60931C853F4200E38A36 /* AppDelegate.swift */; };
 		618E60991C853F4200E38A36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618E60971C853F4200E38A36 /* Main.storyboard */; };
 		618E609B1C853F4200E38A36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618E609A1C853F4200E38A36 /* Assets.xcassets */; };
@@ -72,23 +72,23 @@
 			remoteGlobalIDString = 612A5A6C1C9171E9008EB69F;
 			remoteInfo = AbsenceModule;
 		};
-		616E2A3E1C8967F300F94E20 /* PBXContainerItemProxy */ = {
+		616591721CA54791002AA803 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 616E2A381C8967F300F94E20 /* ischoolFramework.xcodeproj */;
+			containerPortal = 6165916C1CA54791002AA803 /* ischoolFramework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 616E2A1E1C8967E000F94E20;
 			remoteInfo = ischoolFramework;
 		};
-		616E2A401C8967F300F94E20 /* PBXContainerItemProxy */ = {
+		616591741CA54791002AA803 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 616E2A381C8967F300F94E20 /* ischoolFramework.xcodeproj */;
+			containerPortal = 6165916C1CA54791002AA803 /* ischoolFramework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 616E2A281C8967E000F94E20;
 			remoteInfo = ischoolFrameworkTests;
 		};
-		616E2A451C8967FE00F94E20 /* PBXContainerItemProxy */ = {
+		616591781CA54797002AA803 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 616E2A381C8967F300F94E20 /* ischoolFramework.xcodeproj */;
+			containerPortal = 6165916C1CA54791002AA803 /* ischoolFramework.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 616E2A1D1C8967E000F94E20;
 			remoteInfo = ischoolFramework;
@@ -182,8 +182,8 @@
 				61B095211C96BCC0003DA549 /* DisciplineModule.framework in Embed Frameworks */,
 				61F08A541C8D7CC0007CDBDA /* SampleModule.framework in Embed Frameworks */,
 				612A5A991C917361008EB69F /* AbsenceModule.framework in Embed Frameworks */,
+				616591771CA54797002AA803 /* ischoolFramework.framework in Embed Frameworks */,
 				6120081D1C9934420067E102 /* SemesterScoreModule.framework in Embed Frameworks */,
-				616E2A441C8967FE00F94E20 /* ischoolFramework.framework in Embed Frameworks */,
 				619342341C97F0C400705476 /* ExamScoreModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -195,7 +195,7 @@
 		61098BD91C86E7E50059717F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		6120080E1C99343C0067E102 /* SemesterScoreModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SemesterScoreModule.xcodeproj; path = SemesterScoreModule/SemesterScoreModule.xcodeproj; sourceTree = "<group>"; };
 		612A5A871C91720D008EB69F /* AbsenceModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AbsenceModule.xcodeproj; path = AbsenceModule/AbsenceModule.xcodeproj; sourceTree = "<group>"; };
-		616E2A381C8967F300F94E20 /* ischoolFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ischoolFramework.xcodeproj; path = ischoolFramework/ischoolFramework.xcodeproj; sourceTree = "<group>"; };
+		6165916C1CA54791002AA803 /* ischoolFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ischoolFramework.xcodeproj; path = ischoolFramework/ischoolFramework.xcodeproj; sourceTree = "<group>"; };
 		618E60901C853F4200E38A36 /* oneCampusMobileStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oneCampusMobileStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618E60931C853F4200E38A36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		618E60981C853F4200E38A36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 				61B095201C96BCC0003DA549 /* DisciplineModule.framework in Frameworks */,
 				61F08A531C8D7CC0007CDBDA /* SampleModule.framework in Frameworks */,
 				612A5A981C917361008EB69F /* AbsenceModule.framework in Frameworks */,
+				616591761CA54797002AA803 /* ischoolFramework.framework in Frameworks */,
 				6120081C1C9934420067E102 /* SemesterScoreModule.framework in Frameworks */,
-				616E2A431C8967FE00F94E20 /* ischoolFramework.framework in Frameworks */,
 				619342331C97F0C400705476 /* ExamScoreModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,11 +264,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		616E2A391C8967F300F94E20 /* Products */ = {
+		6165916D1CA54791002AA803 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				616E2A3F1C8967F300F94E20 /* ischoolFramework.framework */,
-				616E2A411C8967F300F94E20 /* ischoolFrameworkTests.xctest */,
+				616591731CA54791002AA803 /* ischoolFramework.framework */,
+				616591751CA54791002AA803 /* ischoolFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,12 +276,12 @@
 		618E60871C853F4200E38A36 = {
 			isa = PBXGroup;
 			children = (
+				6165916C1CA54791002AA803 /* ischoolFramework.xcodeproj */,
 				6120080E1C99343C0067E102 /* SemesterScoreModule.xcodeproj */,
 				619342261C97F0B800705476 /* ExamScoreModule.xcodeproj */,
 				61B095141C96BC7D003DA549 /* DisciplineModule.xcodeproj */,
 				612A5A871C91720D008EB69F /* AbsenceModule.xcodeproj */,
 				61F08A431C8D7BDB007CDBDA /* SampleModule.xcodeproj */,
-				616E2A381C8967F300F94E20 /* ischoolFramework.xcodeproj */,
 				618E60921C853F4200E38A36 /* oneCampusMobileStarter */,
 				618E60A71C853F4200E38A36 /* oneCampusMobileStarterTests */,
 				618E60B21C853F4200E38A36 /* oneCampusMobileStarterUITests */,
@@ -374,12 +374,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				616E2A461C8967FE00F94E20 /* PBXTargetDependency */,
 				61F08A561C8D7CC0007CDBDA /* PBXTargetDependency */,
 				612A5A9B1C917362008EB69F /* PBXTargetDependency */,
 				61B095231C96BCC0003DA549 /* PBXTargetDependency */,
 				619342361C97F0C400705476 /* PBXTargetDependency */,
 				6120081F1C9934420067E102 /* PBXTargetDependency */,
+				616591791CA54797002AA803 /* PBXTargetDependency */,
 			);
 			name = oneCampusMobileStarter;
 			productName = oneCampusMobileStarter;
@@ -471,8 +471,8 @@
 					ProjectRef = 619342261C97F0B800705476 /* ExamScoreModule.xcodeproj */;
 				},
 				{
-					ProductGroup = 616E2A391C8967F300F94E20 /* Products */;
-					ProjectRef = 616E2A381C8967F300F94E20 /* ischoolFramework.xcodeproj */;
+					ProductGroup = 6165916D1CA54791002AA803 /* Products */;
+					ProjectRef = 6165916C1CA54791002AA803 /* ischoolFramework.xcodeproj */;
 				},
 				{
 					ProductGroup = 61F08A441C8D7BDB007CDBDA /* Products */;
@@ -521,18 +521,18 @@
 			remoteRef = 612A5A8E1C91720D008EB69F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		616E2A3F1C8967F300F94E20 /* ischoolFramework.framework */ = {
+		616591731CA54791002AA803 /* ischoolFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ischoolFramework.framework;
-			remoteRef = 616E2A3E1C8967F300F94E20 /* PBXContainerItemProxy */;
+			remoteRef = 616591721CA54791002AA803 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		616E2A411C8967F300F94E20 /* ischoolFrameworkTests.xctest */ = {
+		616591751CA54791002AA803 /* ischoolFrameworkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ischoolFrameworkTests.xctest;
-			remoteRef = 616E2A401C8967F300F94E20 /* PBXContainerItemProxy */;
+			remoteRef = 616591741CA54791002AA803 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6193422E1C97F0B800705476 /* ExamScoreModule.framework */ = {
@@ -646,10 +646,10 @@
 			name = AbsenceModule;
 			targetProxy = 612A5A9A1C917362008EB69F /* PBXContainerItemProxy */;
 		};
-		616E2A461C8967FE00F94E20 /* PBXTargetDependency */ = {
+		616591791CA54797002AA803 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ischoolFramework;
-			targetProxy = 616E2A451C8967FE00F94E20 /* PBXContainerItemProxy */;
+			targetProxy = 616591781CA54797002AA803 /* PBXContainerItemProxy */;
 		};
 		618E60A61C853F4200E38A36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -786,6 +786,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = oneCampusMobileStarter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -803,6 +807,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = oneCampusMobileStarter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
