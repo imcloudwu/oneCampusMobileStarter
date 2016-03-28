@@ -18,6 +18,10 @@ class ClassViewCtrl: ischoolViewCtrl,UITableViewDelegate,UITableViewDataSource,U
     
     var firstTime = true
     
+    var afterSelected : (() -> ())?
+    
+    var Resource : Resources?
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -295,6 +299,10 @@ class ClassViewCtrl: ischoolViewCtrl,UITableViewDelegate,UITableViewDataSource,U
             nextView.ClassData = data
             
             nextView.chosedStudent = self.chosedStudent
+            
+            nextView.afterSelected = self.afterSelected
+            
+            nextView.Resource = self.Resource
             
             self.navigationController?.pushViewController(nextView, animated: true)
         }

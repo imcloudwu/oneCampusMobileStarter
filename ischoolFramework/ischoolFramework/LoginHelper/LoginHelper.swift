@@ -173,7 +173,7 @@ public class LoginHelper{
         
         self.refreshToken = nil
         
-        Keychain.delete(saveKey)
+        Keychain.clear()
     }
     
 }

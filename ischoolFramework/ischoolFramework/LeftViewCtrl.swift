@@ -26,6 +26,10 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     var identyTypes = [IdentityType.Admin,IdentityType.CourseTeacher,IdentityType.ClassTeacher,IdentityType.Parent]
     
+    var lastSelected : NSIndexPath?
+    
+    var currentAppContext : AppContext?
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var icon: UIImageView!
@@ -68,6 +72,8 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             
             menu.addAction(UIAlertAction(title: "\(type.rawValue)", style: UIAlertActionStyle.Default, handler: { (act) -> Void in
                 
+                self.currentAppContext?.Identy = type
+                
                 self.currentIdenty = type
                 
                 self.identyBtn.setTitle("\(type.rawValue)", forState: UIControlState.Normal)
@@ -93,6 +99,8 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                 
                 menu.addAction(UIAlertAction(title: dsns.Name, style: UIAlertActionStyle.Default, handler: { (act) -> Void in
                     
+                    self.currentAppContext?.Dsns = dsns.AccessPoint
+                    
                     self.schoolBtn.setTitle(dsns.Name, forState: UIControlState.Normal)
                     
                     self.currentDsns = dsns
@@ -105,6 +113,29 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                     
                 }))
             }
+        }
+        
+        if currentIdenty == IdentityType.ClassTeacher || currentIdenty == IdentityType.CourseTeacher{
+            
+            menu.addAction(UIAlertAction(title: "新 增 班 級", style: UIAlertActionStyle.Destructive, handler: { (act) -> Void in
+                
+                let nextView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AsTeacherViewCtrl") as! AsTeacherViewCtrl
+                
+                nextView.Resource = self.Resource
+                
+                SlideView.ChangeContentView(nextView)
+            }))
+        }
+        else if currentIdenty == IdentityType.Parent{
+            
+            menu.addAction(UIAlertAction(title: "加 入 小 孩", style: UIAlertActionStyle.Destructive, handler: { (act) -> Void in
+                
+                let nextView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AddChildMainViewCtrl") as! AddChildMainViewCtrl
+                
+                nextView.Resource = self.Resource
+                
+                SlideView.ChangeContentView(nextView)
+            }))
         }
         
         self.presentViewController(menu, animated: true, completion: nil)
@@ -125,6 +156,10 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             
             classViewCtrl.chosedStudent = choseStudent
             
+            classViewCtrl.afterSelected = SelectedFunction
+            
+            classViewCtrl.Resource = self.Resource
+            
             SlideView.ChangeContentView(classViewCtrl)
         }
         else if currentIdenty == IdentityType.Parent{
@@ -139,31 +174,12 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             
             studentViewCtrl.chosedStudent = choseStudent
             
+            studentViewCtrl.afterSelected = SelectedFunction
+            
+            studentViewCtrl.Resource = self.Resource
+            
             SlideView.ChangeContentView(studentViewCtrl)
         }
-    }
-    
-    func AddChildOption(menu:UIAlertController){
-    
-        //加入小孩
-        menu.addAction(UIAlertAction(title: "加 入 小 孩", style: UIAlertActionStyle.Destructive, handler: { (act) -> Void in
-            
-            self.schoolBtn.setTitle("請選擇學校", forState: UIControlState.Normal)
-            
-            self.childBtn.setTitle("請選擇小孩", forState: UIControlState.Normal)
-            
-            self.currentDsns = nil
-            
-            self.currentStudent = nil
-            
-            //self.Children = nil
-            
-            let addView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AddChildMainViewCtrl") as! AddChildMainViewCtrl
-            
-            addView.Resource = self.Resource
-            
-            SlideView.ChangeContentView(addView)
-        }))
     }
     
     override func viewDidLoad() {
@@ -281,7 +297,18 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         }
         else{
             
-            let funcShell = self.currentFunctions?[indexPath.row]
+            lastSelected = indexPath
+            
+            SelectedFunction()
+        }
+        
+    }
+    
+    func SelectedFunction(){
+        
+        if let index = lastSelected{
+            
+            let funcShell = self.currentFunctions?[index.row]
             
             let vc = funcShell?.GetViewController()
             
@@ -293,7 +320,10 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
             
             SlideView.ChangeContentView(vc!)
         }
-        
+        else{
+            
+            SlideView.ToggleSideMenu()
+        }
     }
     
     func GetFunctionIDsBySchool(dsns:String) -> [String]{
@@ -319,10 +349,14 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         let appContext = AppContext(identy: self.currentIdenty, dsns: currentDsns?.AccessPoint, id: currentStudent?.Id, data: currentStudent?.Data?.Clone(),connectionManager: Resource.Connection)
         
+        self.currentAppContext = appContext
+        
         return appContext
     }
     
     func ResetDsns(){
+        
+        self.currentAppContext?.Dsns = nil
         
         self.currentDsns = nil
         
@@ -332,6 +366,8 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
     }
     
     func ResetStudent(){
+        
+        self.currentAppContext?.Id = nil
         
         self.currentStudent = nil
         

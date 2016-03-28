@@ -1,25 +1,22 @@
 //
-//  KeyinByCodeViewCtrl.swift
-//  ischoolFramework
+//  AsTeacherViewCtrl.swift
+//  oneAdminTeacher
 //
-//  Created by Cloud on 2016/3/17.
+//  Created by Cloud on 2016/1/28.
 //  Copyright © 2016年 ischool. All rights reserved.
 //
 
 import UIKit
 
-class KeyinByCodeViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDelegate,UIWebViewDelegate {
+class AsTeacherViewCtrl: ischoolViewCtrl,UITextFieldDelegate,UIWebViewDelegate {
     
-    @IBOutlet weak var selectSchoolBtn: UIButton!
-    
-    @IBOutlet weak var code: UITextField!
-    @IBOutlet weak var relationship: UITextField!
-    
-    @IBOutlet weak var submitBtn: UIButton!
+    var Resource : Resources!
     
     var _DsnsItem : DsnsItem!
     
-    var Resource : Resources!
+    @IBOutlet weak var selectSchoolBtn: UIButton!
+    
+    @IBOutlet weak var codeTextField: UITextField!
     
     @IBAction func selectSchoolBtnClick(sender: AnyObject) {
         
@@ -30,30 +27,20 @@ class KeyinByCodeViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDeleg
         self.navigationController?.pushViewController(nextView, animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        submitBtn.layer.masksToBounds = true
-        submitBtn.layer.cornerRadius = 5
-        
-        code.delegate = self
-        relationship.delegate = self
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
     override func viewWillAppear(animated: Bool) {
         
+        codeTextField.delegate = self
+        
+        self.navigationItem.title = "新 增 班 級"
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
         if _DsnsItem == nil{
-            _DsnsItem = DsnsItem(name: "", accessPoint: "")
+            _DsnsItem = DsnsItem(name: "選擇學校", accessPoint: "")
         }
         
-        if _DsnsItem.AccessPoint.isEmpty{
-            self.selectSchoolBtn.setTitle("選擇學校", forState: UIControlState.Normal)
-        }
-        else{
-            self.selectSchoolBtn.setTitle(_DsnsItem.Name, forState: UIControlState.Normal)
-        }
+        selectSchoolBtn.setTitle(_DsnsItem.Name, forState: UIControlState.Normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,26 +59,19 @@ class KeyinByCodeViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDeleg
         self.view.endEditing(true)
     }
     
-    @IBAction func submit(sender: AnyObject) {
+    @IBAction func Submit(sender: AnyObject) {
         
-        let serverName = self._DsnsItem.AccessPoint
-        
-        if serverName.isEmpty{
+        if self._DsnsItem.AccessPoint.isEmpty{
             ShowErrorAlert(self, title: "請選擇學校", msg: "")
             return
         }
         
-        if code.text!.isEmpty{
-            ShowErrorAlert(self, title: "家長代碼必須填寫", msg: "")
+        if let code = self.codeTextField.text where code.isEmpty{
+            ShowErrorAlert(self, title: "請輸入教師代碼", msg: "")
             return
         }
         
-        if relationship.text!.isEmpty{
-            ShowErrorAlert(self, title: "親子關係必須填寫", msg: "")
-            return
-        }
-        
-        AddApplicationRef(serverName)
+        AddApplicationRef(self._DsnsItem.AccessPoint)
     }
     
     func AddApplicationRef(server:String){
@@ -106,23 +86,23 @@ class KeyinByCodeViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDeleg
             
             Resource.Connection.loginHelper.TryToChangeScope(self, after: { () -> Void in
                 
-                self.JoinAsParent()
+                self.JoinAsTeacher()
             })
         }
         else{
             
-            JoinAsParent()
+            JoinAsTeacher()
         }
     }
     
-    func JoinAsParent(){
+    func JoinAsTeacher(){
         
-        if let code = self.code.text, let relationship = self.relationship.text{
+        if let code = self.codeTextField.text{
             
             var rsp : String
             
             do{
-                rsp = try Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "auth.guest", service: "Join.AsParent", body: "<Request><ParentCode>\(code)</ParentCode><Relationship>\(relationship)</Relationship></Request>")
+                rsp = try Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "auth.guest", service: "Join.AsTeacher", body: "<Request><TeacherCode>\(code)</TeacherCode></Request>")
             }
             catch ConnectionError.connectError(let reason){
                 ShowErrorAlert(self, title: "加入失敗", msg: reason)
@@ -141,7 +121,7 @@ class KeyinByCodeViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDeleg
                 xml = nil
             }
             
-            if let msg = xml?.root["Success"].stringValue where msg.isEmpty{
+            if let id = xml?.root["Response"]["RefID"].stringValue where !id.isEmpty{
                 
                 let alert = UIAlertController(title: "加入成功", message: "", preferredStyle: UIAlertControllerStyle.Alert)
                 
@@ -151,7 +131,6 @@ class KeyinByCodeViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDeleg
                 }))
                 
                 self.presentViewController(alert, animated: true, completion: nil)
-                
             }
             else{
                 ShowErrorAlert(self, title: "加入失敗", msg: "發生不明的錯誤,請回報給開發人員")
@@ -159,4 +138,6 @@ class KeyinByCodeViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDeleg
         }
         
     }
+    
 }
+

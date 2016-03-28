@@ -20,6 +20,12 @@ class StudentViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     var chosedStudent : ChosedStudent?
     
+    var afterSelected : (() -> ())?
+    
+    var Resource : Resources?
+    
+    @IBOutlet weak var btnHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var _studentData = [Student]()
@@ -32,6 +38,8 @@ class StudentViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSourc
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        btnHeight.constant = 0
         
         if let identy = appContext?.Identy{
             
@@ -48,14 +56,17 @@ class StudentViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSourc
                 
             default:
                 
+                btnHeight.constant = 44.0
+                
                 let img = UIImage(named: "Menu-24.png", inBundle: frameworkBundle, compatibleWithTraitCollection: nil)
                 
                 self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.Plain, target: self, action: "ToggleSideMenu")
-
+                
                 GetMyChildren()
                 
             }
         }
+
     }
     
     func ToggleSideMenu(){
@@ -102,9 +113,9 @@ class StudentViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSourc
         
         chosedStudent?.Data = student
         
-        Toaster.ToastMessage(self.view, msg: "已選擇了 \(student.Name)", time: 0.5) { () -> () in
+        Toaster.ToastMessage(self.view, msg: "已選擇了 \(student.Name)", time: 1) { () -> () in
             
-            self.ToggleSideMenu()
+            self.afterSelected?()
         }
     }
     
@@ -299,5 +310,14 @@ class StudentViewCtrl: UIViewController,UITableViewDelegate,UITableViewDataSourc
             })
         }
         
+    }
+    
+    @IBAction func AddChildBtnClick(sender: AnyObject) {
+        
+        let addView = frameworkStoryboard.instantiateViewControllerWithIdentifier("AddChildMainViewCtrl") as! AddChildMainViewCtrl
+        
+        addView.Resource = self.Resource
+        
+        SlideView.ChangeContentView(addView)
     }
 }

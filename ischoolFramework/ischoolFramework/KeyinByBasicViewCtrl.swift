@@ -130,16 +130,23 @@ class KeyinByBasicViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDele
         
         if let relationship = self.relationship.text, let idNumber = self.idNumber.text, let studentNumber = self.studentNumber.text{
             
-            let rsp1 = try? Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "1campus.mobile.guest", service: "_.ConfirmMyChild", body: "<Request><StudentIdNumber>\(idNumber)</StudentIdNumber><StudentNumber>\(studentNumber)</StudentNumber></Request>")
+            var rsp1 : String
             
-            if rsp1 == nil{
-                ShowErrorAlert(self, title: "該校查詢不到此學生資料,無法加入", msg: "")
+            do{
+                rsp1 = try Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "1campus.mobile.guest", service: "_.ConfirmMyChild", body: "<Request><StudentIdNumber>\(idNumber)</StudentIdNumber><StudentNumber>\(studentNumber)</StudentNumber></Request>")
+            }
+            catch ConnectionError.connectError(let reason){
+                ShowErrorAlert(self, title: "該校查詢不到此學生資料,無法加入", msg: reason)
+                return
+            }
+            catch{
+                ShowErrorAlert(self, title: "該校查詢不到此學生資料,無法加入", msg: "發生不明的錯誤,請回報給開發人員")
                 return
             }
             
             var xml: AEXMLDocument?
             do {
-                xml = try AEXMLDocument(xmlData: rsp1!.dataValue)
+                xml = try AEXMLDocument(xmlData: rsp1.dataValue)
             } catch _ {
                 xml = nil
             }
@@ -162,9 +169,16 @@ class KeyinByBasicViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDele
                 confirm.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
                 confirm.addAction(UIAlertAction(title: "確認", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
                     
-                    let rsp2 = try? self.Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "1campus.mobile.guest", service: "_.JoinAsParent", body: "<Request><StudentId>\(Id)</StudentId><Relationship>\(relationship)</Relationship></Request>")
+                    var rsp2 : String
                     
-                    if rsp2 == nil{
+                    do{
+                        rsp2 = try self.Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "1campus.mobile.guest", service: "_.JoinAsParent", body: "<Request><StudentId>\(Id)</StudentId><Relationship>\(relationship)</Relationship></Request>")
+                    }
+                    catch ConnectionError.connectError(let reason){
+                        ShowErrorAlert(self, title: "加入失敗", msg: reason)
+                        return
+                    }
+                    catch{
                         ShowErrorAlert(self, title: "加入失敗", msg: "發生不明的錯誤,請回報給開發人員")
                         return
                     }
@@ -172,7 +186,7 @@ class KeyinByBasicViewCtrl: UIViewController,UIAlertViewDelegate,UITextFieldDele
                     var xml: AEXMLDocument?
                     
                     do {
-                        xml = try AEXMLDocument(xmlData: rsp2!.dataValue)
+                        xml = try AEXMLDocument(xmlData: rsp2.dataValue)
                     } catch _ {
                         xml = nil
                     }

@@ -41,6 +41,7 @@
 		615FBE501C9A5606002B1A38 /* Key-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4D1C9A5606002B1A38 /* Key-50.png */; };
 		615FBE511C9A5606002B1A38 /* Keyboard-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4E1C9A5606002B1A38 /* Keyboard-50.png */; };
 		615FBE521C9A5606002B1A38 /* QR Code Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 615FBE4F1C9A5606002B1A38 /* QR Code Filled-50.png */; };
+		6169F44A1CA92E510008E6F3 /* AsTeacherViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6169F4491CA92E510008E6F3 /* AsTeacherViewCtrl.swift */; };
 		616E2A221C8967E000F94E20 /* ischoolFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 616E2A211C8967E000F94E20 /* ischoolFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		616E2A291C8967E000F94E20 /* ischoolFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616E2A1E1C8967E000F94E20 /* ischoolFramework.framework */; };
 		616E2A2E1C8967E000F94E20 /* ischoolFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E2A2D1C8967E000F94E20 /* ischoolFrameworkTests.swift */; };
@@ -108,6 +109,7 @@
 		615FBE4D1C9A5606002B1A38 /* Key-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Key-50.png"; sourceTree = "<group>"; };
 		615FBE4E1C9A5606002B1A38 /* Keyboard-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Keyboard-50.png"; sourceTree = "<group>"; };
 		615FBE4F1C9A5606002B1A38 /* QR Code Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QR Code Filled-50.png"; sourceTree = "<group>"; };
+		6169F4491CA92E510008E6F3 /* AsTeacherViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsTeacherViewCtrl.swift; sourceTree = "<group>"; };
 		616E2A1E1C8967E000F94E20 /* ischoolFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ischoolFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		616E2A211C8967E000F94E20 /* ischoolFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ischoolFramework.h; sourceTree = "<group>"; };
 		616E2A231C8967E000F94E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				61B3A3891CA11E8100350874 /* ClassViewCtrl.swift */,
 				61B3A38B1CA142E700350874 /* StudentViewCtrl.swift */,
 				615F1D8E1CA25E190033F992 /* Toaster.swift */,
+				6169F4491CA92E510008E6F3 /* AsTeacherViewCtrl.swift */,
 			);
 			path = ischoolFramework;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				61B3A38A1CA11E8100350874 /* ClassViewCtrl.swift in Sources */,
 				61B3A38C1CA142E700350874 /* StudentViewCtrl.swift in Sources */,
 				61959F7C1C89880B00F4DB8B /* MMDrawerBarButtonItem.m in Sources */,
+				6169F44A1CA92E510008E6F3 /* AsTeacherViewCtrl.swift in Sources */,
 				616E2A511C89681300F94E20 /* SwiftyJSON.swift in Sources */,
 				615789F81C900FB300C2710B /* AppContext.swift in Sources */,
 				61F08A1E1C8D73C9007CDBDA /* FunctionPool.swift in Sources */,
@@ -653,6 +657,7 @@
 				610AE37D1CA3D97C00F4C8B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		616E2A181C8967DF00F94E20 /* Build configuration list for PBXProject "ischoolFramework" */ = {
 			isa = XCConfigurationList;

@@ -135,9 +135,16 @@ class ScanCodeViewCtrl: UIViewController,AVCaptureMetadataOutputObjectsDelegate 
     
     func JoinAsParent(){
         
-        let rsp = try? Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "auth.guest", service: "Join.AsParent", body: "<Request><ParentCode>\(_Code)</ParentCode><Relationship>iOS Parent</Relationship></Request>")
+        var rsp : String
         
-        if rsp == nil{
+        do{
+            rsp = try Resource.Connection.SendRequest(self._DsnsItem.AccessPoint, contract: "auth.guest", service: "Join.AsParent", body: "<Request><ParentCode>\(_Code)</ParentCode><Relationship>iOS Parent</Relationship></Request>")
+        }
+        catch ConnectionError.connectError(let reason){
+            ShowErrorAlert(self, title: "加入失敗", msg: reason)
+            return
+        }
+        catch{
             ShowErrorAlert(self, title: "加入失敗", msg: "發生不明的錯誤,請回報給開發人員")
             return
         }
@@ -145,7 +152,7 @@ class ScanCodeViewCtrl: UIViewController,AVCaptureMetadataOutputObjectsDelegate 
         let xml: AEXMLDocument?
         
         do {
-            xml = try AEXMLDocument(xmlData: rsp!.dataValue)
+            xml = try AEXMLDocument(xmlData: rsp.dataValue)
         } catch _ {
             xml = nil
         }
