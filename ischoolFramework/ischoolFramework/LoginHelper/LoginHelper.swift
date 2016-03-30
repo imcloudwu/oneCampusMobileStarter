@@ -10,7 +10,7 @@ import Foundation
 
 public class LoginHelper{
     
-    let saveKey = "refreshToken"
+    let saveKey = Keychain.Key.RefreshToken.rawValue
     
     var accountInfo : AccountInfo
     
@@ -121,7 +121,7 @@ public class LoginHelper{
         }
     }
     
-    public func GetAccessTokenAndRefreshToken(code:String){
+    func GetAccessTokenAndRefreshToken(code:String){
         
         dispatch_sync(lockQueue) {
             
@@ -140,7 +140,7 @@ public class LoginHelper{
         }
     }
     
-    public func RenewRefreshToken(refreshToken:String){
+    func RenewRefreshToken(refreshToken:String){
         
         dispatch_sync(lockQueue) {
             
@@ -163,7 +163,7 @@ public class LoginHelper{
         
         if let rftoken = self.refreshToken{
             
-            Keychain.save(saveKey, data: rftoken.dataValue)
+            Keychain.mainSave(saveKey, data: rftoken.dataValue)
         }
     }
     

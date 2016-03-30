@@ -14,7 +14,24 @@ public class Keychain {
     private var service = ""
     private var group = ""
     
-    public class func save(key: String, data: NSData) -> Bool {
+    private static var notAllowKey = [Key.RefreshToken.rawValue,Key.CurrentIdenty.rawValue]
+    
+    enum Key : String{
+        
+        case RefreshToken = "refreshToken"
+        case CurrentIdenty = "currentIdenty"
+    }
+    
+    public class func save(key: String, data: NSData) -> Bool{
+        
+        if notAllowKey.contains(key){
+            return false
+        }
+        
+        return mainSave(key, data: data)
+    }
+    
+    class func mainSave(key: String, data: NSData) -> Bool {
         let query = [
             kSecClassValue : kSecClassGenericPasswordValue,
             kSecAttrAccountValue : key,
@@ -56,7 +73,16 @@ public class Keychain {
         }
     }
     
-    public class func delete(key: String) -> Bool {
+    public class func delete(key: String) -> Bool{
+        
+        if notAllowKey.contains(key){
+            return false
+        }
+        
+        return mainDelete(key)
+    }
+    
+    class func mainDelete(key: String) -> Bool {
         let query = [
             kSecClassValue       : kSecClassGenericPasswordValue,
             kSecAttrAccountValue : key ]
@@ -67,7 +93,7 @@ public class Keychain {
     }
     
     
-    public class func clear() -> Bool {
+    class func clear() -> Bool {
         let query = [ kSecClassValue : kSecClassGenericPasswordValue ]
         
         let status: OSStatus = SecItemDelete(query as CFDictionaryRef)

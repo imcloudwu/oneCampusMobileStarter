@@ -27,7 +27,6 @@ class SampleViewController: ischoolViewCtrl {
         label.text = "hello SampleViewController"
         
         LoadData()
-        
     }
     
     func LoadData(){

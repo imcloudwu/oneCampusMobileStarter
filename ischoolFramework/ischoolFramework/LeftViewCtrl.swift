@@ -80,7 +80,7 @@ class LeftViewCtrl : UIViewController,UITableViewDelegate,UITableViewDataSource{
                 
                 self.ResetDsns()
                 
-                Keychain.save("currentIdenty", data: type.rawValue.dataValue)
+                Keychain.mainSave(Keychain.Key.CurrentIdenty.rawValue, data: type.rawValue.dataValue)
             }))
         }
         
